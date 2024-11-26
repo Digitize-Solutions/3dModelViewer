@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<title>Easy 3D Model Viewer WordPress documentation</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="revisit-after" content="7 DAYS">
+	<meta name="robots" content="All">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <meta name="description" content="A flexible and responsive lightbox plugin, that allows you to create slideshow of multimedia content in a popup window. Built with the latest Javascript and CSS thechniques it offers advanced features to showcase your media.">
+	<meta name="author" content="FWD">
+
+	<link rel='icon' href='assets/favicon.png' type='image/x-icon'/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link rel='stylesheet' href='content/global.css' type='text/css'/>
+	<link rel='stylesheet' id="main_css" href='css/main.css' type='text/css'/>
+	
+	<script type='text/javascript' src='js/jQuery.js'></script>
+	<script type='text/javascript' src='js/FWDSI.js'></script>
+	<script type='text/javascript' src="js/FWDEMV.js"></script>
+	<script type="text/javascript" src="js/FWDVS.js"></script>
+	<script type="text/javascript" src="js/FWDRL.js"></script>
+	
+	<script type="text/javascript" src='js/main.js'></script>
+
+	<script>
+		var page = "api";
+		var docs = true;
+	</script>
+
+	<body>
+
+		<!-- Main -->
+		<div class="main api">
+
+			<!-- Menu -->
+			<div class="menu fwd-hide">
+                <a href="index.html" class="logo-a"><img class="logo" src="assets/logo.png" alt=""/></a>
+               <nav class="primary-navigation">
+                   <ul id="menu-1">
+                        <li class="menu-item home">
+                           <a id="home_menu" href="https://webdesign-flash.ro/p/emv/index.html">Home</a>
+                        </li>
+                        <li class="menu-item">
+                           <a id="demos_menu"  href="https://webdesign-flash.ro/p/emv/demos.html">Demos</a>
+                        </li>
+                        <li class="menu-item">
+                           <a id="documentation_menu"  class="active" href="https://webdesign-flash.ro/p/emv/documentation.html">Documentation</a>
+                        </li>
+                        <li class="menu-item menu-item-disabled">
+                            <a id="documentation_wordpress_menu" href="https://webdesign-flash.ro/p/emv/wordpress-documentation.html">WordPress Documentation</a>
+                        </li>
+                        <!-- <li class="menu-item menu-item-disabled">
+                            <a id="documentation_woocommerce_menu" href="https://webdesign-flash.ro/p/emv/woocomerce-documentation.html">WooCommerce Documentation</a>
+                        </li> -->
+                        <li class="menu-item has-children">
+                            <a href="#" class="buy-now">Buy now</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item">
+                                    <a href="https://1.envato.market/ePrJX" target="_blank">Buy JavaScript Version</a>
+                                </li>
+                                <li class="menu-item menu-item-disabled">
+                                    <a href="https://1.envato.market/5PMm3" target="_blank">Buy WordPress Plugin</a>
+                                </li>
+                                <!-- <li class="menu-item menu-item-disabled">
+                                    <a href="https://1.envato.market/5PMm3"  target="_blank">Buy WooCommerce Plugin</a>
+                                </li> -->
+                            </ul>
+                        </li>
+                   </ul>
+               </nav>
+
+               <nav class="secondary-navigation">
+                   <ul id="menu-1" class="sub-menu has-children">
+                       <li class="menu-item">
+                           <a id="demos_menu" href="https://webdesign-flash.ro/p/emv/index.html">Home</a>
+                       </li>
+                       <li class="menu-item">
+                           <a id="demos_menu"  href="https://webdesign-flash.ro/p/emv/demos.html">Demos</a>
+                       </li>
+                       <li class="menu-item">
+                           <a id="documentation" class="active" href="https://webdesign-flash.ro/p/emv/documentation.html">Documentation</a>
+                       </li>
+                       <li class="menu-item  menu-item-disabled">
+                            <a id="wp-documentation" href="https://webdesign-flash.ro/p/emv/wordpress-documentation.html">WordPress Documentation</a>
+                        </li>		
+                       <li class="menu-item">
+                           <a href="https://1.envato.market/ePrJX"  target="_blank">Buy JavaScript Version</a>
+                       </li>
+                       
+                       <li class="menu-item menu-item-disabled">
+                           <a href="https://1.envato.market/5PMm3" target="_blank">Buy WordPress Plugin</a>
+                       </li>
+                       <!--
+                        <li class="menu-item menu-item-disabled">
+                            <a href="https://1.envato.market/5PMm3" target="_blank">Buy WooCommerce Plugin</a>
+                       </li> -->
+                   </ul>
+               </nav>
+
+			   <a class="help-menu-toggle">
+					<svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="5" cy="12" r="3.5" stroke="#111111"/>
+						<circle cx="16" cy="12" r="3.5" stroke="#111111"/>
+						<circle cx="27" cy="12" r="3.5" stroke="#111111"/>
+					</svg>
+				</a>
+
+               <a class="vertical-menu-toggle">
+                   <span></span>
+               </a>
+            </div>	
+
+            <!-- Demo header -->
+		 	<div class="demos-header fwd-hide">
+
+                <div class="background">
+                    <svg class="left" width="669" height="820" viewBox="0 0 669 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_771_660)">
+                        <path d="M560.151 311.374C560.151 326.058 552.325 339.626 539.621 346.968C482.73 379.845 426.758 412.192 396.419 429.724C383.69 437.081 375.871 450.681 375.901 465.394L376.234 630.241C376.263 644.836 368.558 658.351 355.99 665.75L289.461 704.916C262.122 721.011 227.651 701.321 227.587 669.573L227 379.343C226.97 364.63 234.789 351.03 247.519 343.673C298.128 314.426 420.07 243.955 498.616 198.563C525.989 182.744 560.152 202.549 560.152 234.188L560.151 311.374Z" fill="#F4F2F5"/>
+                        </g>
+                        <g filter="url(#filter1_d_771_660)">
+                        <path d="M500.151 278.374C500.151 293.058 492.325 306.626 479.621 313.968C422.73 346.845 366.758 379.192 336.419 396.724C323.69 404.081 315.871 417.681 315.901 432.394L316.234 597.241C316.263 611.836 308.558 625.351 295.99 632.75L229.461 671.916C202.122 688.011 167.651 668.321 167.587 636.573L167 346.343C166.97 331.63 174.789 318.03 187.519 310.673C238.128 281.426 360.07 210.955 438.616 165.563C465.989 149.744 500.152 169.549 500.152 201.188L500.151 278.374Z" fill="#F4F2F5"/>
+                        </g>
+                        <g filter="url(#filter2_d_771_660)">
+                        <path d="M442.151 227.374C442.151 242.058 434.325 255.626 421.621 262.968C364.73 295.845 308.758 328.192 278.419 345.724C265.69 353.081 257.871 366.681 257.901 381.394L258.234 546.241C258.263 560.836 250.558 574.351 237.99 581.75L171.461 620.916C144.122 637.011 109.651 617.321 109.587 585.573L109 295.343C108.97 280.63 116.789 267.03 129.519 259.673C180.128 230.426 302.07 159.955 380.616 114.563C407.989 98.7438 442.152 118.549 442.152 150.188L442.151 227.374Z" fill="#F4F2F5"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d_771_660" x="118.504" y="84.5042" width="550.143" height="734.642" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset/>
+                        <feGaussianBlur stdDeviation="54.2479"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_771_660"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_771_660" result="shape"/>
+                        </filter>
+                        <filter id="filter1_d_771_660" x="58.5042" y="51.5042" width="550.143" height="734.642" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset/>
+                        <feGaussianBlur stdDeviation="54.2479"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_771_660"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_771_660" result="shape"/>
+                        </filter>
+                        <filter id="filter2_d_771_660" x="0.504211" y="0.504211" width="550.143" height="734.642" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset/>
+                        <feGaussianBlur stdDeviation="54.2479"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_771_660"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_771_660" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>
+
+                    <svg class="right" width="669" height="820" viewBox="0 0 669 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_772_668)">
+                        <path d="M109 311.374C109 326.058 116.827 339.626 129.531 346.968C186.422 379.845 242.394 412.192 272.733 429.724C285.462 437.081 293.281 450.681 293.251 465.394L292.918 630.241C292.888 644.836 300.594 658.351 313.162 665.75L379.69 704.916C407.03 721.011 441.501 701.321 441.565 669.573L442.152 379.343C442.182 364.63 434.363 351.03 421.633 343.673C371.024 314.426 249.081 243.955 170.536 198.563C143.162 182.744 109 202.549 109 234.188L109 311.374Z" fill="#F4F2F5"/>
+                        </g>
+                        <g filter="url(#filter1_d_772_668)">
+                        <path d="M169 278.374C169 293.058 176.827 306.626 189.531 313.968C246.422 346.845 302.394 379.192 332.733 396.724C345.462 404.081 353.281 417.681 353.251 432.394L352.918 597.241C352.888 611.836 360.594 625.351 373.162 632.75L439.69 671.916C467.03 688.011 501.501 668.321 501.565 636.573L502.152 346.343C502.182 331.63 494.363 318.03 481.633 310.673C431.024 281.426 309.081 210.955 230.536 165.563C203.162 149.744 169 169.549 169 201.188L169 278.374Z" fill="#F4F2F5"/>
+                        </g>
+                        <g filter="url(#filter2_d_772_668)">
+                        <path d="M227 227.374C227 242.058 234.827 255.626 247.531 262.968C304.422 295.845 360.394 328.192 390.733 345.724C403.462 353.081 411.281 366.681 411.251 381.394L410.918 546.241C410.888 560.836 418.594 574.351 431.162 581.75L497.69 620.916C525.03 637.011 559.501 617.321 559.565 585.573L560.152 295.343C560.182 280.63 552.363 267.03 539.633 259.673C489.024 230.426 367.081 159.955 288.536 114.563C261.162 98.7438 227 118.549 227 150.188L227 227.374Z" fill="#F4F2F5"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_d_772_668" x="0.504211" y="84.5042" width="550.143" height="734.642" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset/>
+                        <feGaussianBlur stdDeviation="54.2479"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_772_668"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_772_668" result="shape"/>
+                        </filter>
+                        <filter id="filter1_d_772_668" x="60.5042" y="51.5042" width="550.143" height="734.642" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset/>
+                        <feGaussianBlur stdDeviation="54.2479"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_772_668"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_772_668" result="shape"/>
+                        </filter>
+                        <filter id="filter2_d_772_668" x="118.504" y="0.504211" width="550.143" height="734.642" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset/>
+                        <feGaussianBlur stdDeviation="54.2479"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_772_668"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_772_668" result="shape"/>
+                        </filter>
+                        </defs>
+                    </svg>  
+                </div>  
+            
+                <div class="info">
+                    <h1>JavaScript Documentation</h1>
+                    <div></div>
+                    <p>Documentation for the JavaScript version, API and overall JavaScript implementation.</p>
+                </div>
+            </div>
+
+			
+			<!-- API main -->
+			<div class="api-main fwd-hide-top">
+				
+				<aside class="doc">
+
+					<!-- Getting started -->
+					<h3><a href="#getting_started">Getting Started</a></h3>
+					<ul>
+						<li><a href="#installation">Installation</a></li>
+						<li><a href="#model">Add your own model</a></li>
+						<li><a href="#poster">Add a poster</a></li>
+						<li><a href="#environment">Using an environment map</a></li>
+						<li><a href="#default_animations">Working with the default animation</a></li>
+						<li><a href="#info_window">Setup Info Window</a></li>
+						<li><a href="#markers">Working with markers</a></li>
+						<li><a href="#tooltip_window">Marker tooltip window</a></li>
+						<li><a href="#marker_info_window">Marker info window</a></li>
+						<li><a href="#lightbox">Open  in  lightbox</a></li>
+					</ul>
+
+					<h3><a href="#settings">Settings</a></h3>
+					<ul>
+						<!-- Main settings.   -->
+
+						<li><p>-- General settings</p><a href="#instance">instance</a></li>
+						<li><a href="#displayType">displayType</a></li>
+						<li><a href="#parentId">parentId</a></li>
+						<li><a href="#maxWidth">maxWidth</a></li>
+						<li><a href="#startResizingWidth">startResizingWidth</a></li>
+						<li><a href="#maxHeight">maxHeight</a></li>
+						<li><a href="#autoScale">autoScale</a></li>
+						<li><a href="#initializeWhenVisible">initializeWhenVisible</a></li>
+						<li><a href="#lightboxCloseButtonWidth">lightboxCloseButtonWidth</a></li>
+						<li><a href="#lightboxCloseButtonHeight">lightboxCloseButtonHeight</a></li>
+						<li><a href="#lightboxCloseButtonBackgroundNormalColor">lightboxCloseButtonBackgroundN...</a></li>
+						<li><a href="#lightboxCloseButtonBackgroundSelectedColor">lightboxCloseButtonBackgroundS...</a></li>
+						<li><a href="#lightboxCloseButtonIconNormalColor">lightboxCloseButtonIconNormalColor</a></li>
+						<li><a href="#lightboxCloseButtonIconSelectedColor">lightboxCloseButtonIconSelectedColor</a></li>
+						<li><a href="#lightboxBackgroundColor">lightboxBackgroundColor</a></li>
+						<li><a href="#backgroundColor">backgroundColor</a></li>
+						<li><a href="#fullscreenBackgroundColor">fullscreenBackgroundColor</a></li>
+						
+						<!-- Preloader. -->
+						<li><p>-- Preloader</p><a href="#preloaderText">preloaderText</a></li>
+						<li><a href="#preloaderPosition">preloaderPosition</a></li>
+						<li><a href="#preloaderOffsetX">preloaderOffsetX</a></li>
+						<li><a href="#preloaderOffsetY">preloaderOffsetY</a></li>
+						<li><a href="#showPreloaderProgressBar">showPreloaderProgressBar</a></li>
+						<li><a href="#preloaderWidth">preloaderWidth</a></li>
+						<li><a href="#preloaderProgressBarBackgroundColor">preloaderProgressBarBackgroundColor</a></li>
+						<li><a href="#preloaderProgressBarFillColor">preloaderProgressBarFillColor</a></li>
+						<li><a href="#preloaderFontColor">preloaderFontColor</a></li>
+						<li><a href="#preloaderBackgroundColor">preloaderBackgroundColor</a></li>
+
+						<!-- Display helper. -->
+						<li><p>-- Display helper</p><a href="#showGridHelper">showGridHelper</a></li>
+						<li><a href="#modelWireframe">modelWireframe</a></li>
+						<li><a href="#showSkeletonHelper">showSkeletonHelper</a></li>
+
+						<!-- Model. -->
+						<li><p>-- Model</p><a href="#source">source</a></li>
+						<li><a href="#posterSource">posterSource</a></li>
+						<li><a href="#animateModelOpacityOnIntro">animateModelOpacityOnIntro</a></li>
+						<li><a href="#showModelInfoInTheConsole">showModelInfoInTheConsole</a></li>
+						<li><a href="#loadModelDelay">loadModelDelay</a></li>
+
+						<!-- Controller. -->
+						<li><p>-- Controller</p><a href="#buttons">buttons</a></li>
+						<li><a href="#buttonsToolTips">buttonsToolTips</a></li>
+						<li><a href="#showButtonsLabels">showButtonsLabels</a></li>
+						<li><a href="#showBlockTouchButton">showBlockTouchButton</a></li>
+						<li><a href="#blockTouchButtonSize">blockTouchButtonSize</a></li>
+						<li><a href="#hideControllerDelay">hideControllerDelay</a></li>
+						<li><a href="#buttonSize">buttonSize</a></li>
+						<li><a href="#startAndEndButtonsHorizontalGap">startAndEndButtonsHorizontalGap</a></li>
+						<li><a href="#startAndEndButtonsVerticalGap">startAndEndButtonsVerticalGap</a></li>
+						<li><a href="#spaceBetweenButtons">spaceBetweenButtons</a></li>
+						<li><a href="#controllerOffsetY">controllerOffsetY</a></li>
+						<li><a href="#buttonsToolTipOffsetY">buttonsToolTipOffsetY</a></li>
+						<li><a href="#buttonsIconNormalColor">buttonsIconNormalColor</a></li>
+						<li><a href="#buttonsIconSelectedColor">buttonsIconSelectedColor</a></li>
+						<li><a href="#buttonToolTipBackgroundColor">buttonToolTipBackgroundColor</a></li>
+						<li><a href="#controllerBackgrondColor">controllerBackgrondColor</a></li>
+
+						<!-- Orbital controls. -->
+						<li><p>-- Orbital controls</p><a href="#enableOrbitalControls">enableOrbitalControls</a></li>
+						<li><a href="#zoomFactor">zoomFactor</a></li>
+						<li><a href="#zoomSpeed">zoomSpeed</a></li>
+						<li><a href="#dampingFactor">dampingFactor</a></li>
+						<li><a href="#autoRotate">autoRotate</a></li>
+						<li><a href="#autoRotateSpeed">autoRotateSpeed</a></li>
+						<li><a href="#screenSpacePanning">screenSpacePanning</a></li>
+						<li><a href="#enablePan">enablePan</a></li>
+						<li><a href="#enableZoom">enableZoom</a></li>
+						<li><a href="#enableKeboardPan">enableKeboardPan</a></li>
+						<li><a href="#keysType">keysType</a></li>
+						<li><a href="#panSpeed">panSpeed</a></li>
+						<li><a href="#keyPanSpeed">keyPanSpeed</a></li>
+						<li><a href="#zoomMinDistance">zoomMinDistance</a></li>
+						<li><a href="#zoomMaxDistance">zoomMaxDistance</a></li>
+						<li><a href="#horizontalRotationMaxAngle">horizontalRotationMaxAngle</a></li>
+						<li><a href="#horizontalRotationMinAngle">horizontalRotationMinAngle</a></li>
+						<li><a href="#verticalRotationMinAngle">verticalRotationMinAngle</a></li>
+						<li><a href="#verticalRotationMaxAngle">verticalRotationMaxAngle</a></li>
+
+						<!-- Enviroment map. -->
+						<li><p>-- Enviroment map</p><a href="#envMapSource">envMapSource</a></li>
+						<li><a href="#envMapShowBackground">envMapShowBackground</a></li>
+						<li><a href="#backgroundBlurriness">backgroundBlurriness</a></li>
+						<li><a href="#envMapIntensity">envMapIntensity</a></li>
+
+						<!-- Lights. -->
+						<li><p>-- Lights</p><a href="#showLights">showLights</a></li>
+						<li><a href="#toneMapping">toneMapping</a></li>
+						<li><a href="#toneMappingExposure">toneMappingExposure</a></li>
+						<li><a href="#ambientIntensity">ambientIntensity</a></li>
+						<li><a href="#ambientColor">ambientColor</a></li>
+						<li><a href="#directionalLightIntensity">directionalLightIntensity</a></li>
+						<li><a href="#directionalLightColor">directionalLightColor</a></li>
+						<li><a href="#directionalLightX">directionalLightX</a></li>
+						<li><a href="#directionalLightY">directionalLightY</a></li>
+						<li><a href="#directionalLightZ">directionalLightZ</a></li>
+
+						<!-- Animations. -->
+						<li><p>-- Animations</p><a href="#defaultAnimationName">defaultAnimationName</a></li>
+						<li><a href="#defaultAnimationPlayDelay">defaultAnimationPlayDelay</a></li>
+						<li><a href="#defaultAnimationRepeatCount">defaultAnimationRepeatCount</a></li>
+						<li><a href="#showMarkersWhileDefaultAnimationIsPlaying">showMarkersWhileDefaultAnimation...</a></li>
+						<li><a href="#defaultAnimationClampWhenFinished">defaultAnimationClampWhenFinished</a></li>
+						<li><a href="#defaultAnimationCrossFadeDuration">defaultAnimationCrossFadeDuration</a></li>
+						<li><a href="#timeScale">timeScale</a></li>
+						<li><a href="#defaultAnimationCameraPosition">defaultAnimationCameraPosition</a></li>
+						<li><a href="#defaultAnimationCameraPositionDuration">defaultAnimationCameraPositionD...</a></li>
+						<li><a href="#defaultAnimationCameraPositionEasingType">defaultAnimationCameraPositionE...</a></li>
+
+						<!-- Markers & camera positions.. -->
+						<li><p>-- Markers & camera positions.</p><a href="#markersData">markersData</a></li>
+						<li><a href="#showMarkerTool">showMarkerTool</a></li>
+						<li><a href="#markerShowAndHideAnimationType">markerShowAndHideAnimationType</a></li>
+						<li><a href="#showMarkersAfterTime">showMarkersAfterTime</a></li>
+						<li><a href="#markerToolTipOffsetY">markerToolTipOffsetY</a></li>
+						<li><a href="#markerPolygonOffsetAlpha">markerPolygonOffsetAlpha</a></li>
+						<li><a href="#markerToolTipAndWindowBackgroundColor">markerToolTipAndWindowBackg...</a></li>
+						<li><a href="#markerPositionCopiedText">markerPositionCopiedText</a></li>
+						<li><a href="#cameraPositionCopiedText">cameraPositionCopiedText</a></li>
+						<li><a href="#preventToCopyMarkerPosition">preventToCopyMarkerPosition</a></li>
+						<li><a href="#showCameraPositionsSelectMenu">showCameraPositionsSelectMenu</a></li>
+						<li><a href="#cameraPostionsSelectMenuDefaultText">cameraPostionsSelectMenuDefaultText</a></li>
+						<li><a href="#cameraPostitionSelectMenuMaxWidth">cameraPostitionSelectMenuMaxWidth</a></li>
+						<li><a href="#cameraPostitionSelectMenuHeight">cameraPostitionSelectMenuHeight</a></li>
+						<li><a href="#cameraPostitionSelectMenuStartAndEndGap">cameraPostitionSelectMenuStart...</a></li>
+						<li><a href="#cameraPostitionSelectMenuButtonSize">cameraPostitionSelectMenuButtonSize</a></li>
+						<li><a href="#cameraPostionsSelectMenuBackgroundColor">cameraPostionsSelectMenuBackg...</a></li>
+						<li><a href="#cameraPostionsSelectMenuTextColor">cameraPostionsSelectMenuTextColor</a></li>
+						<li><a href="#cameraPositionsNextButtonTooltip">cameraPositionsNextButtonTooltip</a></li>
+						<li><a href="#cameraPositionsPrevButtonTooltip">cameraPositionsPrevButtonTooltip</a></li>
+						<li><a href="#cameraPostionsSelectMenuButtonNormalColor">cameraPostionsSelectMenuButton...</a></li>
+						<li><a href="#cameraPostionsSelectMenuButtonSelectedColor">cameraPostionsSelectMenuButton...</a></li>
+						<li><a href="#cameraPositionsSelectItemsMaxWidth">cameraPositionsSelectItemsMaxWidth</a></li>
+						<li><a href="#cameraPositionsSelectItemHeight">cameraPositionsSelectItemHeight</a></li>
+						<li><a href="#cameraPositionsSelectItemStartLeftGap">cameraPositionsSelectItemStartLeftGap</a></li>
+						<li><a href="#cameraPositionsSelectItemStartRightGap">cameraPositionsSelectItemStartRightGap</a></li>
+						<li><a href="#cameraPositionsSelectItemVerticalGap">cameraPositionsSelectItemVerticalGap</a></li>
+						<li><a href="#cameraPositionsSelectSpaceBetweenItems">cameraPositionsSelectSpaceBetween...</a></li>
+						<li><a href="#cameraPositionsSelectMaxItems">cameraPositionsSelectMaxItems</a></li>
+						<li><a href="#cameraPositionsSelectItemBackgroundColor">cameraPositionsSelectItemBackgr...</a></li>
+						<li><a href="#cameraPositionsSelectItemsScrollBarTrackColor">cameraPositionsSelectItemsScrollBarTr...</a></li>
+						<li><a href="#cameraPositionsSelectItemsScrollBarHandlerNormalColor">cameraPositionsSelectItemsScrollBar...</a></li>
+						<li><a href="#cameraPositionsSelectItemsScrollBarHandlerSelectedColor">cameraPositionsSelectItemsScrollBar...</a></li>
+						<li><a href="#cameraPositionsSelectItemNormalColor">cameraPositionsSelectItemNormalColor</a></li>
+						<li><a href="#cameraPositionsSelectItemSelectedColor">cameraPositionsSelectItemSelectedC...</a></li>
+
+						<!-- Info window. -->
+						<li><p>-- Info window</p><li><a href="#infoWindowData">infoWindowData</a></li>
+						<li><a href="#infoWindowWidth">infoWindowWidth</a></li>
+						<li><a href="#infoWindowMainBackgroundColor">infoWindowMainBackgroundColor</a></li>
+						<li><a href="#closeButtonSize">closeButtonSize</a></li>
+						<li><a href="#closeButtonBackgroundNormalColor">closeButtonBackgroundNormalColor</a></li>
+						<li><a href="#closeButtonBackgroundSelectedColor">closeButtonBackgroundSelectedColor</a></li>
+						<li><a href="#closeButtonIconNormalColor">closeButtonIconNormalColor</a></li>
+						<li><a href="#closeButtonIconSelectedColor">closeButtonIconSelectedColor</a></li>
+						<li><a href="#infoWindowBackgroundColor">infoWindowBackgroundColor</a></li>
+						<li><a href="#infoWindowScrollBarColor">infoWindowScrollBarColor</a></li>
+
+						<!--Help screen. -->
+						<li><p>-- Help screen</p><li><a href="#helpScreenText">helpScreenText</a></li>
+						<li><a href="#mouseRotateAndZoomText">mouseRotateAndZoomText</a></li>
+						<li><a href="#mouseRotateAndZoomInfo">mouseRotateAndZoomInfo</a></li>
+						<li><a href="#mousePanText">mousePanText</a></li>
+						<li><a href="#mousePanInfo">mousePanInfo</a></li>
+						<li><a href="#keyboardPanText">keyboardPanText</a></li>
+						<li><a href="#keyboardPanInfo">keyboardPanInfo</a></li>
+						<li><a href="#touchRotateText">touchRotateText</a></li>
+						<li><a href="#touchRotateInfo">touchRotateInfo</a></li>
+						<li><a href="#touchPanText">touchPanText</a></li>
+						<li><a href="#touchPanInfo">touchPanInfo</a></li>
+						<li><a href="#helpScreenIconColor">helpScreenIconColor</a></li>
+
+						<!--GUI settings. -->
+						<li><p>-- GUI settings</p><li><a href="#showGUI">showGUI</a></li>
+						<li><a href="#closeGUIWhenNotHit">closeGUIWhenNotHit</a></li>
+						<li><a href="#modelScaleOffsetMin">modelScaleOffsetMin</a></li>
+						<li><a href="#modelScaleOffsetMax">modelScaleOffsetMax</a></li>
+
+					</ul>
+
+					<!-- Methods -->
+					<h3><a href="#methods">Methods</a></h3>
+					<ul>
+						<li><a href="#zoom">zoom</a></li>
+						<li><a href="#getCameraPosition">getCameraPosition</a></li>
+						<li><a href="#showInfoWindow">showInfoWindow</a></li>
+						<li><a href="#playOrStopAnimationClip">playOrStopAnimationClip</a></li>
+						<li><a href="#getAnimationClips">getAnimationClips</a></li>
+						<li><a href="#playAutoRotate">playAutoRotate</a></li>
+						<li><a href="#pauseAutoRotate">pauseAutoRotate</a></li>
+						<li><a href="#goFullScreen">goFullScreen</a></li>
+						<li><a href="#goNormalScreen">goNormalScreen</a></li>
+						<li><a href="#destroy">destroy</a></li>
+					</ul>
+
+					<!-- Events -->
+					<h3><a href="#events">Events</a></h3>
+					<ul>
+						<li><a href="#NORMAL_SCREEN">NORMAL_SCREEN</a></li>
+						<li><a href="#FULL_SCREEN">FULL_SCREEN</a></li>
+						<li><a href="#ANIMATION_START">ANIMATION_START</a></li>
+						<li><a href="#ANIMATION_FINISHED">ANIMATION_FINISHED</a></li>
+						<li><a href="#START_TO_LOAD">START_TO_LOAD</a></li>
+						<li><a href="#LOAD_PROGRESS">LOAD_PROGRESS</a></li>
+						<li><a href="#LOAD_COOMPLETE">LOAD_COOMPLETE</a></li>
+						<li><a href="#AUTOROTATE_PLAY">AUTOROTATE_PLAY</a></li>
+						<li><a href="#AUTOROTATE_PAUSE">AUTOROTATE_PAUSE</a></li>
+						<li><a href="#SET_CAMERA_POSITION">SET_CAMERA_POSITION</a></li>
+						<li><a href="#SET_MARKER_OR_CAMERA_POSITION">SET_MARKER_OR_CAMERA_POSITION</a></li>
+						<li><a href="#ERROR">ERROR</a></li>
+						
+					</ul>
+
+					<div class="scroll"></div>
+				</aside>
+
+				<main>
+
+					<!-- Getting started -->
+					<h1 id="getting_started">Getting Started</h1>
+					<p>Easy 3D Model Viewer supports <strong>gltf</strong>, <strong>glb</strong>, <strong>glTF-Embedded</strong>, and compressed <strong>DRACO</strong> formats, delivering stunning realism with realistic lights, environment maps, shadows and more. Take your models to the next level by adding markers/hotspots that can play/control built-in animation, show tooltips and detailed info windows, animate custom camera postions and much more!.</p>
+					<p>It is built using EcmaScript6 using the latest JavaScript and CSS standards.</p>
+					<p>Please note that it will not work locally, it has to run on an HTTP or HTTPS protocol.</p>
+					<p>Please keep in mind that the models will be displayed and rendered in the browser so please optimize the model as best as possible, reduce the number of vertices as much as possible without losing visual quality and also optimize the textures using a tool like <a href="https://tinypng.com/" target="_blank">tinypng.com</a>.</p>
+					<p>To make sure your model works and it is optimzed for the web you can test it online using <a href="https://gltf.report/" target="_blank">this tool</a>, just drag and drop the folder that contains the model and check the details.</p>
+					<p>The model is using vanila JavaScript and it has no dependencies so it can be used in libraries like <strong>React</strong>.</p>
+					
+					<hr>
+
+					<!-- Installation -->
+					<h2 id="installation">Installation</h2>
+					<p>In the <strong>build folder</strong> there are multiple .html files that can be used as reference to copy and paste the HTML and JavaScript code, I have used the <strong>start.html</strong> file as reference for this documentation.</p>
+
+					<p>Copy the <strong>content folder</strong>, <strong>environmentMaps</strong> folder, <strong>media</strong> folder, <strong>models</strong> folder and <strong>src</strong> folder in the same folder where you have the HTML file where you want to use the viewer, this folders can be added anywhere on the server but is best to keep them relative to your main HTML file.</p>
+					
+					<p>Include the viewer CSS file and JavaScript in the header:</p>
+					
+					<div class="highlight html">
+					<pre><code>&#60;head>
+
+&#60;!-- ... -->
+&#60;link rel="stylesheet" type="text/css"  href="./content/global.css"/>
+&#60;script type='text/javascript' src="./src/FWDEMV.js">&#60;/script>
+&#60;!-- ... -->	
+
+&#60;/head></code></pre>
+					</div>
+
+					<p>The next step is to add the initialize code in the page header or footer after the inclusion of the viewer JavaScript and CSS files.</p>
+					<div class="highlight js">
+					<pre><code>&#60;script>
+	if(document.readyState == 'complete'){
+		fwdemvInit();
+	}else{
+		document.addEventListener('DOMContentLoaded', ()=>{
+			fwdemvInit();
+		});
+	}
+
+	function fwdemvInit(){
+		
+		new FWDEMV({
+
+			// General settings.  
+			instance: 'fwdemv0',
+			texturesFolder: 'content/markers/',
+			displayType: 'responsive',
+			parentId: 'myDiv',
+			maxWidth: 4000,
+			startResizingWidth: 1000,
+			maxHeight: 750,
+			autoScale: 'yes',
+			initializeWhenVisible: 'yes',
+			lightboxCloseButtonWidth: 30,
+			lightboxCloseButtonHeight: 30,
+			lightboxCloseButtonBackgroundNormalColor: "#10A0F1",
+			lightboxCloseButtonBackgroundSelectedColor: "#FFFFFF",
+			lightboxCloseButtonIconNormalColor: "#FFFFFF",
+			lightboxCloseButtonIconSelectedColor: "#10A0F1",
+			lightboxBackgroundColor: 'rgba(0, 0, 0, .7)',
+			backgroundColor: '#FFFFFF',
+			fullscreenBackgroundColor: '#FFFFFF',
+
+			// Preloader.
+			preloaderText: 'Loading 3D Model: ',
+			preloaderPosition: 'center',
+			preloaderOffsetX: 0,
+			preloaderOffsetY: 0,
+			showPreloaderProgressBar: 'yes',
+			preloaderWidth: '40%',
+			preloaderProgressBarBackgroundColor: '#8b859b',
+			preloaderProgressBarFillColor: '#10A0F1',
+			preloaderFontColor: '#000000',
+			preloaderBackgroundColor: 'rgba(255, 255, 255, 1)',
+
+			// Display helper.
+			showGridHelper: 'no',
+			modelWireframe: 'no',
+			showSkeletonHelper: 'no',
+
+			// Model.
+			source: './models/camera/scene.gltf',
+			posterSource: 'media/images/camera-poster.png',
+			animateModelOpacityOnIntro: 'no',
+			showModelInfoInTheConsole: 'no',
+			loadModelDelay: 0,
+
+			// Shadow.
+			showShadow: 'yes',
+			shadowBlur: 1.21,
+			shadowDarkness: 1.144,
+			shadowOpacity: .8,
+			shadowPlanePositionOffsetY: 0.017,
+			shadowPlaneOpacity: 0,
+			shadowPlaneColor: '#FFFFFF',
+
+			// Camera amd model initial position.
+			cameraPosition: 'x:0, y:0, z:1, tx:0, ty:0, tz:0',
+			modelScaleOffset: 0,
+			modelPositionX: 0,
+			modelPositionY: 0,
+
+			// Controller.
+			buttons: 'play, zoomin, zoomout, info, help, fullscreen',
+			buttonsToolTips: 'Play/Pause, Zoom in, Zoom out, Info, Help, Full screen/Normal screen',
+			showButtonsLabels: 'yes',
+			showBlockTouchButton: 'yes',
+			blockTouchButtonSize: 40,
+			hideControllerDelay: 3,
+			buttonSize: 30,
+			startAndEndButtonsHorizontalGap: 22,
+			startAndEndButtonsVerticalGap: 5,
+			spaceBetweenButtons: 15,
+			controllerOffsetY: 24,
+			buttonsToolTipOffsetY: 6,
+			buttonsIconNormalColor: '#FFFFFF',
+			buttonsIconSelectedColor: '#d6d6d6',
+			buttonToolTipBackgroundColor: "#FFFFFF",
+			buttonToolTipTextColor: "#00000",
+			controllerBackgrondColor: 'rgba(0, 0, 0, .4)',
+
+			// Orbital controls.
+			enableOrbitalControls: 'yes',
+			zoomFactor: 0.1,
+			zoomSpeed: .25,
+			dampingFactor: 0.1,
+			autoRotate: 'no',
+			autoRotateSpeed: 0.2,
+			screenSpacePanning: 'yes',
+			enablePan: 'yes',
+			enableZoom: 'yes',
+			enableKeboardPan: 'yes',
+			keysType: 'asdw', // arrows/asdw
+			panSpeed: 1,
+			keyPanSpeed: 1,
+			zoomMinDistance: 0.37,
+			zoomMaxDistance: 1.17,
+			horizontalRotationMaxAngle: 0,
+			horizontalRotationMinAngle: 0,
+			verticalRotationMinAngle: -180,
+			verticalRotationMaxAngle: 180,
+
+			// environment map.
+			envMapSource: './environmentMaps/sky.exr', //./environmentMaps/venice_sunset_1k.exr
+			envMapShowBackground: 'no',
+			backgroundBlurriness: 0,
+			envMapIntensity: 1,
+
+			// Lights.
+			showLights: 'yes',
+			toneMapping: 'ACESFilmic',
+			toneMappingExposure: 0,
+			ambientIntensity: 1,
+			ambientColor: '#FFFFFF',
+			directionalLightIntensity: 1,
+			directionalLightColor: '#FFFFFF',
+			directionalLightX: 0.5,
+			directionalLightY: 0,
+			directionalLightZ: 0.866,
+
+			// Animations.
+			defaultAnimationName:'',
+			defaultAnimationPlayDelay: 0.2,
+			defaultAnimationRepeatCount: 999999,
+			showMarkersWhileDefaultAnimationIsPlaying: 'yes',
+			defaultAnimationClampWhenFinished: 'yes',
+			defaultAnimationCrossFadeDuration: .5,
+			timeScale: 1,
+			defaultAnimationCameraPosition: '',
+			defaultAnimationCameraPositionDuration: '1.2',
+			defaultAnimationCameraPositionEasingType: 'easeout',
+
+			// Markers & camera positions.
+			markersData: '',
+			showMarkerTool: 'no',
+			markerShowAndHideAnimationType: 'scale',
+			showMarkersAfterTime: 2,
+			markerToolTipOffsetY: 10,
+			markerPolygonOffsetAlpha: .1,
+			markerToolTipAndWindowBackgroundColor: '#FFFFFF',
+			markerPositionCopiedText: 'Marker position copied to colipboard!',
+			cameraPositionCopiedText: 'Camera position copied to colipboard!',
+			preventToCopyMarkerPosition: 'Please disable the model animation to add markers!',
+			showCameraPositionsSelectMenu: 'no',
+			cameraPostionsSelectMenuDefaultText: 'Plane Details',
+			cameraPostitionSelectMenuMaxWidth: 240,
+			cameraPostitionSelectMenuHeight: 40,
+			cameraPostitionSelectMenuStartAndEndGap: 14,
+			cameraPostitionSelectMenuButtonSize: 30,
+			cameraPostionsSelectMenuBackgroundColor: 'rgba(0, 0, 0, 0.40)',
+			cameraPostionsSelectMenuTextColor: '#FFFFFF',
+			cameraPositionsNextButtonTooltip: '',
+			cameraPositionsPrevButtonTooltip: '',
+			cameraPostionsSelectMenuButtonNormalColor: '#d6d6d6',
+			cameraPostionsSelectMenuButtonSelectedColor: '#FFFFFF',
+			cameraPositionsSelectItemsMaxWidth: 350,
+			cameraPositionsSelectItemHeight: 24,
+			cameraPositionsSelectItemStartLeftGap: 6,
+			cameraPositionsSelectItemStartRightGap: 30,
+			cameraPositionsSelectItemVerticalGap: 16,
+			cameraPositionsSelectSpaceBetweenItems: 8,
+			cameraPositionsSelectMaxItems: 4,
+			cameraPositionsSelectItemBackgroundColor: 'rgba(0, 0, 0, .6)',
+			cameraPositionsSelectItemsScrollBarTrackColor: '#D9D9D9',
+			cameraPositionsSelectItemsScrollBarHandlerNormalColor: '#767676',
+			cameraPositionsSelectItemsScrollBarHandlerSelectedColor: '#FFFFFF',
+			cameraPositionsSelectItemNormalColor: '#D9D9D9',
+			cameraPositionsSelectItemSelectedColor: '#FFFFFF',
+
+			// Info window.
+			infoWindowData: '',
+			infoWindowWidth: 1080,
+			infoWindowMainBackgroundColor: 'rgba(255, 255, 255, .7)',
+			closeButtonSize: 27,
+			closeButtonBackgroundNormalColor: "#10A0F1",
+			closeButtonBackgroundSelectedColor: "#FFFFFF",
+			closeButtonIconNormalColor: "#FFFFFF",
+			closeButtonIconSelectedColor: "#10A0F1",
+			infoWindowBackgroundColor:"#FFFFFF",
+			infoWindowScrollBarColor:"#8b859b",
+
+			// Help screen.
+			helpScreenText: 'Help',
+			mouseRotateAndZoomText: 'Rotate And Zoom',
+			mouseRotateAndZoomInfo: 'Use the left mouse click to rotate and mousewheel to zoom.',
+			mousePanText: 'Pan With Mouse',
+			mousePanInfo: 'Use the right click mouse button to pan.',
+			keyboardPanText: 'Pan With Keyboard',
+			keyboardPanInfo: 'Use the the <strong>W A S D</strong> keyboard keys to pan.',
+			touchRotateText: 'Rotate',
+			touchRotateInfo: 'Use one finger to rotate.',
+			touchPanText: 'Pan',
+			touchPanInfo: 'Use two fingers to pan.',
+			helpScreenIconColor: '#10A0F1',
+
+			// GUI settings.
+			showGUI: 'yes',
+			closeGUIWhenNotHit: 'no',
+			modelScaleOffsetMin: 0,
+			modelScaleOffsetMax: 1,
+		});
+	}
+&#60;/script></code></pre>
+					</div>
+
+					<p>The last step adding the viewer is to create a div with an unique ID that will act as the parent/holder for the viewer and set the parentId option to point to the div id ex: <strong>parentId: 'myDiv'</strong>, this div can be added anywhere in your page.</p>
+					<div class="highlight html">
+					<pre><code>&#60;!-- Viewer holder. --> 
+&#60;div id="myDiv">&#60;/div>
+</code></pre>
+					</div>
+
+					<p>To add multiple viewers just redo the steps explained above and make sure to change the <strong>instance</strong> to <strong>fwdemv1</strong>, <strong>fwdemv2</strong>, <strong>fwdemv3</strong>, etc... depending on how many viewers are added, also change the <strong>parentId</strong> to a different ID.</p>
+
+					<p>Please read the <a href="#settings">settings</a> section to understand the viewer configuration options.</p>
+
+				<hr>
+
+					<!-- Add your own model. -->
+					<h2 id="model">Add your own model</h2>
+					<p>The supported format are <strong>gltf</strong>, <strong>glb</strong>, <strong>glTF-Embedded</strong>, and compressed <strong>DRACO</strong>, to add your own model set the <strong>source</strong> option to your model absolute or relative path.</p>
+
+					<p>After adding the model the initial position must be set, to do this set the <strong>showMarkerTool: 'yes'</strong>, after this is done you can use the right click to copy to clipboard the camera postion that you want and once you like the position set it in the <strong>cameraPosition</strong> option. Please watch this <a href="https://www.youtube.com/watch?v=v6nyiSHa2xk" target="_blank">video tutorial</a> for more info.</p>
+
+					<div class="highlight html">
+						<pre><code>&#60;!-- Model -->
+source: './models/camera/scene.gltf',
+...
+cameraPosition: 'x:0.7916959269558312, y:0.4623247340252273, z:-0.3633283683945322, tx:0.05594507976615551, ty:-0.07176170310160453, tz:0.012591109655911795',</code></pre>
+					</div>
+
+					<hr>
+
+					<!-- Add a poster. -->
+					<h2 id="poster">Add a poster</h2>
+					<p>The poster is optional, adding a poster that will appear while the model is loading is simple, the supported poster format is .png or .jpg, just set the <strong>posterSource</strong> option to your poster absolute or relative path, if you don't want a poster leave this option blank. Please watch this <a href="https://www.youtube.com/watch?v=bO-X0jIEDEY" target="_blank">video tutorial</a> for more info.</p>
+
+					<div class="highlight html">
+						<pre><code>&#60;!-- Model -->
+posterSource: 'media/images/camera-poster.png',</code></pre>
+					</div>
+
+					<hr>
+
+					<!-- environment map -->
+					<h2 id="environment">Using an environment map</h2>
+					<p>EMV suports environment maps <strong>.exr</strong> format to simulate reflections and lighting for the scene and 3D model, to enhance realism by providing reflections on objects based on the surrounding environment, creating a more immersive visual experience.</p>
+					<p>To add an environment map you need an <strong>.exr</strong> file. Based on your project is best to use the lowest quality possible but it dose not look good you can use a 2k, 4k or even 8k .exr file.</p>
+					<p>The environment map is optional, adding an environment map set the <strong>envMapSource</strong> option to your .exr  file absolute or relative path. Please watch this <a href="https://www.youtube.com/watch?v=o9BbWcSKxfA" target="_blank">video tutorial</a> for more info.</p>
+					<div class="highlight html">
+						<pre><code>&#60;!-- Model -->
+envMapSource: './environmentMaps/sky.exr',</code></pre>
+					</div>
+
+					<hr>
+
+					<h2 id="default_animations">Working with the default animation</h2>
+					<p>It is possible to play and control a built-in model animation using the viewer animations options, this is better explained in this <a href="https://www.youtube.com/watch?v=eFwEpKmHA7Y" target="_blank">video tutorial</a>.</p>
+					
+					<hr>
+
+					<!-- Setup Info Window -->
+					<h2 id="info_window">Setup Info Window</h2>
+					<p>To add an info window create a <strong>div</strong> with a unuque id and this id as the value for the <strong>infoWindowData</strong> option. The content from the div will be displayed in the info window that is opened by clicking the info button from the controls, more info in this <a href="https://www.youtube.com/watch?v=dOZbLnrSdkM" target="_blank">video tutorial</a>.</p>
+					<p>Any HTML content can be added including video/autio.</p>
+					<div class="highlight html">
+						<pre><code>&#60;script>
+	&#60;!-- ... -->
+	infoWindowData: 'info_window_data',
+	&#60;!-- ... -->
+&#60;/script>
+
+&#60;!-- Info window. -->
+&#60;div id="info_window_data" style="display: none;">
+
+	&#60;div class="third">
+		&#60;h1>Video & Youtube Ready&#60;/h1>
+		
+		&#60;div class="youtube">
+			&#60;iframe src="https://www.youtube.com/embed/Ihuq6ADCEKk?fs=1" frameborder="0" width="100%" allowfullscreen>&#60;/iframe>
+		&#60;/div>
+
+		&#60;p>Our info window provides seamless support for unlimited HTML content, effortlessly showcasing detailed, responsive elements such as video, audio, CSS styling, and more. Embrace versatility at its finest!&#60;/p>
+
+		&#60;p>Elevate your experience with our 3D model viewer, designed for ultimate responsiveness. It seamlessly supports gltf, glb, and compressed DRACO format models, delivering stunning realism with realistic lights, environment maps, and shadows. Take your models to the next level by adding markers/hotspots, complete with tooltips and detailed info windows, built-in animation control, and customizable camera positioning, &#60;a href="https://webdesign-flash.ro" target="_blank">read more&#60;/a>&#60;/p>
+	&#60;/div>
+
+&#60;/div></code></pre>
+					</div>
+					
+					<hr>
+
+					<!-- Working with markers. -->
+					<h2 id="markers">Working with markers</h2>
+					<p>To add an markers create a <strong>div</strong> with a unuque id and this id as the value for the <strong>markersData</strong> option. Inside this div you can add as many markers as you want with the below markup. Please watch this <a href="https://youtu.be/5EADDRAx94w?t=1" target="_blank">video tutorial</a> for more info.</p>
+
+					<div class="highlight html">
+						<pre><code>&#60;script>
+&#60;!-- ... -->
+markersData: 'markers_data',
+&#60;!-- ... -->
+&#60;/script>
+
+&#60;div id="markers_data" style="display: none;">
+
+	&#60;div data-class = ""
+		data-position = "x:0, y:0, z:0, nx:0, ny:0, nz:0, meshName: none"
+		data-marker-type = "3D"
+		data-polygon-offset-units = "1"
+		data-icon-type = "playPointer"
+		data-border-color = "#FFFFFF"
+		data-border-selected-color = "#10A0F1"
+		data-background-color = "#10A0F1"
+		data-background-selected-color = "#FFFFFF"
+		data-icon-color = "#FFFFFF"
+		data-icon-selected-color = "#10A0F1"
+		data-scale = "1"
+
+		data-normals-angle = "130"
+		data-tooltip-offset-x = "0"
+
+		data-link = ""
+		data-target = ""
+
+		data-animation-name = ""
+		data-animation-repeat-count = "1"
+		data-animation-time-scale = "1"
+		data-animate-with-model = "yes"
+		data-animation-finish-action = "default"
+		data-animation-finish-reset-camera = "default"
+		data-animation-show-tooltip-when-finished = "no"
+
+		data-camera-position-name = ""
+		data-camera-position = ""
+		data-camera-show-tooltip-when-finished = "yes"
+		data-camera-position-animation-duration = "1.8"
+		data-camera-position-animation-easing-type = "easeout"> 
+	&#60;/div>
+
+&#60;/div></code></pre>
+					
+					</div>
+
+					<p>Below is a detailed description of all parameters:</p>
+					<ul>
+						<li><strong>data-position</strong> - the marker postition on the model, this is taken using the built it marker tool by left clicking on the model than pasting the value for this option, the value contains the click intersection x, y and z and also the closest face x, y and z, this is best explaiend in this <a href="https://youtu.be/5EADDRAx94w?t=238" target="_blank">video tutorial</a>.</li>
+						
+						<li><strong>data-marker-type</strong> - it can be <strong>2D</strong> or <strong>3D</strong>, for more info about this please check out <a href="markers.html" target="_blank">this example</a>, <a href="https://youtu.be/5EADDRAx94w?t=389" target="_blank">video tutorial</a>.</li>
+						
+						<li><strong>data-polygon-offset-units</strong> - a value from <strong>0</strong> to <strong>5</strong>, if the marker is 3D type is pusing the marker visually to be over the intersection point, the larger the value the more exlusion is added, this can only be explain visually so please watch this <a href="https://youtu.be/5EADDRAx94w?t=510" target="_blank">video tutorial</a>.</li>
+						
+						<li><strong>data-icon-type</strong> - the icon visual type, this can be <strong>plus</strong>, <strong>plusPointer</strong>, <strong>link</strong>, <strong>linkPointer</strong>, <strong>info</strong>, <strong>infoPointer</strong>, <strong>play</strong>, <strong>playPointer</strong>, <a href="https://youtu.be/5EADDRAx94w?t=985" target="_blank">video tutorial</a>.</li>
+					
+						<li><strong>data-border-color</strong> - the marker border normal color, hex or rgb.</li>
+					
+						<li><strong>data-border-selected-color</strong> - the marker selected border color, hex or rgb.</li>
+					
+						<li><strong>data-background-color</strong> - the marker normal background color, hex or rgb.</li>
+					
+						<li><strong>data-background-selected-color</strong> - the marker selected background color, hex or rgb.</li>
+					
+						<li><strong>data-icon-color</strong> - the marker normal icon color, hex or rgb.</li>
+						
+						<li><strong>data-icon-selected-color</strong> - the marker selected icon color, hex or rgb.</li>
+						
+						<li><strong>data-scale</strong> - the marker scale factor, 1 is normal scale, 2 is 200% scale, 3 is 300% scale, even though the icons are vector the 3D type are textures so try not to make the scale bigger than 3 this way it aways look sharp.</li>
+						
+						<li><strong>data-normals-angle</strong> - If the marker type is set to 2D, it will hide itself in response to the angle formed by the camera and the intersection of the normal face. The marker's disappearance is influenced by this angle, with a higher angle causing the marker to hide more promptly, <a href="https://www.youtube.com/watch?v=5EADDRAx94w&t=389s" target="_blank">video tutorial</a>.</li>
+						
+						<li><strong>data-tooltip-offset-x</strong> - the tooltip window offset x in px.</li>
+						
+						<li><strong>data-link</strong> - the link of the page to open when the marker is clicked, if you don't want to open a page when the maerker is clicked leave this blank.</li>
+						
+						<li><strong>data-target</strong> - this can be <strong>_self</strong> it will open the page in the same window, <strong>_blank</strong> it will open the page in a new window.</li>
+						
+						<li><strong>data-animation-name</strong> - the model built-in animation name to play when the marker is clicked, <a href="https://youtu.be/5EADDRAx94w?t=1328" target="_blank">video tutorial</a>.</li>
+						
+						<li><strong>data-animation-repeat-count</strong> - a integer number that represents how many times to repeat the animation.</li>
+						
+						<li><strong>data-animation-time-scale</strong> - a float number that represents the animation playback speed/time scale, 1 is the default speed.</li>
+						
+						<li><strong>data-animation-time-scale</strong> - a float number that represents the animation playback speed/time scale, 1 is the default speed.</li>
+						
+						<li><strong>data-animate-with-model</strong> - this can be <strong>yes</strong> or <strong>no</strong>, it animates the marker with the model or it keeps it in the default position, <a href="" target="_blank">video tutorial</a>.</li>
+						
+						<li><strong>data-animation-finish-action</strong> - the actiion to run when the animation has finished to play, <a href="https://youtu.be/5EADDRAx94w?t=1571" target="_blank">video tutorial</a>.
+						</li>
+						
+						<ul style="margin: 10px 0 0 20px;">
+							<li><strong class="second-ul">default</strong> - resumes the default playing animation id one is defined or returns to the model its intial state.</li>
+							<li><strong class="second-ul">clampWhenFinished</strong> - stops the animation at the last frame.</li>
+							<li><strong class="second-ul">playInReverse</strong> - plays the animation in reverse.</li>
+							<li><strong class="second-ul">playInReverseWithMarker</strong> - when the animation has finished to play a the marker icon will change to a rewind icon and when clicked it will play the animation in reverse.</li>
+						</ul>
+						<li><strong>data-animation-finish-reset-camera</strong> - reset animation of the camera, <a href="https://youtu.be/5EADDRAx94w?t=1753" target="_blank">video tutorial</a>.
+							<ul style="margin: 10px 0 0 20px;">
+								<li><strong class="second-ul">default</strong> - dose nothing.</li>
+								<li><strong class="second-ul">resetOnAnimationStart</strong> - if the <strong>data-animation-finish-action</strong> is set to <strong>playInReverseWithMarker</strong> when the marker is clicked to play the animation in reverse the camera will also tween to it't original postion.</li>
+								<li><strong class="second-ul">resetOnAnimationFinish</strong> -  if the <strong>data-animation-finish-action</strong> is not set to <strong>playInReverseWithMarker</strong> when the animation is finished it will tween the camera to the default postion.</li>
+							
+							</ul>
+						</li>
+						
+						<li><strong>data-camera-position-name</strong> - this option is for tweening the camera at a specific position when the marker is clicked, this name will also appear in the camera menu selector if it is enabled in the viewer options by setting <strong>showCameraPositionsSelectMenu</strong> to <strong>yes</strong>, please make sure that this is a unique name and is not repeated for other markers,<a href="https://youtu.be/5EADDRAx94w?t=1931" target="_blank">video tutorial</a>.
+						
+						<li><strong>data-camera-position</strong> - the camera position where to tween when the marker is clicked, this is taken using the right-click mouse to copy to clipboard the position and than paste it here, don't forget to set the option to <strong>yes</strong> to have access to the right-click feature, <a href="https://youtu.be/5EADDRAx94w?t=1931" target="_blank">video tutorial</a>.</li>
+						
+						<li><strong>data-camera-show-tooltip-when-finished</strong> - this can be <strong>yes</strong> or <strong>no</strong>, shows the tooltip window related to the marker if defined, when the camera tween position is finished, <a href="https://youtu.be/5EADDRAx94w?t=2504" target="_blank">video tutorial</a>.</li>
+
+						<li><strong>data-camera-position-animation-duration</strong> - a number that represents the tween camera position in seconds.</li>
+						
+						<li><strong>data-camera-position-animation-easing-type</strong> - this can be <strong>linear</strong>, <strong>easeout</strong>, <strong>easeinout</strong> and represents the camera tween position tween easing type.</li>
+					</ul>
+
+					<hr>
+
+					<!-- Marker tooltip window -->
+					<h2 id="tooltip_window">Marker tooltip window</h2>
+					<p>Easy 3D Model Viewer can have a tooltip window associated with it, this tooltip window appears when the marker is hovered/active or when an animation and/or tween camera has finished. It has full support for HTML elements like video/audio and any HTML tag and it can be easily formatted using the global.css file that comes with this viewer, <a href="https://youtu.be/5EADDRAx94w?t=2228" target="_blank">video tutorial</a>.</p>
+
+					<p>To add a tootip window for the marker add a <strong>div</strong> with two attributes one is the <strong>data-tooltip = ""</strong> attrinute that is used by the viewer as a refference  to parse the HTML markup and the other one is the <strong>data-max-width = "380"</strong> that represents the maximum viewer window width in px. This div must be added inside the marker HTML markup.</p>
+					
+					<div class="highlight html">
+							<pre><code>&#60;div id="markers_data" style="display: none;">
+	
+		&#60;div data-class = ""
+			data-position = "x:0, y:0,, z:0,, nx:0,, ny:0, nz:0, meshName: none" ...> 
+
+			&#60;div data-tooltip = "" data-max-width = "380">
+				&#60;p>Add here your HTML content that appears in the tooltip window!&#60;/p>
+			&#60;/div>		
+
+	&#60;/div></code></pre>
+					
+					</div>
+
+					<hr>
+
+					<!-- Marker info window -->
+					<h2 id="marker_info_window">Marker info window</h2>
+					<p>The info window works the same way as the tooltip window with the exception that it can have unlimited HTML content, if the content does not feet the info window a scrollbar will appear to scroll the content, also the info window is opened when  clicking on the marker or when an animation and/or tween camera has finished, <a href="https://youtu.be/5EADDRAx94w?t=2648" target="_blank">video tutorial</a>.</p>
+
+					<p>To add a info window for the marker add a <strong>div</strong> with the attribute <strong>data-info = ""</strong> attrinute that is used by the viewer as a refference  to parse the HTML markup. This div must be added inside the marker HTML markup.</p>
+					
+					<div class="highlight html">
+							<pre><code>&#60;div id="markers_data" style="display: none;">
+	
+		&#60;div data-class = ""
+			data-position = "x:0, y:0,, z:0,, nx:0,, ny:0, nz:0, meshName: none" ...> 
+
+			&#60;div data-info = "">
+				&#60;p>Add here your HTML content that appears in the info window!&#60;/p>
+			&#60;/div>		
+
+	&#60;/div></code></pre>
+					
+					</div>
+				
+					<hr>
+
+					<!-- Marker info window -->
+					<h2 id="lightbox">Open  in  lightbox</h2>
+					<p>To open Easy 3D Model Viewer in a lightbox is done by setting the <strong>displayType:"lightbox"</strong>, in the build folder there is a HTML file <strong>lightbox.html</strong> you can use this file as reference, <a href="https://www.youtube.com/watch?v=nOLjDa_u2so" target="_blank">video tutorial</a>.</p>
+					
+					<div class="highlight html">
+							<pre><code>&#60;script>
+&#60;!-- ... -->
+displayType: 'lightbox',
+&#60;!-- ... -->
+&#60;/script></code></pre>
+					
+					</div>
+
+					<hr>
+
+					<!-- Settings -->
+					<h1 id="settings">Settings</h1>
+					<p>Easy 3D Model Viewer has many options that allows to customize its features. They are added directly in the viewer constructor as it can be seen in the <a href="#installation">installation</a> section.</p>
+
+					<h3>Example</h3>
+				<div class="highlight html">
+                	<pre><code>&#60;script type="text/javascript">
+	if(document.readyState == 'complete'){
+		fwdemvInit();
+	}else{
+		document.addEventListener('DOMContentLoaded', ()=>{
+			fwdemvInit();
+		});
+	}
+
+	function fwdemvInit(){
+		
+		new FWDEMV({
+
+			// General settings.  
+			instance: 'fwdemv0',
+			texturesFolder: 'content/markers/',
+			displayType: 'responsive',
+			parentId: 'myDiv',
+			maxWidth: 4000,
+			startResizingWidth: 1000,
+			maxHeight: 750,
+			autoScale: 'yes',
+				etc...
+				
+			})
+		}
+&#60;/script></code></pre>
+				</div>
+
+					<hr>
+
+					<h3 id="instance" class="head">instance</span></h3>
+					<p class="option">Type: (String) - default: <strong>unset</strong></p>
+					<p>The viewer instance name, this is used to call the API. In the examples files the instance name is set to <strong>fwdemv0</strong>, if you are using multiple viewers instances just change the instance to <strong>fwdemv1</strong>, <strong>fwdemv2</strong>, <strong>fwdemv3</strong>, etc...</p>
+
+					<h3 id="displayType" class="head">displayType</span></h3>
+					<p class="option">Type: (String) - default: <strong>responsive</strong></p>
+					<p>Viewer display type.</p>
+					<ul>
+						<li><strong>responsive</strong> - displays the viewer in responsive type based on the <strong>maxWidth</strong> and <strong>maxHeight</strong> settings.</li>
+						<li><strong>afterparent</strong> - displays the viewer based on the parent element width and height.</li>
+						<li><strong>lightbox</strong> - displays the viewer in lightbox mode.</li>
+					</ul>
+
+					<h3 id="parentId" class="head">parentId</span></h3>
+					<p class="option">Type: (String) - default: <strong>unset</strong></p>
+					<p>The viewer holder/div ID, please make sure that this has an unique ID, it can be added anywhere in your page, this element will be the viewer parent.</p>
+					
+					<h3 id="maxWidth" class="head">maxWidth</span></h3>
+					<p class="option">Type: (Number) - default: <strong>1000</strong></p>
+					<p>The viewer maximum width in px.</p>
+
+					<h3 id="startResizingWidth" class="head">startResizingWidth</span></h3>
+					<p class="option">Type: (Number) - default: <strong>1000</strong></p>
+					<p>Tthe pixel width threshold at which the viewer initiates automatic adjustments to the height in order to maintain the appropriate aspect ratio between width and height, this option only works if <strong>autoScale</strong> is set to yes.</p>
+
+					<h3 id="maxHeight" class="head">maxHeight</span></h3>
+					<p class="option">Type: (Number) - default: <strong>700</strong></p>
+					<p>The viewer maximum height in px.</p>
+
+					<h3 id="autoScale" class="head">autoScale</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong> and applies if the displayType is reponsive. If set to yes this viewer height will always be proportional to the viewer width, if set to no the height will be fixed based on the maxHeight property.</p>
+
+					<h3 id="initializeWhenVisible" class="head">initializeWhenVisible</span></h3>
+					<p class="option">Type: (String) - default: <strong>no</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, lazy scrolling/loading, the posibility to initialize EMV on scroll when the product is visible in the page, this way for example if the viewer is in a section of the page that is not visible it will not be initialized, instead EMV will be initalized only when the user is scrolling to that section in which EMV is added.</p>
+
+					<h3 id="lightboxCloseButtonWidth" class="head">lightboxCloseButtonWidth</span></h3>
+					<p class="option">Type: (Number) - default: <strong>30</strong></p>
+					<p>The lightbox close button width in px.</p>
+
+					<h3 id="lightboxCloseButtonHeight" class="head">lightboxCloseButtonHeight</span></h3>
+					<p class="option">Type: (Number) - default: <strong>30</strong></p>
+					<p>The lightbox close button height in px.</p>
+
+					<h3 id="lightboxCloseButtonBackgroundNormalColor" class="head">lightboxCloseButtonBackgroundNormalColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#7EC1AB</strong></p>
+					<p>The lightbox close button background normal color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="lightboxCloseButtonBackgroundSelectedColor" class="head">lightboxCloseButtonBackgroundSelectedColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The lightbox close button background selected color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="lightboxCloseButtonIconNormalColor" class="head">lightboxCloseButtonIconNormalColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The lightbox close button icon normal color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="lightboxCloseButtonIconSelectedColor" class="head">lightboxCloseButtonIconSelectedColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#10A0F1</strong></p>
+					<p>The lightbox close button icon selected color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="lightboxBackgroundColor" class="head">lightboxBackgroundColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>rgba(0, 0, 0, .7)</strong></p>
+					<p>The lightbox main background color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="backgroundColor" class="head">backgroundColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The viewer background color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="fullscreenBackgroundColor" class="head">fullscreenBackgroundColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The viewer background color when it is in fullscreen mode, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="preloaderText" class="head">preloaderText</span></h3>
+					<p class="option">Type: (String) - default: <strong>Loading 3D Model: </strong></p>
+					<p>The viewer preloader text.</p>
+
+					<h3 id="preloaderPosition" class="head">preloaderPosition</span></h3>
+					<p class="option">Type: (String) - default: <strong>center</strong></p>
+					<p>The preloader postion, this can be <strong>center</strong>, <strong>centertop</strong>, <strong>centerbottom</strong>, <strong>topleft</strong>, <strong>topright</strong>, <strong>bottomleft</strong>, <strong>bottomright</strong>.</p>
+
+					<h3 id="preloaderOffsetX" class="head">preloaderOffsetX</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0</strong></p>
+					<p>Move the preloader horizontally in px from its initial postion.</p>
+
+					<h3 id="preloaderOffsetY" class="head">preloaderOffsetY</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0</strong></p>
+					<p>Move the preloader horizontally in px from its initial postion.</p>
+
+					<h3 id="showPreloaderProgressBar" class="head">showPreloaderProgressBar</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, show the preloader progress bar.</p>
+
+					<h3 id="preloaderWidth" class="head">preloaderWidth</span></h3>
+					<p class="option">Type: (String) - default: <strong>70%</strong></p>
+					<p>A string from 0% to 100% when 100% is the maximum preloder width.</p>
+
+					<h3 id="preloaderProgressBarBackgroundColor" class="head">preloaderProgressBarBackgroundColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#8b859b</strong></p>
+					<p>The preloader progress bar backgrond color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="preloaderProgressBarFillColor" class="head">preloaderProgressBarFillColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#bfbf06</strong></p>
+					<p>The preloader progress bar fill color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="preloaderFontColor" class="head">preloaderFontColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#000000</strong></p>
+					<p>The preloader text color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="preloaderBackgroundColor" class="head">preloaderBackgroundColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>rgba(255, 255, 255, .7)</strong></p>
+					<p>The preloader main text background color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="showGridHelper" class="head">showGridHelper</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, show thegrid helper.</p>
+
+					<h3 id="modelWireframe" class="head">modelWireframe</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, show the model with wireframe.</p>
+
+					<h3 id="showSkeletonHelper" class="head">showSkeletonHelper</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, show skeleton helper if the model has a skeleton.</p>
+
+					<h3 id="source" class="head">source</span></h3>
+					<p class="option">Type: (String) - default: <strong>unset</strong></p>
+					<p>The model relative or absolute source, the supported formats are <strong>.gltf</strong>, <strong>.glb</strong>, <strong>glTF-Embedded</strong> and <strong>compressed DRACO</strong>, <a href="https://www.youtube.com/watch?v=v6nyiSHa2xk" target="_blank">video tutorial</a>.</p>
+
+					<h3 id="posterSource" class="head">posterSource</span></h3>
+					<p class="option">Type: (String) - default: <strong>unset</strong></p>
+					<p>The preloader poster relative or absolute source, the supported formats are <strong>.png</strong>, <strong>.webp</strong>  or <strong>.jpg</strong>, <a href="https://www.youtube.com/watch?v=bO-X0jIEDEY" target="_blank">video tutorial</a>.</p>
+
+					<h3 id="animateModelOpacityOnIntro" class="head">animateModelOpacityOnIntro</span></h3>
+					<p class="option">Type: (String) - default: <strong>no</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, animate the viewer from opacity 0 to 1 as soon as the model is ready.</p>
+
+					<h3 id="showModelInfoInTheConsole" class="head">showModelInfoInTheConsole</span></h3>
+					<p class="option">Type: (String) - default: <strong>no</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, this shows data about the model in the console when the model is loaded an ready.</p>
+
+					<h3 id="loadModelDelay" class="head">loadModelDelay</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0</strong></p>
+					<p>The delay in seconds until the model starts to load.</p>
+
+					<h3 id="buttons" class="head">buttons</span></h3>
+					<p class="option">Type: (String) - default: <strong>unset</strong></p>
+					<p>This can be <strong>'play, zoomin, zoomout, info, help, fullscreen'</strong>, This option represents the buttons from the controls bar, they are separated by ",". The buttons are displayed in the order in which they are listed here so you can switch the order of the buttons by modifying the list order. If you don't need a button just remove it from the list, for example to display only the fullscreen and info buttons set this option like this: buttons:"info, fullscreen".</p>
+
+					<h3 id="buttonsToolTips" class="head">buttonsToolTips</span></h3>
+					<p class="option">Type: (String) - default: <strong>unset</strong></p>
+					<p>This can be <strong>'Play/Pause, Zoom in, Zoom out, Info, Help, Full screen/Normal screen'</strong>. This option represents the controls bar tooltips they are separated by ",". Each tooltip is related to a button so the order of tooltips must be the same with the order of buttons from the buttons option explained above, there are some buttons which requires two tootltip states like the fullscreen button, in this case the tooltip string is separated by "/" for example the fullscreen tooltip is formatted like this: "Full screen/Normal screen". If you don't want to use the tooltips leave this option blank like this: buttonsToolTips:''.</p>
+
+					<h3 id="showButtonsLabels" class="head">showButtonsLabels</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, show the buttons tooltip labels.</p>
+
+					<h3 id="showBlockTouchButton" class="head">showBlockTouchButton</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, show the block touch input button when the viewer is running on a mobile device like Iphone.</p>
+
+					<h3 id="blockTouchButtonSize" class="head">blockTouchButtonSize</span></h3>
+					<p class="option">Type: (Number) - default: <strong>40</strong></p>
+					<p>The block touch input button width and height in px.</p>
+
+					<h3 id="hideControllerDelay" class="head">hideControllerDelay</span></h3>
+					<p class="option">Type: (Number) - default: <strong>1</strong></p>
+					<p>The delay in seconds until the controls buttons will hide after a period of inactivity</p>
+
+					<h3 id="buttonSize" class="head">buttonSize</span></h3>
+					<p class="option">Type: (Number) - default: <strong>30</strong></p>
+					<p>The controls buttons width and height in px.</p>
+
+					<h3 id="startAndEndButtonsHorizontalGap" class="head">startAndEndButtonsHorizontalGap</span></h3>
+					<p class="option">Type: (Number) - default: <strong>22</strong></p>
+					<p>The controls buttons start and end horizontal gap in px.</p>
+
+					<h3 id="startAndEndButtonsVerticalGap" class="head">startAndEndButtonsVerticalGap</span></h3>
+					<p class="option">Type: (Number) - default: <strong>5</strong></p>
+					<p>The controls buttons start and end vertical gap in px.</p>
+
+					<h3 id="spaceBetweenButtons" class="head">spaceBetweenButtons</span></h3>
+					<p class="option">Type: (Number) - default: <strong>5</strong></p>
+					<p>The controls buttons start and end vertical gap in px.</p>
+
+					<h3 id="controllerOffsetY" class="head">controllerOffsetY</span></h3>
+					<p class="option">Type: (Number) - default: <strong>24</strong></p>
+					<p>The controls buttons gap bettween the bottom part of the buttons controler and the viewer bottom part in px.</p>
+
+					<h3 id="buttonsToolTipOffsetY" class="head">buttonsToolTipOffsetY</span></h3>
+					<p class="option">Type: (Number) - default: <strong>10</strong></p>
+					<p>The gap between the controls buttons and tooltip in px.</p>
+
+					<h3 id="buttonsIconNormalColor" class="head">buttonsIconNormalColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The controls buttons icon normal color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="buttonsIconSelectedColor" class="head">buttonsIconSelectedColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#d6d6d6</strong></p>
+					<p>The controls buttons icon selected color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="buttonToolTipBackgroundColor" class="head">buttonToolTipBackgroundColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FF0000</strong></p>
+					<p>The controls buttons tooltip background color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="controllerBackgrondColor" class="head">controllerBackgrondColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>rgba(0, 0, 0, 0.4)</strong></p>
+					<p>The controls buttons background color, it can be HEX, RGB or RGBA.</p>
+					
+					<h3 id="enableOrbitalControls" class="head">enableOrbitalControls</span></h3>
+					<p class="option">Type: (String) - default: <strong>no</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, enable the orbital controls... zoom and pan.</p>
+
+					<h3 id="zoomFactor" class="head">zoomFactor</span></h3>
+					<p class="option">Type: (Number) - default: <strong>.1</strong></p>
+					<p>A number from 0 to 1, where a higher value corresponds to increased zoom intensity or magnification when the model undergoes zooming.</p>
+
+					<h3 id="zoomSpeed" class="head">zoomSpeed</span></h3>
+					<p class="option">Type: (Number) - default: <strong>.25</strong></p>
+					<p>A number from 0 to 1, the zoom animation tween in seconds.</p>
+
+					<h3 id="dampingFactor" class="head">dampingFactor</span></h3>
+					<p class="option">Type: (Number) - default: <strong>.1</strong></p>
+					<p>A number from 0 to 1, the pan damping inertia when the model is rotated.</p>
+
+					<h3 id="autoRotate" class="head">autoRotate</span></h3>
+					<p class="option">Type: (String) - default: <strong>no</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, enable the orbital controls autorotation.</p>
+
+					<h3 id="autoRotateSpeed" class="head">autoRotateSpeed</span></h3>
+					<p class="option">Type: (Number) - default: <strong>.25</strong></p>
+					<p>A number from 0 to 100, the autorotation speed, the higher the number the faster the model will autorotate.</p>
+
+					<h3 id="screenSpacePanning" class="head">screenSpacePanning</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, defines how the camera's position is translated when panning. If yes, the camera pans in screen spacem otherwise, the camera pans in the plane orthogonal to the camera's up direction.</p>
+					
+					<h3 id="enablePan" class="head">enablePan</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, enable right click pan or tap with two fingers on mobile pan.</p>
+
+					<h3 id="enableZoom" class="head">enableZoom</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, enable zoom.</p>
+
+					<h3 id="enableKeboardPan" class="head">enableKeboardPan</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, enable keyboard pan.</p>
+
+					<h3 id="keysType" class="head">keysType</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>asdw</strong> or <strong>arrows</strong>, set the keys to pan.</p>
+
+					<h3 id="panSpeed" class="head">panSpeed</span></h3>
+					<p class="option">Type: (Number) - default: <strong>1</strong></p>
+					<p>A number from 0 to 3, the right click pan speed factor.</p>
+
+					<h3 id="keyPanSpeed" class="head">keyPanSpeed</span></h3>
+					<p class="option">Type: (Number) - default: <strong>1</strong></p>
+					<p>A number from 0 to 3, the keyboard pan speed factor.</p>
+
+					<h3 id="zoomMinDistance" class="head">zoomMinDistance</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0.07</strong></p>
+					<p>A number from 0 to 3, The minimum distance the camera can be from the target (orbit center) when using orbital controls, ensuring the camera does not get too close to the target during user interaction.</p>
+
+					<h3 id="zoomMaxDistance" class="head">zoomMaxDistance</span></h3>
+					<p class="option">Type: (Number) - default: <strong>1.5</strong></p>
+					<p>>A number from 0 to 3, the maximum distance the camera can be from the target (orbit center) when using orbital controls, ensuring the camera does not get too close to the target during user interaction.</p>
+
+					<h3 id="horizontalRotationMaxAngle" class="head">horizontalRotationMaxAngle</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0</strong></p>
+					<p>A number from 0 to -180 angle in degree, restricts the maximum azimuthal rotation angle (horizontal rotation) of the camera when using controls, preventing it from exceeding a specified limit.</p>
+
+					<h3 id="horizontalRotationMinAngle" class="head">horizontalRotationMinAngle</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0</strong></p>
+					<p>A number from 0 to 180 angle in degree, restricts the minimum azimuthal rotation angle (horizontal rotation) of the camera when using controls, preventing it from exceeding a specified limit.</p>
+
+					<h3 id="verticalRotationMinAngle" class="head">verticalRotationMinAngle</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0</strong></p>
+					<p>A number from 0 to 180 angle in degree, how far you can orbit vertically, lower limit.</p>
+
+					<h3 id="verticalRotationMaxAngle" class="head">verticalRotationMaxAngle</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0</strong></p>
+					<p>A number from 0 to 180 angle in degree, how far you can orbit vertically, higher limit.</p>
+
+					<h3 id="envMapSource" class="head">envMapSource</span></h3>
+					<p class="option">Type: (String) - default: <strong>unset</strong></p>
+					<p>The environment map source, the supported format is <strong>.exr</strong>, it can be a relative or absolute path, please note that if you are using 4k, 8k, or higher quality this will affect performance if the model is high poly so always try to use the best quality possible based on your model.</p>
+
+					<h3 id="envMapShowBackground" class="head">envMapShowBackground</span></h3>
+					<p class="option">Type: (String) - default: <strong>no</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, enable the environment as a background.</p>
+
+					<h3 id="backgroundBlurriness" class="head">backgroundBlurriness</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0</strong></p>
+					<p>A number from 0 to 4, the environment map background blurriness.</p>
+
+					<h3 id="envMapIntensity" class="head">envMapIntensity</span></h3>
+					<p class="option">Type: (Number) - default: <strong>1</strong></p>
+					<p>A number from 0 to 4, the environment map intensity.</p>
+
+					<h3 id="showLights" class="head">showLights</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, enable the ambient and directional light.</p>
+
+					<h3 id="toneMapping" class="head">toneMapping</span></h3>
+					<p class="option">Type: (String) - default: <strong>ACESFilmic</strong></p>
+					<p>This can be <strong>ACESFilmic</strong>, <strong>Linear</strong>, <strong>Reinhard</strong> and <strong>Cineon</strong>, adjusts the color and brightness of rendered scenes to achieve desired visual effects or realistic representations, it involves mapping pixel values to a different range to control the overall tone and appearance of the rendered image.</p>
+
+					<h3 id="toneMappingExposure" class="head">toneMappingExposure</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0</strong></p>
+					<p>A number from -10 to 10, the toneMapping exposure.</p>
+
+					<h3 id="ambientIntensity" class="head">ambientIntensity</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0</strong></p>
+					<p>A number from 0 to 4, the ambient light intensity.</p>
+
+					<h3 id="ambientColor" class="head">ambientColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The ambient color, it can be HEX, RGB.</p>
+
+					<h3 id="directionalLightIntensity" class="head">directionalLightIntensity</span></h3>
+					<p class="option">Type: (Number) - default: <strong>1</strong></p>
+					<p>A number from 0 to 4, the directionl light intensity.</p>
+
+					<h3 id="directionalLightColor" class="head">directionalLightColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The directionl color, it can be HEX, RGB.</p>
+
+					<h3 id="directionalLightX" class="head">directionalLightX</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0.5</strong></p>
+					<p>A number, the directionl light x position.</p>
+
+					<h3 id="directionalLightY" class="head">directionalLightY</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0</strong></p>
+					<p>A number, the directionl light y position.</p>
+
+					<h3 id="directionalLightZ" class="head">directionalLightZ</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0.866</strong></p>
+					<p>A number, the directionl light z position.</p>
+					
+					<h3 id="defaultAnimationName" class="head">defaultAnimationName</span></h3>
+					<p class="option">Type: (String) - default: <strong>unset</strong></p>
+					<p>The default animation name that will play as soon as the model is ready, <a href="https://www.youtube.com/watch?v=eFwEpKmHA7Y" target="_blank">video tutorial</a>.</p>
+
+					<h3 id="defaultAnimationPlayDelay" class="head">defaultAnimationPlayDelay</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0.1</strong></p>
+					<p>The default animation start playing delay in seconds.</p>
+
+					<h3 id="defaultAnimationRepeatCount" class="head">defaultAnimationRepeatCount</span></h3>
+					<p class="option">Type: (Number) - default: <strong>1</strong></p>
+					<p>How many times an animation will loop.</p>
+
+					<h3 id="showMarkersWhileDefaultAnimationIsPlaying" class="head">showMarkersWhileDefaultAnimationIsPlaying</span></h3>
+					<p class="option">Type: (String) - default: <strong>yes</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, enable the markers to move with the model or remain in the original position.</p>
+
+					<h3 id="defaultAnimationClampWhenFinished" class="head">defaultAnimationClampWhenFinished</span></h3>
+					<p class="option">Type: (String) - default: <strong>no</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, stop the animation at the last frame when it has finished playing.</p>
+
+					<h3 id="defaultAnimationCrossFadeDuration" class="head">defaultAnimationCrossFadeDuration</span></h3>
+					<p class="option">Type: (Number) - default: <strong>.5</strong></p>
+					<p>The duration of the crossfade transition between the default animation and an animation played with a marker.</p>
+
+					<h3 id="timeScale" class="head">timeScale</span></h3>
+					<p class="option">Type: (Number) - default: <strong>1</strong></p>
+					<p>The playback animation speed, 1 is normal speed, 2 is 200% speed , 3 is 300% speed, etc...</p>
+
+					<h3 id="defaultAnimationCameraPosition" class="head">defaultAnimationCameraPosition</span></h3>
+					<p class="option">Type: (String) - default: <strong>unset</strong></p>
+					<p>The position to where to tween the camera when the animation is strting, <a href="https://www.youtube.com/watch?v=eFwEpKmHA7Y" target="_blank">video tutorial</a>.</p>
+
+					<h3 id="defaultAnimationCameraPositionDuration" class="head">defaultAnimationCameraPositionDuration</span></h3>
+					<p class="option">Type: (Number) - default: <strong>1.2</strong></p>
+					<p>The duration in seconds for the default cameara postion tween.</p>
+
+					<h3 id="defaultAnimationCameraPositionEasingType" class="head">defaultAnimationCameraPositionEasingType</span></h3>
+					<p class="option">Type: (String) - default: <strong>linear</strong></p>
+					<p>The default cameara postion tween easeing, this can be <strong>linear</strong>, <strong>easeout</strong>, <strong>easeinout</strong>.</p>
+
+					<h3 id="markersData" class="head">markersData</span></h3>
+					<p class="option">Type: (String) - default: <strong>unset</strong></p>
+					<p>A string that represents the id of the markers <strong>div</strong> HTML markup,  <a href="https://youtu.be/5EADDRAx94w?t=4" target="_blank">video tutorial</a>.</p>
+
+					<h3 id="showMarkerTool" class="head">showMarkerTool</span></h3>
+					<p class="option">Type: (String) - default: <strong>no</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, enable the built in tool to copy to clipboard the marker postion on the model with left click and camera postion with right click.</p>
+
+					<h3 id="markerShowAndHideAnimationType" class="head">markerShowAndHideAnimationType</span></h3>
+					<p class="option">Type: (String) - default: <strong>scale</strong></p>
+					<p>This can be <strong>scale</strong> or <strong>opacity</strong>, the hide and show animation type.</p>
+
+					<h3 id="showMarkersAfterTime" class="head">showMarkersAfterTime</span></h3>
+					<p class="option">Type: (Number) - default: <strong>2</strong></p>
+					<p>The delay in seconds until the markers are showed after the model is ready.</p>
+
+					<h3 id="markerToolTipOffsetY" class="head">markerToolTipOffsetY</span></h3>
+					<p class="option">Type: (Number) - default: <strong>10</strong></p>
+					<p>The markers tooltip window vertical offset in px.</p>
+
+					<h3 id="markerPolygonOffsetAlpha" class="head">markerPolygonOffsetAlpha</span></h3>
+					<p class="option">Type: (Number) - default: <strong>.1</strong></p>
+					<p>A number from 0 to 1, if the markers are 3D type, this option will set the opacity of the non-visible part of the marker, <a href="https://youtu.be/5EADDRAx94w?t=443" target="_blank">video tutorial</a>.</p>
+
+					<h3 id="markerToolTipAndWindowBackgroundColor" class="head">markerToolTipAndWindowBackgroundColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The tooltip window background color, it can be HEX, RGB or RGBA.</p>
+
+					<h3 id="markerPositionCopiedText" class="head">markerPositionCopiedText</span></h3>
+					<p class="option">Type: (String) - default: <strong>Marker position copied to colipboard!</strong></p>
+					<p>When using the marker tool and left clicking on the model to get the marker postion this text will appear on the screen.</p>
+
+					<h3 id="cameraPositionCopiedText" class="head">cameraPositionCopiedText</span></h3>
+					<p class="option">Type: (String) - default: <strong>Camera position copied to colipboard!</strong></p>
+					<p>When using the marker tool and right clicking on viewer viewport to get the cameara postion this text will appear on the screen.</p>
+
+					<h3 id="preventToCopyMarkerPosition" class="head">cameraPositionCopiedText</span></h3>
+					<p class="option">Type: (String) - default: <strong>Please disable the model animation to add markers!</strong></p>
+					<p>When using the marker tool if an animation is running this message will appear.</p>
+
+					<h3 id="showCameraPositionsSelectMenu" class="head">showCameraPositionsSelectMenu</span></h3>
+					<p class="option">Type: (String) - default: <strong>no</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, show the camera postion select menu, <a href="http://work.com/es6/Easy%203D%20Model%20Viewer/demo/camera-positions.html" target="_blank">example here</a></p>
+
+					<h3 id="cameraPostionsSelectMenuDefaultText" class="head">cameraPostionsSelectMenuDefaultText</span></h3>
+					<p class="option">Type: (String) - default: <strong>Plane Details</strong></p>
+					<p>The default camera postion select menu text.</p>
+					
+					<h3 id="cameraPostitionSelectMenuMaxWidth" class="head">cameraPostitionSelectMenuMaxWidth</span></h3>
+					<p class="option">Type: (Number) - default: <strong>240</strong></p>
+					<p>The default camera postion select menu maximum width in px.</p>
+
+					<h3 id="cameraPostitionSelectMenuHeight" class="head">cameraPostitionSelectMenuHeight</span></h3>
+					<p class="option">Type: (Number) - default: <strong>240</strong></p>
+					<p>The default camera postion select menu height in px.</p>
+
+					<h3 id="cameraPostitionSelectMenuStartAndEndGap" class="head">cameraPostitionSelectMenuStartAndEndGap</span></h3>
+					<p class="option">Type: (Number) - default: <strong>14</strong></p>
+					<p>The default camera postion select menu start and end gap in px.</p>
+
+					<h3 id="cameraPostitionSelectMenuButtonSize" class="head">cameraPostitionSelectMenuButtonSize</span></h3>
+					<p class="option">Type: (Number) - default: <strong>30</strong></p>
+					<p>The default camera postion select menu next and prev buttons size in px.</p>
+
+					<h3 id="cameraPostionsSelectMenuBackgroundColor" class="head">cameraPostionsSelectMenuBackgroundColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>rgba(0, 0, 0, 0.40)</strong></p>
+					<p>The default camera postion select menu background color, HEX, RGB or RGBA.</p>
+
+					<h3 id="cameraPostionsSelectMenuTextColor" class="head">cameraPostionsSelectMenuTextColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The default camera postion select menu text color, HEX, RGB or RGBA.</p>
+
+					<h3 id="cameraPositionsNextButtonTooltip" class="head">cameraPositionsNextButtonTooltip</span></h3>
+					<p class="option">Type: (String) - default: <strong>unset</strong></p>
+					<p>The default camera postion select menu next button tooltip text.</p>
+
+					<h3 id="cameraPositionsPrevButtonTooltip" class="head">cameraPositionsPrevButtonTooltip</span></h3>
+					<p class="option">Type: (String) - default: <strong>unset</strong></p>
+					<p>The default camera postion select menu prev button tooltip text.</p>
+
+					<h3 id="cameraPostionsSelectMenuButtonNormalColor" class="head">cameraPostionsSelectMenuButtonNormalColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#d6d6d6</strong></p>
+					<p>The default camera postion select menu next and prev button icon normal color, HEX, RGB or RGBA.</p>
+
+					<h3 id="cameraPostionsSelectMenuButtonSelectedColor" class="head">cameraPostionsSelectMenuButtonSelectedColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The default camera postion select menu next and prev button icon selected color, HEX, RGB or RGBA.</p>
+
+					<h3 id="cameraPositionsSelectItemsMaxWidth" class="head">cameraPositionsSelectItemsMaxWidth</span></h3>
+					<p class="option">Type: (Number) - default: <strong>350</strong></p>
+					<p>The default camera postion select menu items max width in px.</p>
+					
+					<h3 id="cameraPositionsSelectItemHeight" class="head">cameraPositionsSelectItemHeight</span></h3>
+					<p class="option">Type: (Number) - default: <strong>24</strong></p>
+					<p>The default camera postion select menu items height in px.</p>
+
+					<h3 id="cameraPositionsSelectItemStartLeftGap" class="head">cameraPositionsSelectItemStartLeftGap</span></h3>
+					<p class="option">Type: (Number) - default: <strong>6</strong></p>
+					<p>The default camera postion select menu items start left gap px.</p>
+
+					<h3 id="cameraPositionsSelectItemStartRightGap" class="head">cameraPositionsSelectItemStartRightGap</span></h3>
+					<p class="option">Type: (Number) - default: <strong>30</strong></p>
+					<p>The default camera postion select menu items start right gap px.</p>
+
+					<h3 id="cameraPositionsSelectItemVerticalGap" class="head">cameraPositionsSelectItemVerticalGap</span></h3>
+					<p class="option">Type: (Number) - default: <strong>16</strong></p>
+					<p>The default camera postion select menu items vertical gap px.</p>
+
+					<h3 id="cameraPositionsSelectSpaceBetweenItems" class="head">cameraPositionsSelectSpaceBetweenItems</span></h3>
+					<p class="option">Type: (Number) - default: <strong>16</strong></p>
+					<p>The default camera postion select menu space between items px.</p>
+
+					<h3 id="cameraPositionsSelectMaxItems" class="head">cameraPositionsSelectMaxItems</span></h3>
+					<p class="option">Type: (Number) - default: <strong>4</strong></p>
+					<p>The default camera postion select menu total items to show.</p>
+
+					<h3 id="cameraPositionsSelectItemBackgroundColor" class="head">cameraPositionsSelectItemBackgroundColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>rgba(0, 0, 0, .6)</strong></p>
+					<p>The default camera postion select menu items background color, HEX, RGB or RGBA.</p>
+
+					<h3 id="cameraPositionsSelectItemsScrollBarTrackColor" class="head">cameraPositionsSelectItemsScrollBarTrackColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#D9D9D9</strong></p>
+					<p>The default camera postion select menu items scrollbar backgrond color, HEX, RGB or RGBA.</p>
+
+					<h3 id="cameraPositionsSelectItemsScrollBarHandlerNormalColor" class="head">cameraPositionsSelectItemsScrollBarHandlerNormalColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#767676</strong></p>
+					<p>The default camera postion select menu items scrollbar handler normal color, HEX, RGB or RGBA.</p>
+
+					<h3 id="cameraPositionsSelectItemsScrollBarHandlerSelectedColor" class="head">cameraPositionsSelectItemsScrollBarHandlerSelectedColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The default camera postion select menu items scrollbar handler selected color, HEX, RGB or RGBA.</p>
+
+					<h3 id="cameraPositionsSelectItemNormalColor" class="head">cameraPositionsSelectItemNormalColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#D9D9D9</strong></p>
+					<p>The default camera postion select menu items text normal color, HEX, RGB or RGBA.</p>
+
+					<h3 id="cameraPositionsSelectItemSelectedColor" class="head">cameraPositionsSelectItemSelectedColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The default camera postion select menu items text selected color, HEX, RGB or RGBA.</p>
+
+					<h3 id="infoWindowData" class="head">infoWindowData</span></h3>
+					<p class="option">Type: (String) - default: <strong>unset</strong></p>
+					<p>This id for the info window that contains the HTML markup, <a href="https://www.youtube.com/watch?v=dOZbLnrSdkM&t=1s" target="_blank">video tutorial</a>.</p>
+					
+					<h3 id="infoWindowWidth" class="head">infoWindowWidth</span></h3>
+					<p class="option">Type: (Number) - default: <strong>920</strong></p>
+					<p>The info window maximum width in px.</p>
+
+					<h3 id="infoWindowMainBackgroundColor" class="head">infoWindowMainBackgroundColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>rgba(255, 255, 255, .7)</strong></p>
+					<p>The info window background color, HEX, RBG and RGBA.</p>
+
+					<h3 id="closeButtonSize" class="head">closeButtonSize</span></h3>
+					<p class="option">Type: (Number) - default: <strong>24</strong></p>
+					<p>The info window close button size width/height in px.</p>
+
+					<h3 id="closeButtonBackgroundNormalColor" class="head">closeButtonBackgroundNormalColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#8b859b</strong></p>
+					<p>The info window close button normal background color, HEX, RGB or RGBA.</p>
+
+					<h3 id="closeButtonBackgroundSelectedColor" class="head">closeButtonBackgroundSelectedColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The info window close button selected background color, HEX, RGB or RGBA.</p>
+
+					<h3 id="infoWindowBackgroundColor" class="head">infoWindowBackgroundColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#FFFFFF</strong></p>
+					<p>The info window backgrond color, HEX, RGB or RGBA.</p>
+
+					<h3 id="infoWindowScrollBarColor" class="head">infoWindowScrollBarColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#8b859b</strong></p>
+					<p>The info window scrollbar color, HEX, RGB or RGBA.</p>
+
+					<h3 id="helpScreenText" class="head">helpScreenText</span></h3>
+					<p class="option">Type: (String) - default: <strong>Help</strong></p>
+					<p>The help screen header text.</p>
+
+					<h3 id="mouseRotateAndZoomText" class="head">mouseRotateAndZoomText</span></h3>
+					<p class="option">Type: (String) - default: <strong>Rotate And Zoom</strong></p>
+					<p>The help screen mouse and rotate text.</p>
+
+					<h3 id="mouseRotateAndZoomInfo" class="head">mouseRotateAndZoomInfo</span></h3>
+					<p class="option">Type: (String) - default: <strong>Use the left mouse click to rotate and mousewheel to zoom.</strong></p>
+					<p>The help screen mouse and rotate info.</p>
+
+					<h3 id="mousePanText" class="head">mousePanText</span></h3>
+					<p class="option">Type: (String) - default: <strong>Pan With Mouse</strong></p>
+					<p>The help screen mouse and pan text.</p>
+
+					<h3 id="mousePanInfo" class="head">mousePanInfo</span></h3>
+					<p class="option">Type: (String) - default: <strong>Use the right click mouse button to pan.</strong></p>
+					<p>The help screen mouse and pan info.</p>
+
+					<h3 id="keyboardPanText" class="head">keyboardPanText</span></h3>
+					<p class="option">Type: (String) - default: <strong>Pan With Keyboard</strong></p>
+					<p>The help screen keyboard pan text.</p>
+
+					<h3 id="keyboardPanInfo" class="head">keyboardPanInfo</span></h3>
+					<p class="option">Type: (String) - default: <strong>Use the the <strong>W A S D</strong> keyboard keys to pan.</strong></p>
+					<p>The help screen keyboard pan info.</p>
+
+					<h3 id="touchRotateText" class="head">touchRotateText</span></h3>
+					<p class="option">Type: (String) - default: <strong>Rotate</strong></p>
+					<p>The help screen touch rotation text.</p>
+
+					<h3 id="touchRotateInfo" class="head">touchRotateInfo</span></h3>
+					<p class="option">Type: (String) - default: <strong>Use one finger to rotate.</strong></p>
+					<p>The help screen touch rotation info.</p>
+
+					<h3 id="touchPanText" class="head">touchPanText</span></h3>
+					<p class="option">Type: (String) - default: <strong>Pan</strong></p>
+					<p>The help screen touch pan text.</p>
+
+					<h3 id="touchPanInfo" class="head">touchPanInfo</span></h3>
+					<p class="option">Type: (String) - default: <strong>Use two fingers to pan.</strong></p>
+					<p>The help screen touch pan info.</p>
+
+					<h3 id="helpScreenIconColor" class="head">helpScreenIconColor</span></h3>
+					<p class="option">Type: (String) - default: <strong>#10A0F1</strong></p>
+					<p>The help screen icon text color.</p>
+
+					<h3 id="showGUI" class="head">showGUI</span></h3>
+					<p class="option">Type: (String) - default: <strong>no</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, enable the GUI live settings, this feature is not available on mobile devices.</p>
+
+					<h3 id="closeGUIWhenNotHit" class="head">closeGUIWhenNotHit</span></h3>
+					<p class="option">Type: (String) - default: <strong>no</strong></p>
+					<p>This can be <strong>yes</strong> or <strong>no</strong>, enable to close the GUI live features when the mouse is clicked outside it.</p>
+
+					<h3 id="modelScaleOffsetMin" class="head">modelScaleOffsetMin</span></h3>
+					<p class="option">Type: (Number) - default: <strong>0</strong></p>
+					<p>The minimum value for the GUI model scale offset.</p>
+
+					<h3 id="modelScaleOffsetMax" class="head">modelScaleOffsetMax</span></h3>
+					<p class="option">Type: (Number) - default: <strong>1</strong></p>
+					<p>The maximum value for the GUI model scale offset.</p>
+
+
+					<hr>
+
+					<!-- Methods -->
+					<h1 id="methods">Methods</h1>
+					<p>Methods are functions that can be called via the API to execute certain actions.</p>
+					<p>JavaScript methods look like <strong>fwdemv0.methodName( /* arguments */ )</strong>, please note that fwdemv0 is the viewer instance name, if you are using multiple viewers don't forget to set the <strong>instance</strong> unique for each instance like this <strong>fwdemv1</strong>, <strong>fwdemv2</strong>, <strong>fwdemv3</strong>, etc... depending on how many viewers are added.</p>
+
+
+					<h3 id="zoom" class="head">zoom</h3>
+					<p class="option">.zoom(direction:String)</p>
+					<p>Zoom in or out the model.</p>
+					<h4>Parameters</h4>
+					<ul>
+						<li><strong>direction (String)</strong> - this can be <strong>in</strong> or <strong>out</strong>.</li>
+					</ul>
+
+					<h3 id="getCameraPosition" class="head">getCameraPosition</h3>
+					<p class="option">.getCameraPosition():Object</p>
+					<p>Returns an object with the current camera position controls target current position.</p>
+					
+					<h3 id="showInfoWindow" class="head">showInfoWindow</h3>
+					<p class="option">.showInfoWindow(htmlContent:String):void</p>
+					<p>Show the info window with the HTML content.</p>
+					<h4>Parameters</h4>
+					<ul>
+						<li><strong>htmlContent (String)</strong> - this HTML content to show in the info window.</li>
+					</ul>
+
+					<h3 id="playOrStopAnimationClip" class="head">playOrStopAnimationClip</h3>
+					<p class="option">.playOrStopAnimationClip(name:String, play:Boolean):void</p>
+					<p>Play a built-in model animation based on name.</p>
+					<h4>Parameters</h4>
+					<ul>
+						<li><strong>name (String)</strong> - the built-in model animation name.</li>
+						<li><strong>play (Boolean)</strong> - if set to <strong>true</strong> will play the animation.</li>
+					</ul>
+
+					<h3 id="getAnimationClips" class="head">getAnimationClips</h3>
+					<p class="option">.getAnimationClips():array</p>
+					<p>Returns an array with all the animation clips.</p>
+					
+					<h3 id="playAutoRotate" class="head">playAutoRotate</h3>
+					<p class="option">.playAutoRotate():void</p>
+					<p>Start to play the model auto-rotation.</p>
+
+					<h3 id="pauseAutoRotate" class="head">pauseAutoRotate</h3>
+					<p class="option">.pauseAutoRotate():void</p>
+					<p>Stop to play the model auto-rotation.</p>
+
+					<h3 id="goFullScreen" class="head">goFullScreen</h3>
+					<p class="option">.goFullScreen():void</p>
+					<p>Set the viewer in fullscreen.</p>
+
+					<h3 id="goNormalScreen" class="head">goNormalScreen</h3>
+					<p class="option">.goNormalScreen():void</p>
+					<p>Set the viewer in normal screen.</p>
+					
+					<h3 id="destroy" class="head">destroy</h3>
+					<p class="option">.destroy():void</p>
+					<p>Destory the viewer and remove it from DOM.</p>
+					
+					
+					<hr>
+
+					<!-- Events -->
+					<h1 id="events">Events</h1>
+					<p>Easy 3D Model Viewer has many events, they are added via the <strong>addEventListener</strong> method add accessed via the instance name.</p>
+					<p>The events must be registered when the API is ready.</p>
+				<div class="highlight js">
+				<pre><code>// API.
+let fwdemvAPI = setInterval(() =>{
+if(window['fwdemv0']){
+	console.log('EMV API ready')
+	clearInterval(fwdemvAPI);
+
+	// Register the START_TO_LOAD event.
+	fwdemv0.addEventListener(FWDEMV.START_TO_LOAD, onStartToLoad);
+}
+}, 100);
+
+// Listen for the START_TO_LOAD event.
+function onStartToLoad(e){
+	console.log(e)
+}
+</code></pre>
+				</div>
+
+				<h3 id="NORMAL_SCREEN" class="head">FWDEMV.NORMAL_SCREEN</h3>
+				<p class="option">FWDEMV.NORMAL_SCREEN</p>
+				<p>Dispatched when the viewer goes to normal screen.</p>
+
+				<h3 id="FULL_SCREEN" class="head">FWDEMV.FULL_SCREEN</h3>
+				<p class="option">FWDEMV.FULL_SCREEN</p>
+				<p>Dispatched when the viewer goes in full screen.</p>
+
+				<h3 id="ANIMATION_START" class="head">FWDEMV.ANIMATION_START</h3>
+				<p class="option">FWDEMV.ANIMATION_START</p>
+				<p>Dispatched when a model built-in animation starts, it also has an parameter with info about the animation action.</p>
+
+				<h3 id="ANIMATION_FINISHED" class="head">FWDEMV.ANIMATION_FINISHED</h3>
+				<p class="option">FWDEMV.ANIMATION_FINISHED</p>
+				<p>Dispatched when a model built-in animation has finished to play, it also has an parameter with info about the animation action.</p>
+
+				<h3 id="START_TO_LOAD" class="head">FWDEMV.START_TO_LOAD</h3>
+				<p class="option">FWDEMV.START_TO_LOAD</p>
+				<p>Dispatched when the model is starting to load.</p>
+
+				<h3 id="LOAD_PROGRESS" class="head">FWDEMV.LOAD_PROGRESS</h3>
+				<p class="option">FWDEMV.LOAD_PROGRESS</p>
+				<p>Dispatched when the  model is starting to load, it also has an parameter with info about the loading process.</p>
+
+				<h3 id="LOAD_COOMPLETE" class="head">FWDEMV.LOAD_COOMPLETE</h3>
+				<p class="option">FWDEMV.LOAD_COOMPLETE</p>
+				<p>Dispatched when the model loading is complete.</p>
+
+				<h3 id="AUTOROTATE_PLAY" class="head">FWDEMV.AUTOROTATE_PLAY</h3>
+				<p class="option">FWDEMV.AUTOROTATE_PLAY</p>
+				<p>Dispatched when the model auto-rotation starts.</p>
+
+				<h3 id="AUTOROTATE_PAUSE" class="head">FWDEMV.AUTOROTATE_PAUSE</h3>
+				<p class="option">FWDEMV.AUTOROTATE_PAUSE</p>
+				<p>Dispatched when the model auto-rotation is paused.</p>
+
+				<h3 id="SET_CAMERA_POSITION" class="head">FWDEMV.SET_CAMERA_POSITION</h3>
+				<p class="option">FWDEMV.SET_CAMERA_POSITION</p>
+				<p>Dispatched when the marker tool is used and the right click button is used to copy to clipboard the camera position.</p>
+
+				<h3 id="SET_MARKER_OR_CAMERA_POSITION" class="head">FWDEMV.SET_MARKER_OR_CAMERA_POSITION</h3>
+				<p class="option">FWDEMV.SET_MARKER_OR_CAMERA_POSITION</p>
+				<p>Dispatched when the marker tool is used and the left click button is used to copy to clipboard the marker position.</p>
+				
+				<h3 id="ERROR" class="head">FWDEMV.ERROR</h3>
+				<p class="option">FWDEMV.ERROR</p>
+				<p>Dispatched when a loading error occurs.</p>
+				
+				
+
+				<!-- Footer bar -->
+				<div class="footer-bar api">
+					<div class="holder">
+						<p>© Copyright FWDesign</p>
+						<div class="social">
+							<a href="https://www.facebook.com/Futurewebdesign/?eid=ARBVNX9uwTVqUN6-NFFu0-C3HJnbidLw2i5cQ9aSdpOJrDHpvp1Ow-lMBzg_zL-I-s_vTJZ0yMrYAGuH" target="_blank">
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9 5.5V3.5C9 2.948 9.448 2.5 10 2.5H11V0H9C7.343 0 6 1.343 6 3V5.5H4V8H6V16H9V8H11L12 5.5H9Z" fill="white"/>
+								</svg>
+							</a>
+
+							<a href="https://www.youtube.com/user/fwdflashwebdesign" target="_blank">
+								<svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M15.32 1.56C14.886 0.788 14.415 0.646 13.456 0.592C12.498 0.527 10.089 0.5 8.002 0.5C5.911 0.5 3.501 0.527 2.544 0.591C1.587 0.646 1.115 0.787 0.677 1.56C0.23 2.331 0 3.659 0 5.997C0 5.999 0 6 0 6C0 6.002 0 6.003 0 6.003V6.005C0 8.333 0.23 9.671 0.677 10.434C1.115 11.206 1.586 11.346 2.543 11.411C3.501 11.467 5.911 11.5 8.002 11.5C10.089 11.5 12.498 11.467 13.457 11.412C14.416 11.347 14.887 11.207 15.321 10.435C15.772 9.672 16 8.334 16 6.006C16 6.006 16 6.003 16 6.001C16 6.001 16 5.999 16 5.998C16 3.659 15.772 2.331 15.32 1.56ZM6 9V3L11 6L6 9Z" fill="white"/>
+								</svg>
+							</a>
+						</div>
+						<div class="clear-fix"></div>
+					</div>
+				</main>
+			</div>
+		</div>
+
+		<!-- Mixed viewer -->
+		<ul id="viewer" style="display:none;">
+			<li data-src="assets/docs/general_settings.jpg"></li>
+			<li data-src="assets/docs/static.jpg"></li>
+			<li data-src="assets/docs/viewer-manager.jpg"></li>
+			<li data-src="assets/docs/dynamic.jpg"></li>
+		</ul>
+	</body>
+</html>

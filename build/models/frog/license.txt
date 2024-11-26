@@ -1,0 +1,8 @@
+Model Information:
+* title:	Strawberry Poison Dart Frog
+* source:	https://sketchfab.com/3d-models/strawberry-poison-dart-frog-5396adbc8d024574b53bada8f1bb6d3e
+* author:	NestaEric (https://sketchfab.com/Nestaeric)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

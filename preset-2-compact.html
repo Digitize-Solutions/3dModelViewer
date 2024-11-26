@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>Plasmic Audio Player</title>
+
+    <!-- Fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Js and CSS files -->
+    <link rel="stylesheet" type="text/css"  href="./content/global.css"/>
+    <script type='text/javascript' src="./src/FWDPAP.js"></script>
+    
+    <script>
+      
+        if(document.readyState == 'complete'){
+            fwdpapSetupPlayers();
+        }else{
+            document.addEventListener('DOMContentLoaded', ()=>{
+                fwdpapSetupPlayers();
+            });
+        }
+
+        function fwdpapSetupPlayers(){
+
+            new FWDPAP({
+                // Main settings.  
+                instance: 'fwdpap0',
+                displayType: 'responsive',
+                parentId: 'myDiv',
+                playerDataId: 'playerData',
+                proxyCorss: '',
+                initializeWhenVisible: 'no',
+                maxWidth: 600,
+                maxHeight: 700,
+                minHeight: 520,
+                autoScale: 'yes',
+                showScrubbersToolTips: 'yes',
+                showLiveSettings: 'yes',
+                showLiveSettingsFrameCounter: 'no',
+                addKeyboardSupport: 'yes',
+                backgroundColor: '#000000',
+
+                // Audio.
+                autoPlay: "no",
+                loop: 'no',
+                shuffle: 'no',
+                randomizeTracks: 'no',
+
+                // Controls.
+                usePlayerControls: 'yes',
+                showOnlyPlayButton: 'no',
+                showPlayerControls: 'yes',
+                showArtwork: 'yes',
+                showArtistAndTitle: 'yes',
+                showCloseButtton: 'yes',
+                showPlayPauseButtonWhenHidden: 'yes',
+                showLikeButton: 'yes',
+                showPlayButton: 'yes',
+                showNextAndPrevButtons: 'yes',
+                showShuffleButton: 'yes',
+                showLoopButton: 'yes',
+                showScrubber: 'yes',
+                disableScrubber: 'no',
+                showTime: 'yes',
+                showArtistAndTitleToolTips: 'yes',
+                controlsOffsetHeight: 0,
+                startGap: 16,
+                endGap: 12,
+                gapBetweenCenterButtons: 24,
+                scrubberAndTimeBottomGap: 12,
+                rightSideGapBetweenButtons: 4,
+                gapBetweenArtworkOrTitle: 14,
+                verticalGapBetweenTitleAndArtist: 8,
+                scrubberCircleRadius: 10,
+                compactScrubberCircleRadius: 12,
+                scrubberCircleTooltipGap: 6,
+                compactScrubberCircleTooltipGap: 8,
+                scrubberHeight: 2,
+                scrubberAndTimeHorizontalGap: 20,
+                maxScrubberAndTimeWidth: 800,
+                showCompactVersionAtWidth: 720,
+                compactTopElementsStartGap: 20,
+                compactCenterButtonsStartAndEndGap: 14,
+                compactButtonsStartGap: 15,
+                compactButtonsEndGap: 16,
+                compactButtonsVerticalGap: 10,
+                compactTimeVerticalGap: 66,
+                compactScrubberVerticalGap: 50,
+                compactScrubberStartGap: 20,
+                compactScrubberEndGap: 20,
+                compactScrubberHeight: 4,
+                controlsBackgroundColor: '#000000',
+                artistAndTitleToolTipsBackgroundColor: '#1A1A1A',
+                titleTextColor: '#FFFFFF',
+                artistTextColor: '#999999',
+                artworkBackgroundColor:'#3A3A3A',
+                lineSeparatorColor: '#3A3A3A',
+                controlsButtonsIconNormalColor: '#999999',
+                controlsButtonsIconSelectedColor: '#FFFFFF',
+                timeColor:"#999999",
+                scrubberBackgroundColor:"#535353",
+                scrubberProgressColor:"#FFFFFF",
+                scrubberToolTipBackgroundColor:"#1A1A1A",
+                scrubberToolTipTextColor:"#FFFFFF",
+                likeInfoBackgroundColor: '#FFFFFF',
+                likeInfoTextColor: '#000000',
+
+                // Volume & playback speed.
+                showVolumeButton: 'yes',
+                showPlaybackSpeedButton: 'yes',
+                defaultPlaybackRate: 1, //min - 0.5 / max - 2.5
+                volume: 1,
+                volumeScrubberCircleRadius: 10,
+                compactVolumeScrubberCircleRadius: 12,
+                volumeScrubberCircleTooltipGap: 6,
+                compactVolumeScrubberCircleTooltipGap: 8,
+                volumeScrubberMainWidth: 26,
+                volumeScrubberMainHeight: 120,
+                volumeScrubberWidth: 2,
+                compactVolumeScrubberWidth: 4,
+                volumeBackgroundColor: '#1A1A1A',
+                volumeScrubberBackgroundColor: '#535353',
+                volumeScrubberProgressColor: '#FFFFFF',
+                volumeScrubberToolTipBackgroundColor: '#1A1A1A',
+                volumeScrubberToolTipTextColor: '#FFFFFF',
+
+                // Share.
+                shareButtons:['facebook', 'twitter', 'linkedin', 'tumblr', 'pinterest', 'reddit', 'buffer', 'digg','blogger'],
+                shareBackgroundColor:"#191919",
+                shareText:"Share via",
+                shareTextColor: '#FFFFFF',
+                shareLineSeparatorColor: '#3A3A3A',
+
+                // Playlist.
+                showPlaylist: 'yes',
+                startAtTrack: 0,
+                playlistItemHeight: 80,
+                playlistMobileItemHeight: 80,
+                playlistEndGap: 20,
+                showPlaylistArtwork: 'yes',
+                showPlaylistPlayButton: 'yes',
+                showPlaylistLikeButton: 'yes',
+                showPlaylistAudioVisualizer: 'yes',
+                hidePlaylistOnItemPlay: 'no',
+                scrollbarWidth: 2,
+                scrollbarSelectedWidth: 10,
+                scrollbarTrackColor: '#535353',
+                scrollbarHandlerNormalColor: '#999999',
+                scrollbarHandlerSelectedColor: '#FFFFFF',
+                playlistSeparatorColor: "#1A1A1A",
+                playlistVisualizerBarsColor: '#FFFFFF',
+                playlistItemNormalBackgroundColor: '#000000',
+                playlistItemSelectedBackgroundColor: '#0C0C0C',
+                playlistItemTitleColor: '#FFFFFF',
+                playlistItemArtistColor: '#999999',
+
+                // Sphere.
+                segmentsCount: 712,
+                mobileSegmentsCount: 256,
+                macOSSegmentsCount: 512,
+                useDrag: 'yes',
+                showFront: 'yes',
+                useUnrealBloomPass: 'yes',
+                unrealBloomPassStrength: 0.222,
+                unrealBloomPassRadius: 0.316,
+                unrealBloomPassThreshold: 0,
+                unrealBloomPassTintColor: '#ff07fd',
+                unrealBloomPassTintStrength: 0,
+                uBackgroundColor: '#000000',
+                uSphereRotationDirection: 'clockWise', // clockWise, counterClockWise
+                cameraOffsetZ: 6,
+                cameraOffsetZWhenCompact: 4,
+                cameraOffsetYWhenCompact: .13,
+                uSphereStartAngleY: 0,
+                uSphereRotationSpeed: .4,
+                uLightAColor: '#FF5B8C',
+                ulightAIntensity: 5,
+                uLightAColorPhi: 0.615,
+                uLightAColorTheta: 2.049,
+                uLightBColor: '#FF5B8C',
+                ulightBIntensity: 5,
+                uLightBColorPhi: 2.561,
+                uLightBColorTheta: -1.844,
+                uDistortionFrequency: 50,
+                uDistortionStrength: 0.147,
+                uDisplacementFrequency: 2.120,
+                uDisplacementStrength: 10.152,
+                uFresnelOffset: -1.9,
+                uFresnelMultiplier: 3.557,
+                uFresnelPower: 1.244,
+
+                // Particles.
+                showParticles: 'yes',
+                particlesCount: 500,
+                mobileParticlesCount: 300,
+                uParticlesRotationDirection: 'counterClockWise', // clockWise, counterClockWise
+                particlesMinRadius: 1,
+                particlesMaxRadius: 2,
+                uParticlesRotationSpeed: .6,
+                particlesSizeFactor: .5,
+                particlesAmplitudeColor: '#FFFFFF',
+                particlesMidsColor: '#FFFFFF',
+                particlesTrebleColor: '#FFFFFF',
+            });
+            
+        }
+    </script>
+
+  </head>
+  
+  <body>
+
+    <!-- Player holder.  -->
+    <div id="myDiv"></div>            
+       
+    <!-- Player data. -->
+    <div id="playerData" style="display: none;">
+
+        <div data-src="encrypt:bWVkaWEvbXAzLzAxLm1wMw==" data-artwork-src="media/images/1.jpg" data-likes="6">
+            <div data-title>
+                <p class="fwdpap-title">Nothing Gona Change My Love For You</p>
+            </div>
+            <div data-artist>
+                <p class="fwdpap-artist">A Song From Mars</p>
+            </div>
+        </div>
+    
+        <div data-src="media/mp3/02.mp3" data-artwork-src="media/images/2.jpg" data-likes="0">
+            <div data-title>
+                <p class="fwdpap-title">“I Love You, You’re Perfect, Now Change”</p>
+            </div>
+            <div data-artist>
+                <p class="fwdpap-artist">Tomuta Bede Melinda</p>
+            </div>
+        </div>
+    
+        <div data-src="media/mp3/03.mp3" data-artwork-src="media/images/3.jpg" data-likes="4">
+            <div data-title>
+                <p class="fwdpap-title">Shane Wins The Movie Break And His Name Is Dane</p>
+            </div>
+            <div data-artist>
+                <p class="fwdpap-artist">When I Have A Hard Day</p>
+            </div>
+        </div>
+    
+        <div data-src="media/mp3/04.mp3" data-artwork-src="media/images/4.jpg" data-likes="1">
+            <div data-title>
+                <p class="fwdpap-title">ROYALTY FREE Hotel Chillout Lounge Vibes</p>
+            </div>
+            <div data-artist>
+                <p class="fwdpap-artist">Tomuta Izabela Ingerul Meu</p>
+            </div>
+        </div>
+    
+        <div data-src="media/mp3/05.mp3" data-artwork-src="media/images/5.jpg" data-likes="1">
+            <div data-title>
+                <p class="fwdpap-title">Donut Stop Believin' and Start Eatin' All the Glazed Goodness</p>
+            </div>
+            <div data-artist>
+                <p class="fwdpap-artist">Sprinkle Fighters</p>
+            </div>
+        </div>
+    
+        <div data-src="media/mp3/06.mp3" data-artwork-src="media/images/6.jpg" data-likes="1">
+            <div data-title>
+                <p class="fwdpap-title">The Sound of Mucus: When a Cold Hits the High Notes</p>
+            </div>
+            <div data-artist>
+                <p class="fwdpap-artist">Wheezy Crooners</p>
+            </div>
+        </div>
+    
+        <div data-src="media/mp3/07.mp3" data-artwork-src="media/images/7.jpg" data-likes="1">
+            <div data-title>
+                <p class="fwdpap-title">Funky Monkey Business: Simian Shenanigans on the Dance Floor</p>
+            </div>
+            <div data-artist>
+                <p class="fwdpap-artist">Bananasplitz</p>
+            </div>
+        </div>
+    
+        <div data-src="media/mp3/08.mp3" data-artwork-src="media/images/8.jpg" data-likes="1">
+            <div data-title>
+                <p class="fwdpap-title">Sasquatch Salsa: Bigfoot's Big Moves and Spicy Rhythms</p>
+            </div>
+            <div data-artist>
+                <p class="fwdpap-artist">Carb Carnage</p>
+            </div>
+        </div>
+    
+        <div data-src="media/mp3/09.mp3" data-artwork-src="media/images/9.jpg" data-likes="1">
+            <div data-title>
+                <p class="fwdpap-title">Oops, I Ate It Again: A Tale of Snacking Regret</p>
+            </div>
+            <div data-artist>
+                <p class="fwdpap-artist">Mr. Lyme Borrelia</p>
+            </div>
+        </div>
+    
+        <div data-src="media/mp3/10.mp3" data-artwork-src="media/images/10.jpg" data-likes="1">
+            <div data-title>
+                <p class="fwdpap-title">Disco Dentist: Groovy Beats to Floss By</p>
+            </div>
+            <div data-artist>
+                <p class="fwdpap-artist">The Floss Brothers</p>
+            </div>
+        </div>
+    
+        <div data-src="media/mp3/11.mp3" data-artwork-src="media/images/11.jpg" data-likes="1">
+            <div data-title>
+                <p class="fwdpap-title">Moldy Cheese Rhapsody: Symphony of the Stinky Dairy</p>
+            </div>
+            <div data-artist>
+                <p class="fwdpap-artist">Stinky Symphony</p>
+            </div>
+        </div>
+    
+        <div data-src="media/mp3/12.mp3" data-artwork-src="media/images/12.jpg" data-likes="1">
+            <div data-title>
+                <p class="fwdpap-title">The Ballad of Burrito Breath: A Spicy Journey in Song</p>
+            </div>
+            <div data-artist>
+                <p class="fwdpap-artist">Jalapeño Jammers</p>
+            </div>
+        </div>
+
+    </div>
+
+  </body>
+</html>
