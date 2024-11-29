@@ -1,5 +1,6 @@
 {
   "name": "easey-model-viewer",
+  "base": "/3dModelViewer",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -7,6 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "watch": "vite build --watch --mode development"
   },
   "devDependencies": {
@@ -16,6 +19,7 @@
   },
   "dependencies": {
     "dat.gui": "^0.7.9",
+    "gh-pages": "^6.2.0",
     "three": "^0.159.0",
     "three-mesh-bvh": "^0.6.7"
   }
