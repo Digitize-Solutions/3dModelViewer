@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="./content/global.css">
+    <title>Easy 3D Model Viewer</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .button{
+            display: inline-block;
+            background: #CCCCCC;
+            color: #000;
+            user-select: none;
+        }
+    </style>
+
+    
+
+    
+
+    <script type="module" crossorigin src="/src/FWDEMV.js"></script>
+  </head>
+
+  <body style="background: #FFFFFF">
+
+        
+
+        <!-- Viewer holder -->
+        <div id="myDiv" style=" width:100%; margin:0 auto 2000px; max-width:1920px; height:100vh;"></div>
+
+        <!-- API buttons. -->
+        <div class="button" onclick="fwdemv0.showInfoWindow()">show info</div>
+        <div class="button" onclick="fwdemv0.zoom('in')">zoom in</div>
+        <div class="button" onclick="fwdemv0.zoom('out')">zoom out</div>
+        <div class="button" onclick="fwdemv0.playAutoRotate()">play</div>
+        <div class="button" onclick="fwdemv0.pauseAutoRotate()">pause</div>
+        <div class="button" onclick="fwdemv0.goFullScreen()">fullscreen</div>
+        <div class="button" onclick="fwdemv0.goNormalScreen()">normalscreen</div>
+        <div class="button" onclick="setupEasyModelViewer()">open lightbox</div>
+        <div class="button" onclick="fwdemv0.destroy()">destroy</div>
+
+         <!-- Info window. -->
+         <div id="info_window_data" style="display: none;">
+            <div class="one">
+				<img src="media/images/frog-left.png">
+
+				<h1>Image On The Left Side</h1>
+
+                <p>Our info window provides seamless support for unlimited HTML content, effortlessly showcasing detailed, responsive elements such as video, audio, CSS styling, and more. Embrace versatility at its finest!</p>
+
+                <p>Elevate your experience with our 3D model viewer, designed for ultimate responsiveness. It seamlessly supports gltf, glb, and compressed DRACO format models, delivering stunning realism with realistic lights, environment maps, and shadows. Take your models to the next level by adding markers/hotspots, complete with tooltips and detailed info windows, built-in animation control, and customizable camera positioning, <a href="https://webdesign-flash.ro" target="_blank">read more</a></p>
+			</div>
+			<div class="spacer"></div>
+			<div class="two">
+				<img src="media/images/frog-right.png">
+
+				<h1>Image On The Right Side</h1>
+
+				<p>Our info window provides seamless support for unlimited HTML content, effortlessly showcasing detailed, responsive elements such as video, audio, CSS styling, and more. Embrace versatility at its finest!</p>
+
+                <p>Elevate your experience with our 3D model viewer, designed for ultimate responsiveness. It seamlessly supports gltf, glb, and compressed DRACO format models, delivering stunning realism with realistic lights, environment maps, and shadows. Take your models to the next level by adding markers/hotspots, complete with tooltips and detailed info windows, built-in animation control, and customizable camera positioning, <a href="https://webdesign-flash.ro" target="_blank">read more</a></p>
+			</div>
+			<div class="spacer"></div>
+			<div class="three">
+				<h1>Video & Youtube Ready</h1>
+                
+				<div class="youtube">
+					<iframe src="https://www.youtube.com/embed/ho6N7MdRqeo?fs=1" frameborder="0" width="100%" allowfullscreen></iframe>
+				</div>
+
+				<p>Our info window provides seamless support for unlimited HTML content, effortlessly showcasing detailed, responsive elements such as video, audio, CSS styling, and more. Embrace versatility at its finest!</p>
+
+                <p>Elevate your experience with our 3D model viewer, designed for ultimate responsiveness. It seamlessly supports gltf, glb, and compressed DRACO format models, delivering stunning realism with realistic lights, environment maps, and shadows. Take your models to the next level by adding markers/hotspots, complete with tooltips and detailed info windows, built-in animation control, and customizable camera positioning, <a href="https://webdesign-flash.ro" target="_blank">read more</a></p>
+			</div>
+        </div>
+
+        <!-- Markers data markup. -->
+        <div id="markers_data" style="display: none;">
+
+            <div data-class = ""
+                data-position = "x:-0.10086010305592628, y:-0.0474429013959983, z:0.0995272600298798, nx:-5.509948080523242, ny:5.870342044176747, nz:6.076281277886994, boneName: PDF_R_ForeTwist_0114"
+                data-marker-type = "3D"
+                data-polygon-offset-units = ".5"
+                data-icon-type = "infoPointer"
+                data-border-color = "#00F0F0"
+                data-border-selected-color = "#9a9d9s"
+                data-background-color = "#FF0000"
+                data-background-selected-color = "#00FF00"
+                data-icon-color = "#00FF00"
+                data-icon-selected-color = "#FF0000"
+                data-scale = "1.2"
+
+                data-normals-angle = "90"
+                data-tooltip-offset-x = "0"
+
+                data-link = ""
+                data-target = ""
+
+                data-animation-name = "jump"
+                data-animation-repeat-count = "1"
+                data-animation-time-scale = "2"
+                data-animate-with-model = "yes"
+                data-animation-finish-action = "default"
+                data-animation-finish-reset-camera = "default"
+                data-animation-show-tooltip-when-finished = "yes"
+
+                data-camera-position-name = ""
+                data-camera-position = ""
+                data-camera-show-tooltip-when-finished = "yes"
+                data-camera-position-animation-duration = "1"
+                data-camera-position-animation-easing-type = "easeout"> 
+
+
+                <div data-info = "">
+                    <p>Add here your HTML content that appears in the info window!</p>
+                </div>		
+            </div>
+
+           
+         
+        </div>
+
+  </body>
+</html>

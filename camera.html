@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <title>Easy 3D Model Viewer</title>
+
+      
+        <!-- Js and CSS files -->
+        <link rel="stylesheet" type="text/css"  href="./content/global.css"/>
+        <script type='text/javascript' src="./src/FWDEMV.js"></script>
+
+        <script>
+            if(document.readyState == 'complete'){
+                fwdemvInit();
+            }else{
+                document.addEventListener('DOMContentLoaded', ()=>{
+                    fwdemvInit();
+                });
+            }
+    
+            function fwdemvInit(){
+               
+                new FWDEMV({
+
+                    // General settings.  
+                    instance: 'fwdemv0',
+                    texturesFolder: 'content/markers/',
+                    displayType: 'responsive',
+                    parentId: 'myDiv',
+                    maxWidth: 4000,
+                    startResizingWidth: 1000,
+                    maxHeight: 750,
+                    autoScale: 'yes',
+                    initializeWhenVisible: 'yes',
+                    lightboxCloseButtonWidth: 30,
+                    lightboxCloseButtonHeight: 30,
+                    lightboxCloseButtonBackgroundNormalColor: "#10A0F1",
+                    lightboxCloseButtonBackgroundSelectedColor: "#FFFFFF",
+                    lightboxCloseButtonIconNormalColor: "#FFFFFF",
+                    lightboxCloseButtonIconSelectedColor: "#10A0F1",
+                    lightboxBackgroundColor: 'rgba(0, 0, 0, .7)',
+                    backgroundColor: '#FFFFFF',
+                    fullscreenBackgroundColor: '#FFFFFF',
+
+                    // Preloader.
+                    preloaderText: 'Loading 3D Model: ',
+                    preloaderPosition: 'center',
+                    preloaderOffsetX: 0,
+                    preloaderOffsetY: 0,
+                    showPreloaderProgressBar: 'yes',
+                    preloaderWidth: '40%',
+                    preloaderProgressBarBackgroundColor: '#8b859b',
+                    preloaderProgressBarFillColor: '#10A0F1',
+                    preloaderFontColor: '#000000',
+                    preloaderBackgroundColor: 'rgba(255, 255, 255, 1)',
+
+                    // Display helper.
+                    showGridHelper: 'no',
+                    modelWireframe: 'no',
+                    showSkeletonHelper: 'no',
+
+                    // Model.
+                    source: './models/camera/scene.gltf',
+                    posterSource: 'media/images/camera-poster.png',
+                    animateModelOpacityOnIntro: 'no',
+                    showModelInfoInTheConsole: 'no',
+                    loadModelDelay: 0,
+
+                    // Shadow.
+                    showShadow: 'yes',
+                    shadowBlur: 1.21,
+                    shadowDarkness: 1.144,
+                    shadowOpacity: .8,
+                    shadowPlanePositionOffsetY: 0.017,
+                    shadowPlaneOpacity: 0,
+                    shadowPlaneColor: '#FFFFFF',
+
+                    // Camera amd model initial position.
+                    cameraPosition: 'x:0.7916959269558312, y:0.4623247340252273, z:-0.3633283683945322, tx:0.05594507976615551, ty:-0.07176170310160453, tz:0.012591109655911795',
+                    modelScaleOffset: 0,
+                    modelPositionX: 0,
+                    modelPositionY: 0,
+
+                    // Controller.
+                    buttons: 'play, zoomin, zoomout, info, help, fullscreen',
+                    buttonsToolTips: 'Play/Pause, Zoom in, Zoom out, Info, Help, Full screen/Normal screen',
+                    showButtonsLabels: 'yes',
+                    showBlockTouchButton: 'yes',
+                    blockTouchButtonSize: 40,
+                    hideControllerDelay: 3,
+                    buttonSize: 30,
+                    startAndEndButtonsHorizontalGap: 22,
+                    startAndEndButtonsVerticalGap: 5,
+                    spaceBetweenButtons: 15,
+                    controllerOffsetY: 24,
+                    buttonsToolTipOffsetY: 6,
+                    buttonsIconNormalColor: '#FFFFFF',
+                    buttonsIconSelectedColor: '#d6d6d6',
+                    buttonToolTipBackgroundColor: "#FFFFFF",
+                    buttonToolTipTextColor: "#00000",
+                    controllerBackgrondColor: 'rgba(0, 0, 0, .4)',
+
+                    // Orbital controls.
+                    enableOrbitalControls: 'yes',
+                    zoomFactor: 0.1,
+                    zoomSpeed: .25,
+                    dampingFactor: 0.1,
+                    autoRotate: 'no',
+                    autoRotateSpeed: 0.2,
+                    screenSpacePanning: 'yes',
+                    enablePan: 'yes',
+                    enableZoom: 'yes',
+                    enableKeboardPan: 'yes',
+                    keysType: 'asdw', // arrows/asdw
+                    panSpeed: 1,
+                    keyPanSpeed: 1,
+                    zoomMinDistance: 0.37,
+                    zoomMaxDistance: 1.17,
+                    horizontalRotationMaxAngle: 0,
+                    horizontalRotationMinAngle: 0,
+                    verticalRotationMinAngle: -180,
+                    verticalRotationMaxAngle: 180,
+
+                    // Enviroment map.
+                    envMapSource: './environmentMaps/sky.exr', //./environmentMaps/venice_sunset_1k.exr
+                    envMapShowBackground: 'no',
+                    backgroundBlurriness: 0,
+                    envMapIntensity: 1,
+
+                    // Lights.
+                    showLights: 'yes',
+                    toneMapping: 'ACESFilmic',
+                    toneMappingExposure: 0,
+                    ambientIntensity: 1,
+                    ambientColor: '#FFFFFF',
+                    directionalLightIntensity: 1,
+                    directionalLightColor: '#FFFFFF',
+                    directionalLightX: 0.5,
+                    directionalLightY: 0,
+                    directionalLightZ: 0.866,
+
+                    // Animations.
+                    defaultAnimationName:'idle2',
+                    defaultAnimationPlayDelay: 0.2,
+                    defaultAnimationRepeatCount: 999999,
+                    showMarkersWhileDefaultAnimationIsPlaying: 'yes',
+                    defaultAnimationClampWhenFinished: 'yes',
+                    defaultAnimationCrossFadeDuration: .5,
+                    timeScale: 1,
+                    defaultAnimationCameraPosition: '',
+                    defaultAnimationCameraPositionDuration: '1.2',
+                    defaultAnimationCameraPositionEasingType: 'easeout',
+
+                    // Markers & camera positions.
+                    markersData: 'markers_data',
+                    showMarkerTool: 'no',
+                    markerShowAndHideAnimationType: 'scale',
+                    showMarkersAfterTime: 2,
+                    markerToolTipOffsetY: 10,
+                    markerPolygonOffsetAlpha: .1,
+                    markerToolTipAndWindowBackgroundColor: '#FFFFFF',
+                    markerPositionCopiedText: 'Marker position copied to colipboard!',
+                    cameraPositionCopiedText: 'Camera position copied to colipboard!',
+                    preventToCopyMarkerPosition: 'Please disable the model animation to add markers!',
+                    showCameraPositionsSelectMenu: 'no',
+                    cameraPostionsSelectMenuDefaultText: 'Plane Details',
+                    cameraPostitionSelectMenuMaxWidth: 240,
+                    cameraPostitionSelectMenuHeight: 40,
+                    cameraPostitionSelectMenuStartAndEndGap: 14,
+                    cameraPostitionSelectMenuButtonSize: 30,
+                    cameraPostionsSelectMenuBackgroundColor: 'rgba(0, 0, 0, 0.40)',
+                    cameraPostionsSelectMenuTextColor: '#FFFFFF',
+                    cameraPositionsNextButtonTooltip: '',
+                    cameraPositionsPrevButtonTooltip: '',
+                    cameraPostionsSelectMenuButtonNormalColor: '#d6d6d6',
+                    cameraPostionsSelectMenuButtonSelectedColor: '#FFFFFF',
+                    cameraPositionsSelectItemsMaxWidth: 350,
+                    cameraPositionsSelectItemHeight: 24,
+                    cameraPositionsSelectItemStartLeftGap: 6,
+                    cameraPositionsSelectItemStartRightGap: 30,
+                    cameraPositionsSelectItemVerticalGap: 16,
+                    cameraPositionsSelectSpaceBetweenItems: 8,
+                    cameraPositionsSelectMaxItems: 4,
+                    cameraPositionsSelectItemBackgroundColor: 'rgba(0, 0, 0, .6)',
+                    cameraPositionsSelectItemsScrollBarTrackColor: '#D9D9D9',
+                    cameraPositionsSelectItemsScrollBarHandlerNormalColor: '#767676',
+                    cameraPositionsSelectItemsScrollBarHandlerSelectedColor: '#FFFFFF',
+                    cameraPositionsSelectItemNormalColor: '#D9D9D9',
+                    cameraPositionsSelectItemSelectedColor: '#FFFFFF',
+
+                    // Info window.
+                    infoWindowData: 'info_window_data',
+                    infoWindowWidth: 1080,
+                    infoWindowMainBackgroundColor: 'rgba(255, 255, 255, .7)',
+                    closeButtonSize: 27,
+                    closeButtonBackgroundNormalColor: "#10A0F1",
+                    closeButtonBackgroundSelectedColor: "#FFFFFF",
+                    closeButtonIconNormalColor: "#FFFFFF",
+                    closeButtonIconSelectedColor: "#10A0F1",
+                    infoWindowBackgroundColor:"#FFFFFF",
+                    infoWindowScrollBarColor:"#8b859b",
+
+                    // Help screen.
+                    helpScreenText: 'Help',
+                    mouseRotateAndZoomText: 'Rotate And Zoom',
+                    mouseRotateAndZoomInfo: 'Use the left mouse click to rotate and mousewheel to zoom.',
+                    mousePanText: 'Pan With Mouse',
+                    mousePanInfo: 'Use the right click mouse button to pan.',
+                    keyboardPanText: 'Pan With Keyboard',
+                    keyboardPanInfo: 'Use the the <strong>W A S D</strong> keyboard keys to pan.',
+                    touchRotateText: 'Rotate',
+                    touchRotateInfo: 'Use one finger to rotate.',
+                    touchPanText: 'Pan',
+                    touchPanInfo: 'Use two fingers to pan.',
+                    helpScreenIconColor: '#10A0F1',
+
+                    // GUI settings.
+                    showGUI: 'yes',
+                    closeGUIWhenNotHit: 'no',
+                    modelScaleOffsetMin: 0,
+                    modelScaleOffsetMax: 1,
+                });
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <!-- Viewer holder -->
+        <div id="myDiv"></div>
+
+        <!-- Info window. -->
+        <div id="info_window_data" style="display: none;">
+            <div class="first">
+				<img src="media/images/camera-left.png">
+
+				<h1>Image On The Left Side</h1>
+
+                <p>Our info window provides seamless support for unlimited HTML content, effortlessly showcasing detailed, responsive elements such as video, audio, CSS styling, and more. Embrace versatility at its finest!</p>
+
+                <p>Elevate your experience with our 3D model viewer, designed for ultimate responsiveness. It seamlessly supports gltf, glb, and compressed DRACO format models, delivering stunning realism with realistic lights, environment maps, and shadows. Take your models to the next level by adding markers/hotspots, complete with tooltips and detailed info windows, built-in animation control, and customizable camera positioning, <a href="https://webdesign-flash.ro" target="_blank">read more</a></p>
+			</div>
+			<div class="spacer"></div>
+			<div class="second">
+				<img src="media/images/camera-right.png">
+
+				<h1>Image On The Right Side</h1>
+
+				<p>Our info window provides seamless support for unlimited HTML content, effortlessly showcasing detailed, responsive elements such as video, audio, CSS styling, and more. Embrace versatility at its finest!</p>
+
+                <p>Elevate your experience with our 3D model viewer, designed for ultimate responsiveness. It seamlessly supports gltf, glb, and compressed DRACO format models, delivering stunning realism with realistic lights, environment maps, and shadows. Take your models to the next level by adding markers/hotspots, complete with tooltips and detailed info windows, built-in animation control, and customizable camera positioning, <a href="https://webdesign-flash.ro" target="_blank">read more</a></p>
+			</div>
+			<div class="spacer"></div>
+			<div class="third">
+				<h1>Video & Youtube Ready</h1>
+                
+				<div class="youtube">
+					<iframe src="https://www.youtube.com/embed/Ihuq6ADCEKk?fs=1" frameborder="0" width="100%" allowfullscreen></iframe>
+				</div>
+
+				<p>Our info window provides seamless support for unlimited HTML content, effortlessly showcasing detailed, responsive elements such as video, audio, CSS styling, and more. Embrace versatility at its finest!</p>
+
+                <p>Elevate your experience with our 3D model viewer, designed for ultimate responsiveness. It seamlessly supports gltf, glb, and compressed DRACO format models, delivering stunning realism with realistic lights, environment maps, and shadows. Take your models to the next level by adding markers/hotspots, complete with tooltips and detailed info windows, built-in animation control, and customizable camera positioning, <a href="https://webdesign-flash.ro" target="_blank">read more</a></p>
+			</div>
+        </div>
+
+        <!-- Markers data markup. -->
+        <div id="markers_data" style="display: none;">
+
+             <div data-class = ""
+                data-position = "x:0.04616764463523012, y:0.1145943635635335, z:-0.1376345180988397, nx:0.5372497459470937, ny:10.102529003405795, nz:-0.13763770360709268, meshName: Object_117"
+                data-marker-type = "3D"
+                data-polygon-offset-units = "1"
+                data-icon-type = "playPointer"
+                data-border-color = "#FFFFFF"
+                data-border-selected-color = "#10A0F1"
+                data-background-color = "#10A0F1"
+                data-background-selected-color = "#FFFFFF"
+                data-icon-color = "#FFFFFF"
+                data-icon-selected-color = "#10A0F1"
+                data-scale = "1.4"
+
+                data-normals-angle = "130"
+                data-tooltip-offset-x = "0"
+
+                data-link = ""
+                data-target = ""
+
+                data-animation-name = "Animation"
+                data-animation-repeat-count = "1"
+                data-animation-time-scale = "3.2"
+                data-animate-with-model = "yes"
+                data-animation-finish-action = "playInReverseWithMarker"
+                data-animation-finish-reset-camera = "resetOnAnimationStart"
+                data-animation-show-tooltip-when-finished = "no"
+
+                data-camera-position-name = "Camera opened"
+                data-camera-position = "x:0.9143955587428844, y:0.37583453408936357, z:-0.4521608862260658, tx:0.00955428130649956, ty:-0.10532221875874008, tz:-0.14450776689203526"
+                data-camera-show-tooltip-when-finished = "yes"
+                data-camera-position-animation-duration = "1.8"
+                data-camera-position-animation-easing-type = "easeout"> 
+                
+                <div data-tooltip = "" data-max-width = "380">
+                    <p>This marker plays a built-in 3D model animation forward, then displays a rewind button for reverse playback before seamlessly transitioning to the default animation playback.</p>
+                </div>
+            </div>
+
+            <div data-class = ""
+                data-position = "x:0.13672726543816158, y:0.07050665334513331, z:-0.062925160816012, nx:7.546506887098732, ny:6.7858000913422005, nz:-0.06292100885840232, meshName: Object_117"
+                data-marker-type = "3D"
+                data-polygon-offset-units = "2"
+                data-icon-type = "playPointer"
+                data-border-color = "#FFFFFF"
+                data-border-selected-color = "#10A0F1"
+                data-background-color = "#10A0F1"
+                data-background-selected-color = "#FFFFFF"
+                data-icon-color = "#FFFFFF"
+                data-icon-selected-color = "#10A0F1"
+                data-scale = "1"
+
+                data-normals-angle = "130"
+                data-tooltip-offset-x = "0"
+
+                data-link = ""
+                data-target = ""
+
+                data-animation-name = ""
+                data-animation-repeat-count = "1"
+                data-animation-time-scale = "1"
+                data-animate-with-model = "yes"
+                data-animation-finish-action = "playInReverse"
+                data-animation-finish-reset-camera = "resetOnAnimationFinish"
+                data-animation-show-tooltip-when-finished = "no"
+
+                data-camera-position-name = ""
+                data-camera-position = ""
+                data-camera-show-tooltip-when-finished = "yes"
+                data-camera-position-animation-duration = "1.2"
+                data-camera-position-animation-easing-type = "easeout"> 
+                
+                <div data-tooltip = "" data-max-width = "380">
+                    <iframe src="https://www.youtube.com/embed/Ihuq6ADCEKk?fs=0" frameborder="0" width="100%" height="197px" allowfullscreen></iframe>
+                    <p>Easily enhance your interface with our user-friendly tooltips – fully responsive and compatible with a wide range of HTML content, including video, audio, CSS-styled text, and more.</p>
+                    <a href="https://webdesign-flash.ro/" target="_blank">Read More</a>
+                </div>
+            </div>
+
+            <div data-class = ""
+                data-position = "x:0.05634956668443292, y:-0.14479418574542563, z:-0.22440477936642705, nx:-0.08330638047069083, ny:1.7487256367258643, nz:-10.042504335712987, meshName: Object_131"
+                data-marker-type = "3D"
+                data-polygon-offset-units = "0.3"
+                data-icon-type = "plusPointer"
+                data-border-color = "#FFFFFF"
+                data-border-selected-color = "#10A0F1"
+                data-background-color = "#10A0F1"
+                data-background-selected-color = "#FFFFFF"
+                data-icon-color = "#FFFFFF"
+                data-icon-selected-color = "#10A0F1"
+                data-scale = "1"
+
+                data-normals-angle = "130"
+                data-tooltip-offset-x = "0"
+
+                data-link = ""
+                data-target = ""
+
+                data-animation-name = ""
+                data-animation-repeat-count = "1"
+                data-animation-time-scale = "1"
+                data-animate-with-model = "yes"
+                data-animation-finish-action = "default"
+                data-animation-finish-reset-camera = "resetOnAnimationFinish"
+                data-animation-show-tooltip-when-finished = "no"
+
+                data-camera-position-name = ""
+                data-camera-position = ""
+                data-camera-show-tooltip-when-finished = "yes"
+                data-camera-position-animation-duration = "1.2"
+                data-camera-position-animation-easing-type = "easeout"> 
+                
+                <div data-tooltip = "" data-max-width = "380">
+                    <p>Easily enhance your interface with our user-friendly tooltips, fully responsive and compatible with a wide range of HTML content, including video, audio, CSS-styled text, and more.</p>
+                </div>
+            </div>
+
+            <div data-class = ""
+                data-position = "x:0.024377242196662416, y:-0.04710931971653431, z:0.27788243677479585, nx:0.024377242196662416, ny:-0.04716745912980521, nz:10.277882436605786, meshName: Object_137"
+                data-marker-type = "3D"
+                data-polygon-offset-units = "2.5"
+                data-icon-type = "plus"
+                data-border-color = "#FFFFFF"
+                data-border-selected-color = "#10A0F1"
+                data-background-color = "#10A0F1"
+                data-background-selected-color = "#FFFFFF"
+                data-icon-color = "#FFFFFF"
+                data-icon-selected-color = "#10A0F1"
+                data-scale = "1"
+
+                data-normals-angle = "130"
+                data-tooltip-offset-x = "0"
+
+                data-link = ""
+                data-target = ""
+
+                data-animation-name = ""
+                data-animation-repeat-count = "1"
+                data-animation-time-scale = "1"
+                data-animate-with-model = "yes"
+                data-animation-finish-action = "default"
+                data-animation-finish-reset-camera = "resetOnAnimationFinish"
+                data-animation-show-tooltip-when-finished = "no"
+
+                data-camera-position-name = ""
+                data-camera-position = ""
+                data-camera-show-tooltip-when-finished = "yes"
+                data-camera-position-animation-duration = "1.2"
+                data-camera-position-animation-easing-type = "easeout"> 
+                
+                <div data-tooltip = "" data-max-width = "380">
+                    <img src="media/images/camera-right.png">
+                    <p>Easily enhance your interface with our user-friendly tooltips – fully responsive and compatible with a wide range of HTML content, including video, audio, CSS-styled text, and more.</p>
+                    <a href="https://webdesign-flash.ro" target="_blank">Read More</a>
+                </div>
+            </div>
+
+            <div data-class = ""
+                data-position = "x:-0.0700483414340997, y:0.13252369953721185, z:0.19270392965050526, nx:-0.0700483414340997, ny:10.132523699537211, nz:0.19270392965050526, meshName: Object_81"
+                data-marker-type = "3D"
+                data-polygon-offset-units = "1"
+                data-icon-type = "plusPointer"
+                data-border-color = "#FFFFFF"
+                data-border-selected-color = "#10A0F1"
+                data-background-color = "#10A0F1"
+                data-background-selected-color = "#FFFFFF"
+                data-icon-color = "#FFFFFF"
+                data-icon-selected-color = "#10A0F1"
+                data-scale = "1"
+
+                data-normals-angle = "130"
+                data-tooltip-offset-x = "0"
+
+                data-link = ""
+                data-target = ""
+
+                data-animation-name = ""
+                data-animation-repeat-count = "1"
+                data-animation-time-scale = "1"
+                data-animate-with-model = "yes"
+                data-animation-finish-action = "default"
+                data-animation-finish-reset-camera = "resetOnAnimationFinish"
+                data-animation-show-tooltip-when-finished = "no"
+
+                data-camera-position-name = ""
+                data-camera-position = ""
+                data-camera-show-tooltip-when-finished = "yes"
+                data-camera-position-animation-duration = "1.2"
+                data-camera-position-animation-easing-type = "easeout"> 
+                
+                <div data-tooltip = "" data-max-width = "490">
+                    <p>Flexibility to customize <strong>the size</strong> of the tooltip window as you wish.</p>
+                    <a href="https://webdesign-flash.ro" target="_blank">Read More</a>
+                </div>
+            </div>
+
+            <div data-class = ""
+                data-position = "x:0.26365772552872735, y:-0.013992938247050588, z:0.05974051041496925, nx:1.5291062019780155, ny:4.356662993526717, nz:-8.845090025844716, meshName: Object_7"
+                data-marker-type = "3D"
+                data-polygon-offset-units = "2"
+                data-icon-type = "info"
+                data-border-color = "#FFFFFF"
+                data-border-selected-color = "#10A0F1"
+                data-background-color = "#10A0F1"
+                data-background-selected-color = "#FFFFFF"
+                data-icon-color = "#FFFFFF"
+                data-icon-selected-color = "#10A0F1"
+                data-scale = "1"
+
+                data-normals-angle = "130"
+                data-tooltip-offset-x = "0"
+
+                data-link = ""
+                data-target = ""
+
+                data-animation-name = ""
+                data-animation-repeat-count = "1"
+                data-animation-time-scale = "1"
+                data-animate-with-model = "yes"
+                data-animation-finish-action = "playInReverseWithMarker"
+                data-animation-finish-reset-camera = "default"
+                data-animation-show-tooltip-when-finished = "no"
+
+                data-camera-position-name = ""
+                data-camera-position = ""
+                data-camera-show-tooltip-when-finished = "yes"
+                data-camera-position-animation-duration = ".8"
+                data-camera-position-animation-easing-type = "easeout"> 
+                
+                <div data-tooltip = "" data-max-width = "118">
+                    <p class="fwdemv-tooltip-window-single-line">Camera info</p>
+                </div>
+
+                <div data-info = "">
+                    <div class="third">
+                        <h1>Detailed Info Window</h1>
+                        
+                        <div class="youtube">
+                            <iframe src="https://www.youtube.com/embed/Ihuq6ADCEKk?fs=1" frameborder="0" width="100%" allowfullscreen></iframe>
+                        </div>
+
+                        <p>Our info window provides seamless support for unlimited HTML content, effortlessly showcasing detailed, responsive elements such as video, audio, CSS styling, and more. Embrace versatility at its finest!</p>
+
+                        <p>Elevate your experience with our 3D model viewer, designed for ultimate responsiveness. It seamlessly supports gltf, glb, and compressed DRACO format models, delivering stunning realism with realistic lights, environment maps, and shadows. Take your models to the next level by adding markers/hotspots, complete with tooltips and detailed info windows, built-in animation control, and customizable camera positioning, <a href="https://webdesign-flash.ro" target="_blank">read more</a></p>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div data-class = ""
+                data-position = "x:0.04471644001231171, y:0.1736266550634476, z:0.21785764107606165, nx:0.04471644001231171, ny:10.173626655063448, nz:0.21785764107606165, meshName: Object_55"
+                data-marker-type = "3D"
+                data-polygon-offset-units = "1"
+                data-icon-type = "linkPointer"
+                data-border-color = "#FFFFFF"
+                data-border-selected-color = "#10A0F1"
+                data-background-color = "#10A0F1"
+                data-background-selected-color = "#FFFFFF"
+                data-icon-color = "#FFFFFF"
+                data-icon-selected-color = "#10A0F1"
+                data-scale = "1"
+
+                data-normals-angle = "130"
+                data-tooltip-offset-x = "0"
+
+                data-link = "https://webdesign-flash.ro"
+                data-target = "_blank"
+
+                data-animation-name = ""
+                data-animation-repeat-count = "1"
+                data-animation-time-scale = "1"
+                data-animate-with-model = "yes"
+                data-animation-finish-action = "playInReverseWithMarker"
+                data-animation-finish-reset-camera = "default"
+                data-animation-show-tooltip-when-finished = "no"
+
+                data-camera-position-name = ""
+                data-camera-position = ""
+                data-camera-show-tooltip-when-finished = "yes"
+                data-camera-position-animation-duration = ".8"
+                data-camera-position-animation-easing-type = "easeout"> 
+                
+                <div data-tooltip = "" data-max-width = "112">
+                    <p class="fwdemv-tooltip-window-single-line">External link</p>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
