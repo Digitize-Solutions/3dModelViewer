@@ -29072,6 +29072,7 @@ const _FWDEMVData = class _FWDEMVData extends FWDEMVEventDispather {
   constructor(settings) {
     super();
     this.settings = settings;
+    this.loadMarkers = this.loadMarkers;
     this.parseProperties();
     this.loadTextures();
   }
@@ -46014,9 +46015,6 @@ const _FWDEMVModelManager = class _FWDEMVModelManager extends FWDEMVDisplayObjec
     this.curAnimAction.reset();
     if (this.animationFinishAction == "default") {
       this.resumeDefaultAnimation();
-    } else if (this.animationFinishAction == "clampWhenFinished") {
-      this.curAnimAction.time = this.curAnimAction.duration;
-      this.pauseAnimation();
     } else if (this.animationFinishAction == "playInReverse") {
       this.curAnimAction.repetitions = 1;
       this.timeScale *= -1;
@@ -46035,6 +46033,9 @@ const _FWDEMVModelManager = class _FWDEMVModelManager extends FWDEMVDisplayObjec
         this.pauseAnimation();
         this.curMarkerDO.playInReverse = true;
       }
+    } else {
+      this.curAnimAction.time = this.curAnimAction.duration;
+      this.pauseAnimation();
     }
     let allowToPlayAnimationInreverse = false;
     if (this.curMarkerDO && this.curMarkerDO.animationFinishResetCamera == "resetOnAnimationFinish") {
@@ -49214,10 +49215,10 @@ const _FWDEMV = class _FWDEMV extends FWDEMVEventDispather {
     this.modelManagerDO.showInfoWindow(htmlContent);
   }
   // Play or pause animation clip
-  playOrStopAnimationClip(name, play) {
+  playOrStopAnimationClip(name, play, repetitions, clampWhenFinished) {
     if (!this.APIReady)
       return;
-    this.modelManagerDO.playOrStopAnimationClip(name, play);
+    this.modelManagerDO.playOrStopAnimationClip(name, play, repetitions, clampWhenFinished);
   }
   getAnimationClips() {
     if (!this.APIReady)
