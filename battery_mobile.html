@@ -162,8 +162,8 @@
             markerPositionCopiedText: 'Marker position copied to colipboard!',
             cameraPositionCopiedText: 'Camera position copied to colipboard!',
             preventToCopyMarkerPosition: 'Please disable the model animation to add markers!',
-            // showCameraPositionsSelectMenu: 'no',
-            showCameraPositionsSelectMenu: 'yes',
+            showCameraPositionsSelectMenu: 'no',
+            // showCameraPositionsSelectMenu: 'yes',
             cameraPostionsSelectMenuDefaultText: 'Set marker',
             cameraPostitionSelectMenuMaxWidth: 240,
             cameraPostitionSelectMenuHeight: 40,
@@ -216,20 +216,69 @@
             helpScreenIconColor: '#21A80B',
 
             // GUI settings.
+            // showGUI: 'yes',
             showGUI: 'no',
             closeGUIWhenNotHit: 'no',
             modelScaleOffsetMin: 0,
             modelScaleOffsetMax: 1,
         }
 
+        const markerData = {
+            "socket":{
+                cameraPosition : {
+                        "x": 0.21788711986201864,
+                        "y": 0.3025869473794921,
+                        "z": 0.6864396770360911,
+                        "tx": -0.006564968723456249,
+                        "ty": -0.09990818441590082,
+                        "tz": 0.000915808066485707
+                    }
+            },
+            "wi_iq":{
+                cameraPosition : {
+                        "x": -0.00046418035741224804,
+                        "y": 0.7760604116898822,
+                        "z": 0.24115860650606863,
+                        "tx": -0.006564968723456249,
+                        "ty": -0.09990818441590082,
+                        "tz": 0.000915808066485707
+                    }
+            }, 
+            "blinky":{
+                cameraPosition : {
+                        "x": -0.40609229061276764,
+                        "y": 0.7353672650717108,
+                        "z": 0.4813829258841578,
+                        "tx": 0.10021136346153406,
+                        "ty": -0.02422313285522223,
+                        "tz": -0.06466309995454829
+                    }
+            },
+            "side_label":{
+                cameraPosition : {
+                        "x": -0.7288026546400463,
+                        "y": 0.12428039760344137,
+                        "z": -0.22191123536664564,
+                        "tx": -0.006564968723456249,
+                        "ty": -0.09990818441590082,
+                        "tz": 0.000915808066485707
+                    }
+            }
+        }
+
 
 
 
            function handleViewSwitch(e){
-                console.log('handle change>>>>>>>>>>>>', e)
-                console.log('fwdemv0>>>>>>>>>>>>>>>>', fwdemv0)
-                console.log('fwdemv0>>>>>>>>>>>>>>>>', fwdemv0.playOrStopAnimationClip)
+                // console.log('fwdemv0>>>>>>>>>>>>>>>>', fwdemv0)
+                // console.log('fwdemv0>>>>>>>>>>>>>>>>', fwdemv0.playOrStopAnimationClip)
                 fwdemv0?.playOrStopAnimationClip("Animation", e.target.checked, "1", false)
+
+
+            }
+            function handleCameraPositionSet(key){
+                let tmpCameraPos = markerData[key].cameraPosition
+                fwdemv0?.modelManagerDO?.setCameraPositionDigitize(tmpCameraPos, "0.5", "easeout" )
             }
             if(document.readyState == 'complete'){
                 fwdemvInit();
@@ -245,27 +294,28 @@
 
 
                 document.getElementById('viewSwitch').addEventListener('change', handleViewSwitch);
-                const toggleAnnotations = document.getElementById('toggleAnnotations')
-                toggleAnnotations.addEventListener('click', () => {
-                    let display = 'none';
+                document.getElementById('getHelpWizard').addEventListener('click', () => {
+                    // let display = 'none';
 
-                    if (toggleAnnotations.getAttribute('data-hide') === "1") {
-                        toggleAnnotations.setAttribute('data-hide', '0')
-                    } else {
-                        toggleAnnotations.setAttribute('data-hide', '1')
-                        display = 'inline'
-                    }
+                    // if (toggleAnnotations.getAttribute('data-hide') === "1") {
+                    //     toggleAnnotations.setAttribute('data-hide', '0')
+                    // } else {
+                    //     toggleAnnotations.setAttribute('data-hide', '1')
+                    //     display = 'inline'
+                    // }
+                    fwdemv0?.controllerDO?.displayHelpWindowDigitize()
+                    // light.classList.toggle('st0');
+                    // light.classList.toggle('st3');
 
-                    light.classList.toggle('st0');
-                    light.classList.toggle('st3');
-
-                    // handleToggle(display);
-                    // loadBatteryOpenedSvgLines();
                 })
 
                 document.getElementById('info-content-button').addEventListener('click', ()=>{
                     fwdemv0.showInfoWindow()
                 });
+                document.getElementById("setMarker").onchange = function(){
+                    let value = document.getElementById("setMarker").value;
+                    handleCameraPositionSet(value)
+                };
             }
         </script>
 
@@ -360,10 +410,44 @@
         .fwdemv-camera-positions-select-menu{
             left: calc(-1 * 50% + 120px) !important;
         }
-        @media screen and (max-width: 992px){
-            .left-content-container{
-                top: 200px;
-            }
+        .camera-position-container{
+            position: absolute;
+            top: auto;
+            left: calc(50% - 100px);
+            
+        }
+        select {
+            -webkit-appearance:none;
+            -moz-appearance:none;
+            -ms-appearance:none;
+            appearance:none;
+            outline:0;
+            box-shadow:none;
+            border:0!important;
+            background: #5c6664;
+            background-image: none;
+            flex: 1;
+            padding: 0 .5em;
+            color:#fff;
+            cursor:pointer;
+            font-size: 1em;
+            font-family: 'Open Sans', sans-serif;
+        }
+        select::-ms-expand {
+            display: none;
+        }
+        .select {
+            position: relative;
+            display: flex;
+            width: 200px;
+            height: 2.5em;
+            line-height: 3;
+            background: #5c6664;
+            overflow: hidden;
+            border-radius: .25em;
+        }
+        #setMarker{
+            text-align: center;
         }
         @media screen and (max-width: 716px){
             .left-content-container{
@@ -397,7 +481,7 @@
         </div>
         <div class="left-content-container">
             <span>
-                <svg id="toggleAnnotations" style="enable-background:new 0 0 250 250;" width="50px" height="50px" version="1.1"
+                <svg id="getHelpWizard" style="enable-background:new 0 0 250 250;" width="50px" height="50px" version="1.1"
                         viewBox="0 0 250 250" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" data-hide='0'>
                         <style type="text/css">
@@ -490,6 +574,18 @@
                 Innnerview
             </span>
         </div>
+
+        <div class="camera-position-container">
+            <div class="select">
+                <select name="format" id="setMarker">
+                   <option selected disabled>Set Marker</option>
+                   <option value="socket">Socket</option>
+                   <option value="wi_iq">Wi-IQ</option>
+                   <option value="blinky">Blinky</option>
+                   <option value="side_label">Side Label</option>
+                </select>
+             </div>
+        </div>
       
         <!-- Markers data markup. -->
         <div id="markers_data" style="display: none;">
@@ -522,7 +618,7 @@
                 data-animation-finish-reset-camera = "resetOnAnimationFinish"
                 data-animation-show-tooltip-when-finished = "no"
 
-                data-camera-position-name = "Socket "
+                data-camera-position-name = "Socket"
                 data-camera-position = "x:0.21788711986201864, y:0.3025869473794921, z:0.6864396770360911, tx:-0.006564968723456249, ty:-0.09990818441590082, tz:0.000915808066485707"
                 data-camera-show-tooltip-when-finished = "yes"
                 data-camera-position-animation-duration = "1.2"
@@ -737,59 +833,8 @@
                     <p class="fwdemv-tooltip-window-single-line">Resoundingly recyclable</p>
                 </div>
 
-                <!-- <div data-info = "">
-                    <div class="third">
-                        <h1>Detailed Info Window</h1>
-                        
-                        <div class="youtube">
-                            <iframe src="https://www.youtube.com/embed/ho6N7MdRqeo?fs=1" frameborder="0" width="100%" allowfullscreen></iframe>
-                        </div>
-
-                        <p>Our info window provides seamless support for unlimited HTML content, effortlessly showcasing detailed, responsive elements such as video, audio, CSS styling, and more. Embrace versatility at its finest!</p>
-
-                        <p>Elevate your experience with our 3D model viewer, designed for ultimate responsiveness. It seamlessly supports gltf, glb, and compressed DRACO format models, delivering stunning realism with realistic lights, environment maps, and shadows. Take your models to the next level by adding markers/hotspots, complete with tooltips and detailed info windows, built-in animation control, and customizable camera positioning, <a href="https://webdesign-flash.ro" target="_blank">read more</a></p>
-                        
-                    </div>
-                </div> -->
             </div>
 
-            <!-- <div data-class = ""
-                data-position = "x:0.18460809000979927, y:-0.0714954501987462, z:-0.05599439337064295, nx:2.6466316330711246, ny:3.615850577830237, nz:8.907371009366804, boneName: PDF_LThighTwist2_0259"
-                data-marker-type = "3D"
-                data-polygon-offset-units = "0.5"
-                data-icon-type = "link"
-                data-border-color = "#FFFFFF"
-                data-border-selected-color = "#21A80B"
-                data-background-color = "#21A80B"
-                data-background-selected-color = "#FFFFFF"
-                data-icon-color = "#FFFFFF"
-                data-icon-selected-color = "#21A80B"
-                data-scale = "1"
-
-                data-normals-angle = "130"
-                data-tooltip-offset-x = "0"
-
-                data-link = "https://webdesign-flash.ro"
-                data-target = "_blank"
-
-                data-animation-name = ""
-                data-animation-repeat-count = "1"
-                data-animation-time-scale = "1"
-                data-animate-with-model = "yes"
-                data-animation-finish-action = "playInReverseWithMarker"
-                data-animation-finish-reset-camera = "default"
-                data-animation-show-tooltip-when-finished = "no"
-
-                data-camera-position-name = ""
-                data-camera-position = ""
-                data-camera-show-tooltip-when-finished = "yes"
-                data-camera-position-animation-duration = ".8"
-                data-camera-position-animation-easing-type = "easeout"> 
-                
-                <div data-tooltip = "" data-max-width = "112">
-                    <p class="fwdemv-tooltip-window-single-line">smart blinky</p>
-                </div>
-            </div> -->
         </div>
 
     </body>

@@ -43676,6 +43676,7 @@ const _FWDEMVModelManager = class _FWDEMVModelManager extends FWDEMVDisplayObjec
     this.animateMarkersWithSkeleton = this.data.animateMarkersWithSkeleton;
     this.showMarkersAfterTime = this.data.showMarkersAfterTime;
     this.markerToolTipOffsetY = this.data.markerToolTipOffsetY;
+    this.setCameraPositionDigitize = this.setCameraPositionDigitize;
     this.addSceneAndRenderer();
     this.addCamera();
     this.addOrbitControls();
@@ -46196,6 +46197,23 @@ const _FWDEMVModelManager = class _FWDEMVModelManager extends FWDEMVDisplayObjec
     }
     return false;
   }
+  setCameraPositionDigitize(cameraPosition, cameraPositionAnimationDuration, cameraPositionEasingType) {
+    this.moveCamera(
+      new Vector3(
+        cameraPosition.x,
+        cameraPosition.y,
+        cameraPosition.z
+      ),
+      new Vector3(
+        cameraPosition.tx,
+        cameraPosition.ty,
+        cameraPosition.tz
+      ),
+      true,
+      cameraPositionAnimationDuration,
+      cameraPositionEasingType
+    );
+  }
   /**
    * Destroy.
    */
@@ -46876,6 +46894,8 @@ const _FWDEMVController = class _FWDEMVController extends FWDEMVDisplayObject {
     this.mainDO.height = this.totalHeight;
     this.hide();
     this.style.zIndex = 99;
+    this.displayHelpWindowDigitize = this.displayHelpWindowDigitize;
+    this.dispatchEventDigitize = this.dispatchEvent;
     window.addEventListener("pointerup", this.onWindowpointerUp);
   }
   onWindowpointerUp(e2) {
@@ -47519,6 +47539,9 @@ const _FWDEMVController = class _FWDEMVController extends FWDEMVDisplayObject {
     } else {
       this.mainDO.y = 0;
     }
+  }
+  displayHelpWindowDigitize() {
+    this.dispatchEvent(_FWDEMVController.HELP);
   }
   /**
    * Destroy.
