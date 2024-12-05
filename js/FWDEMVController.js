@@ -73,6 +73,8 @@ export default class FWDEMVController extends FWDEMVDisplayObject{
       
         this.hide();
         this.style.zIndex = 99;
+        this.displayHelpWindowDigitize = this.displayHelpWindowDigitize;
+        this.dispatchEventDigitize = this.dispatchEvent
 
         window.addEventListener('pointerup', this.onWindowpointerUp);
     }
@@ -837,6 +839,10 @@ export default class FWDEMVController extends FWDEMVDisplayObject{
             this.mainDO.y = 0;
         }
     };
+
+    displayHelpWindowDigitize(){
+        this.dispatchEvent(FWDEMVController.HELP)
+    }
 
 
     /**

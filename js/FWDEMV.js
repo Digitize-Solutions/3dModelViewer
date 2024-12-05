@@ -231,7 +231,7 @@ export default class FWDEMV extends FWDEMVEventDispather{
 
             if(this.autoScale && this.width <= this.startResizingWidth){
                 this.height = Math.round(this.maxHeight * (this.width/this.startResizingWidth));
-                if(this.height < 300) this.height = 300;
+                if(this.height < 360) this.height = 360;
             }else{
                 this.height = this.maxHeight;
             }
@@ -737,9 +737,9 @@ export default class FWDEMV extends FWDEMVEventDispather{
 
 
     // Play or pause animation clip
-    playOrStopAnimationClip(name, play){
+    playOrStopAnimationClip(name, play, repetitions, clampWhenFinished){
         if(!this.APIReady) return;
-        this.modelManagerDO.playOrStopAnimationClip(name, play);
+        this.modelManagerDO.playOrStopAnimationClip(name, play, repetitions, clampWhenFinished);
     }
 
     getAnimationClips(){
