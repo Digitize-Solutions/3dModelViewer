@@ -29072,7 +29072,6 @@ const _FWDEMVData = class _FWDEMVData extends FWDEMVEventDispather {
   constructor(settings) {
     super();
     this.settings = settings;
-    this.loadMarkers = this.loadMarkers;
     this.parseProperties();
     this.loadTextures();
   }
