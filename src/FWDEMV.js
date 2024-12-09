@@ -48838,8 +48838,8 @@ const _FWDEMV = class _FWDEMV extends FWDEMVEventDispather {
       this.width = this.stageContainer.offsetWidth;
       if (this.autoScale && this.width <= this.startResizingWidth) {
         this.height = Math.round(this.maxHeight * (this.width / this.startResizingWidth));
-        if (this.height < 360)
-          this.height = 360;
+        if (this.height < 500)
+          this.height = 500;
       } else {
         this.height = this.maxHeight;
       }
