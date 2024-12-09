@@ -12,6 +12,7 @@
 
     <script>
 
+        let currentMarkerIndex=0;
         const settings = {
 
             // General settings.  
@@ -54,7 +55,7 @@
             // Model.
             source: 'https://digitize-solutions.github.io/Enersys/Custom-Close/Explode_V4.glb',
             // source: './models/frog/scene.gltf',
-            posterSource: 'media/images/battery_thumb.png',
+            posterSource: 'media/images/battery_thumb3.png',
             animateModelOpacityOnIntro: 'no',
             showModelInfoInTheConsole: 'no',
             loadModelDelay: 0,
@@ -269,55 +270,76 @@
 
 
 
-           function handleViewSwitch(e){
-                // console.log('fwdemv0>>>>>>>>>>>>>>>>', fwdemv0)
-                // console.log('fwdemv0>>>>>>>>>>>>>>>>', fwdemv0.playOrStopAnimationClip)
-                fwdemv0?.playOrStopAnimationClip("Animation", e.target.checked, "1", false)
-
-
-            }
-            function handleCameraPositionSet(key){
-                let tmpCameraPos = markerData[key].cameraPosition
-                fwdemv0?.modelManagerDO?.setCameraPositionDigitize(tmpCameraPos, "0.5", "easeout" )
-            }
-            if(document.readyState == 'complete'){
+        function handleViewSwitch(e){
+            // console.log('fwdemv0>>>>>>>>>>>>>>>>', fwdemv0)
+            // console.log('fwdemv0>>>>>>>>>>>>>>>>', fwdemv0.playOrStopAnimationClip)
+            fwdemv0?.playOrStopAnimationClip("Animation", e.target.checked, "1", false)
+        }
+        function handleCameraPositionSet(key){
+            let tmpCameraPos = markerData[key].cameraPosition
+            fwdemv0?.modelManagerDO?.setCameraPositionDigitize(tmpCameraPos, "0.5", "easeout" )
+        }
+        if(document.readyState == 'complete'){
+            fwdemvInit();
+        }else{
+            document.addEventListener('DOMContentLoaded', ()=>{
                 fwdemvInit();
-            }else{
-                document.addEventListener('DOMContentLoaded', ()=>{
-                    fwdemvInit();
-                });
+            });
+        }
+
+        function fwdemvInit(){
+            
+            new FWDEMV(settings);
+
+
+            document.getElementById('viewSwitch').addEventListener('change', handleViewSwitch);
+            document.getElementById('getHelpWizard').addEventListener('click', () => {
+                // let display = 'none';
+
+                // if (toggleAnnotations.getAttribute('data-hide') === "1") {
+                //     toggleAnnotations.setAttribute('data-hide', '0')
+                // } else {
+                //     toggleAnnotations.setAttribute('data-hide', '1')
+                //     display = 'inline'
+                // }
+                fwdemv0?.controllerDO?.displayHelpWindowDigitize()
+                // light.classList.toggle('st0');
+                // light.classList.toggle('st3');
+
+            })
+
+            document.getElementById('info-content-button').addEventListener('click', ()=>{
+                fwdemv0.showInfoWindow()
+            });
+            document.getElementById('back-arrow').addEventListener('click', ()=>{
+                handleSwitchMarker(-1)
+            });
+            document.getElementById('forth-arrow').addEventListener('click', ()=>{
+                handleSwitchMarker(1)
+            });
+            document.getElementById("setMarker").onchange = function(){
+                let value = document.getElementById("setMarker").value;
+                handleCameraPositionSet(value)
+            };
+
+
+        }
+        function handleSwitchMarker(value){
+            let keys = Object.keys(markerData)
+            // currentMarkerIndex = (currentMarkerIndex + value) ;
+            if(value < 0 && currentMarkerIndex == 0){
+                return false;
+            }else if(value > 0 && currentMarkerIndex >= keys.length-1){
+                return false;
             }
-    
-            function fwdemvInit(){
-                
-                new FWDEMV(settings);
-
-
-                document.getElementById('viewSwitch').addEventListener('change', handleViewSwitch);
-                document.getElementById('getHelpWizard').addEventListener('click', () => {
-                    // let display = 'none';
-
-                    // if (toggleAnnotations.getAttribute('data-hide') === "1") {
-                    //     toggleAnnotations.setAttribute('data-hide', '0')
-                    // } else {
-                    //     toggleAnnotations.setAttribute('data-hide', '1')
-                    //     display = 'inline'
-                    // }
-                    fwdemv0?.controllerDO?.displayHelpWindowDigitize()
-                    // light.classList.toggle('st0');
-                    // light.classList.toggle('st3');
-
-                })
-
-                document.getElementById('info-content-button').addEventListener('click', ()=>{
-                    fwdemv0.showInfoWindow()
-                });
-                document.getElementById("setMarker").onchange = function(){
-                    let value = document.getElementById("setMarker").value;
-                    handleCameraPositionSet(value)
-                };
-            }
-        </script>
+            currentMarkerIndex += value
+            console.log('currentMarkerIndex>>>>>>>>>>>>>>>>', currentMarkerIndex, keys);
+            let key = keys[currentMarkerIndex]
+            let element = document.getElementById("setMarker");
+            element.value = key;
+            handleCameraPositionSet(key)
+        }
+    </script>
 
     </head>
     <style>
@@ -412,8 +434,11 @@
         }
         .camera-position-container{
             position: absolute;
+            display: grid;
+            grid-template-columns: 40px auto 40px;
+            grid-gap: 5px;
             top: auto;
-            left: calc(50% - 60px);
+            left: calc(50% - 105px);
             
         }
         select {
@@ -453,6 +478,20 @@
             display: flex;
             justify-content: center;
         }
+        .arrow-span{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: inline-block;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            box-sizing: border-box;
+        }
         @media screen and (max-width: 716px){
             .left-content-container{
                 top: 265px;
@@ -484,7 +523,7 @@
 			
         </div>
         <div class="left-content-container">
-            <span>
+            <span style="cursor: pointer;">
                 <svg id="getHelpWizard" style="enable-background:new 0 0 250 250;" width="50px" height="50px" version="1.1"
                         viewBox="0 0 250 250" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" data-hide='0'>
@@ -580,6 +619,7 @@
         </div>
 
         <div class="camera-position-container">
+            <span class="arrow-span" id="back-arrow"> &#60; </span>
             <div class="select">
                 <select name="format" id="setMarker">
                    <option selected disabled>Set Marker</option>
@@ -589,9 +629,9 @@
                    <option value="side_label">Side Label</option>
                 </select>
              </div>
+            <span class="arrow-span" style="padding-left: 4px"  id="forth-arrow">></span>
         </div>
       
-        <!-- Markers data markup. -->
         <div id="markers_data" style="display: none;">
 
              <div data-class = "innerview-marker-2"
@@ -599,7 +639,7 @@
                 data-position = "x:0.2484790193658539, y:0.15109280837211062, z:0.12318402059280859, nx:0.2484790193658539, ny:0.1510914647837263, nz:10.123184020592719, meshName: Socket"
                 data-marker-type = "3D"
                 data-polygon-offset-units = "0.01"
-                data-icon-type = "playPointer"
+                data-icon-type = "info"
                 data-border-color = "#FFFFFF"
                 data-border-selected-color = "#21A80B"
                 data-background-color = "#21A80B"
@@ -623,7 +663,7 @@
                 data-animation-show-tooltip-when-finished = "no"
 
                 data-camera-position-name = "Socket"
-                data-camera-position = "x:0.21788711986201864, y:0.3025869473794921, z:0.6864396770360911, tx:-0.006564968723456249, ty:-0.09990818441590082, tz:0.000915808066485707"
+                data-camera-position2 = "x:0.21788711986201864, y:0.3025869473794921, z:0.6864396770360911, tx:-0.006564968723456249, ty:-0.09990818441590082, tz:0.000915808066485707"
                 data-camera-show-tooltip-when-finished = "yes"
                 data-camera-position-animation-duration = "1.2"
                 data-camera-position-animation-easing-type = "easeout"> 
@@ -632,50 +672,12 @@
                     <p>This is to display information about the socket.</p>
                 </div>
             </div>
-<!-- 
-            <div data-class = ""
-                data-position = "x:0.3562103909813608, y:0.20513807581835936, z:0.011067714469568599, nx:0.3337154587750891, ny:10.205106229348335, nz:0.022509148439537528, meshName: Cap"
-                data-marker-type = "3D"
-                data-polygon-offset-units = "0.01"
-                data-icon-type = "play"
-                data-border-color = "#FFFFFF"
-                data-border-selected-color = "#21A80B"
-                data-background-color = "#21A80B"
-                data-background-selected-color = "#FFFFFF"
-                data-icon-color = "#FFFFFF"
-                data-icon-selected-color = "#21A80B"
-                data-scale = "1"
-
-                data-normals-angle = "130"
-                data-tooltip-offset-x = "0"
-
-                data-link = ""
-                data-target = ""
-
-                data-animation-name = ""
-                data-animation-repeat-count = "1"
-                data-animation-time-scale = "1"
-                data-animate-with-model = "yes"
-                data-animation-finish-action = "playInReverse"
-                data-animation-finish-reset-camera = "resetOnAnimationFinish"
-                data-animation-show-tooltip-when-finished = "no"
-
-                data-camera-position-name = "The little cap"
-                data-camera-position = "x:0.4241544887202622, y:0.6251391679628353, z:0.3383500816255545, nx:-0.006564968723456249, ny:-0.09990818441590082, nz:0.000915808066485707"
-                data-camera-show-tooltip-when-finished = "yes"
-                data-camera-position-animation-duration = "1.2"
-                data-camera-position-animation-easing-type = "easeout"> 
-                
-                <div data-tooltip = "" data-max-width = "380">
-                    <p>This marker plays a build-in 3D model animation forward, for the little cap.</p>
-                </div>
-            </div> -->
 
             <div data-class = ""
                 data-position = "x:-0.1413800270140897, y:0.20670311303539973, z:-0.03232151647768075, nx:-0.13782755950160444, ny:10.206702425602938, nz:-0.03338388331829504, meshName: Wi_iQ_Body"
                 data-marker-type = "3D"
                 data-polygon-offset-units = "0.01"
-                data-icon-type = "playPointer"
+                data-icon-type = "info"
                 data-border-color = "#FFFFFF"
                 data-border-selected-color = "#21A80B"
                 data-background-color = "#21A80B"
@@ -699,7 +701,7 @@
                 data-animation-show-tooltip-when-finished = "no"
 
                 data-camera-position-name = "Wi-IQ"
-                data-camera-position = "x:-0.00046418035741224804, y:0.7760604116898822, z:0.24115860650606863, tx:-0.006564968723456249, ty:-0.09990818441590082, tz:0.000915808066485707"
+                data-camera-position2 = "x:-0.00046418035741224804, y:0.7760604116898822, z:0.24115860650606863, tx:-0.006564968723456249, ty:-0.09990818441590082, tz:0.000915808066485707"
                 data-camera-show-tooltip-when-finished = "yes"
                 data-camera-position-animation-duration = "1.2"
                 data-camera-position-animation-easing-type = "easeout"> 
@@ -713,44 +715,6 @@
                 data-position = "x:-0.34305336754704346, y:0.19445051579236466, z:-0.09903319152518916, nx:-0.36744222950733235, ny:10.194415370051697, nz:-0.08863622127331294, meshName: Cap"
                 data-marker-type = "3D"
                 data-polygon-offset-units = "0.01"
-                data-icon-type = "playPointer"
-                data-border-color = "#FFFFFF"
-                data-border-selected-color = "#21A80B"
-                data-background-color = "#21A80B"
-                data-background-selected-color = "#FFFFFF"
-                data-icon-color = "#FFFFFF"
-                data-icon-selected-color = "#21A80B"
-                data-scale = "1"
-
-                data-normals-angle = "130"
-                data-tooltip-offset-x = "0"
-
-                data-link = ""
-                data-target = ""
-
-                data-animation-name = "Animation"
-                data-animation-repeat-count = "1"
-                data-animation-time-scale = "1"
-                data-animate-with-model = "yes"
-                data-animation-finish-action = "clampWhenFinished"
-                data-animation-finish-reset-camera = "default"
-                data-animation-show-tooltip-when-finished = "no"
-
-                data-camera-position-name = "Blinky"
-                data-camera-position = "x:-0.40609229061276764, y:0.7353672650717108, z:0.4813829258841578, tx:0.10021136346153406, ty:-0.02422313285522223, tz:-0.06466309995454829"
-                data-camera-show-tooltip-when-finished = "yes"
-                data-camera-position-animation-duration = "1.2"
-                data-camera-position-animation-easing-type = "easeout"> 
-                
-                <div data-tooltip = "" data-max-width = "380">
-                    <p>Dependable power. Reliable protection.</p>
-                </div>
-            </div>
-
-            <!-- <div data-class = ""
-                data-position = "x:0.015507138808857008, y:0.18961280401555736, z:-0.016394875821020317, nx:0.015507138808857008, ny:10.189612804015468, nz:-0.01639353223263599, meshName: Smart_Blinky_Base"
-                data-marker-type = "3D"
-                data-polygon-offset-units = "0.1"
                 data-icon-type = "info"
                 data-border-color = "#FFFFFF"
                 data-border-selected-color = "#21A80B"
@@ -766,40 +730,26 @@
                 data-link = ""
                 data-target = ""
 
-                data-animation-name = "test"
+                data-animation-name = ""
                 data-animation-repeat-count = "1"
                 data-animation-time-scale = "1"
                 data-animate-with-model = "yes"
-                data-animation-finish-action = "playInReverse"
+                data-animation-finish-action = "clampWhenFinished"
                 data-animation-finish-reset-camera = "default"
                 data-animation-show-tooltip-when-finished = "no"
 
-                data-camera-position-name = ""
-                data-camera-position = ""
+                data-camera-position-name = "Blinky"
+                data-camera-position2 = "x:-0.40609229061276764, y:0.7353672650717108, z:0.4813829258841578, tx:0.10021136346153406, ty:-0.02422313285522223, tz:-0.06466309995454829"
                 data-camera-show-tooltip-when-finished = "yes"
                 data-camera-position-animation-duration = "1.2"
                 data-camera-position-animation-easing-type = "easeout"> 
                 
-                <div data-tooltip = "" data-max-width = "91">
-                    <p class="fwdemv-tooltip-window-single-line">Info text</p>
-                </div> -->
+                <div data-tooltip = "" data-max-width = "380">
+                    <p>Dependable power. Reliable protection.</p>
+                </div>
+            </div>
 
-                <!-- <div data-info = "">
-                    <div class="third">
-                        <h1>Detailed Info Window</h1>
-                        
-                        <div class="youtube">
-                            <iframe src="https://www.youtube.com/embed/ho6N7MdRqeo?fs=1" frameborder="0" width="100%" allowfullscreen></iframe>
-                        </div>
-
-                        <p>Our info window provides seamless support for unlimited HTML content, effortlessly showcasing detailed, responsive elements such as video, audio, CSS styling, and more. Embrace versatility at its finest!</p>
-
-                        <p>Elevate your experience with our 3D model viewer, designed for ultimate responsiveness. It seamlessly supports gltf, glb, and compressed DRACO format models, delivering stunning realism with realistic lights, environment maps, and shadows. Take your models to the next level by adding markers/hotspots, complete with tooltips and detailed info windows, built-in animation control, and customizable camera positioning, <a href="https://webdesign-flash.ro" target="_blank">read more</a></p>
-                        
-                    </div>
-                </div> 
-            </div>-->
-
+            
             <div data-class = ""
                 data-position = "x:-0.395931172969574, y:0.03588625246952043, z:-0.021156221504759966, nx:-10.395931172969574, ny:0.03588625246952043, nz:-0.021156221504759966, meshName: S_Label"
                 data-marker-type = "3D"
@@ -828,7 +778,7 @@
                 data-animation-show-tooltip-when-finished = "no"
 
                 data-camera-position-name = "Side Label"
-                data-camera-position = "x:-0.7288026546400463, y:0.12428039760344137, z:-0.22191123536664564, nx:-0.006564968723456249, ny:-0.09990818441590082, nz:0.000915808066485707"
+                data-camera-position2 = "x:-0.7288026546400463, y:0.12428039760344137, z:-0.22191123536664564, nx:-0.006564968723456249, ny:-0.09990818441590082, nz:0.000915808066485707"
                 data-camera-show-tooltip-when-finished = "yes"
                 data-camera-position-animation-duration = "1.2"
                 data-camera-position-animation-easing-type = "easeout"> 
