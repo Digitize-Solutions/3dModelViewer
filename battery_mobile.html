@@ -278,6 +278,7 @@
         function handleCameraPositionSet(key){
             let tmpCameraPos = markerData[key].cameraPosition
             fwdemv0?.modelManagerDO?.setCameraPositionDigitize(tmpCameraPos, "0.5", "easeout" )
+            fwdemv0?.playOrStopAnimationClip("Animation", false, "1", false)
         }
         if(document.readyState == 'complete'){
             fwdemvInit();
@@ -620,8 +621,9 @@
 
         <div class="camera-position-container">
             <span class="arrow-span" id="back-arrow"> &#60; </span>
+            
             <div class="select">
-                <select name="format" id="setMarker">
+                <select name="format" id="setMarker" disabled>
                    <option selected disabled>Set Marker</option>
                    <option value="socket">Socket</option>
                    <option value="wi_iq">Wi-IQ</option>
@@ -668,7 +670,7 @@
                 data-camera-position-animation-duration = "1.2"
                 data-camera-position-animation-easing-type = "easeout"> 
                 
-                <div data-tooltip = "" data-max-width = "380">
+                <div data-tooltip = "" data-max-width = "355">
                     <p>This is to display information about the socket.</p>
                 </div>
             </div>
@@ -706,7 +708,7 @@
                 data-camera-position-animation-duration = "1.2"
                 data-camera-position-animation-easing-type = "easeout"> 
                 
-                <div data-tooltip = "" data-max-width = "380">
+                <div data-tooltip = "" data-max-width = "160">
                     <p>All work. No water.</p>
                 </div>
             </div>
@@ -744,7 +746,7 @@
                 data-camera-position-animation-duration = "1.2"
                 data-camera-position-animation-easing-type = "easeout"> 
                 
-                <div data-tooltip = "" data-max-width = "380">
+                <div data-tooltip = "" data-max-width = "305">
                     <p>Dependable power. Reliable protection.</p>
                 </div>
             </div>
@@ -783,7 +785,7 @@
                 data-camera-position-animation-duration = "1.2"
                 data-camera-position-animation-easing-type = "easeout"> 
                 
-                <div data-tooltip = "" data-max-width = "91">
+                <div data-tooltip = "" data-max-width = "205">
                     <p class="fwdemv-tooltip-window-single-line">Resoundingly recyclable</p>
                 </div>
 
