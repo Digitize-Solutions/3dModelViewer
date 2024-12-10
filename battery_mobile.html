@@ -284,8 +284,6 @@
 
 
         function handleViewSwitch(e){
-            // console.log('fwdemv0>>>>>>>>>>>>>>>>', fwdemv0)
-            // console.log('fwdemv0>>>>>>>>>>>>>>>>', fwdemv0.playOrStopAnimationClip)
             fwdemv0?.playOrStopAnimationClip("Animation", e.target.checked, "1", false)
             if(e.target.checked){
                 fwdemv0?.modelManagerDO?.setCameraPositionDigitize(outerViewCameraPosition, "0.5", "easeout" )
@@ -311,17 +309,7 @@
 
             document.getElementById('viewSwitch').addEventListener('change', handleViewSwitch);
             document.getElementById('getHelpWizard').addEventListener('click', () => {
-                // let display = 'none';
-
-                // if (toggleAnnotations.getAttribute('data-hide') === "1") {
-                //     toggleAnnotations.setAttribute('data-hide', '0')
-                // } else {
-                //     toggleAnnotations.setAttribute('data-hide', '1')
-                //     display = 'inline'
-                // }
                 fwdemv0?.controllerDO?.displayHelpWindowDigitize()
-                // light.classList.toggle('st0');
-                // light.classList.toggle('st3');
 
             })
 
@@ -334,11 +322,6 @@
             document.getElementById('forth-arrow').addEventListener('click', ()=>{
                 handleSwitchMarker(1)
             });
-            // document.getElementById("setMarker").onchange = function(){
-            //     let value = document.getElementById("setMarker").value;
-            //     handleCameraPositionSet(value)
-            // };
-
 
         }
         function handleSwitchMarker(value){
@@ -350,13 +333,12 @@
                 return false;
             }
             currentMarkerIndex += value
-            console.log('currentMarkerIndex>>>>>>>>>>>>>>>>', currentMarkerIndex, keys);
             let key = keys[currentMarkerIndex]
             let element = document.getElementById("select-camera");
             element.innerHTML = markerData[key].label;
             handleCameraPositionSet(key)
             let tooltipEle = document.getElementsByClassName('fwdemv-main-tooltip-window');
-            tooltipEle.style.display = "none"
+            tooltipEle[0]?.style.display = "none"
         }
     </script>
 
@@ -480,26 +462,6 @@
             left: calc(50% - 105px);
             
         }
-        select {
-            -webkit-appearance:none;
-            -moz-appearance:none;
-            -ms-appearance:none;
-            appearance:none;
-            outline:0;
-            box-shadow:none;
-            border:0!important;
-            background: #5c6664;
-            background-image: none;
-            flex: 1;
-            padding: 0 .5em;
-            color:#fff;
-            cursor:pointer;
-            font-size: 1em;
-            font-family: 'Open Sans', sans-serif;
-        }
-        select::-ms-expand {
-            display: none;
-        }
         #select-camera {
             position: relative;
             width: 120px;
@@ -513,12 +475,6 @@
             color: #fff;
             background: #646464;
             cursor: pointer;
-        }
-        #setMarker{
-            text-align: center;
-            text-align: -webkit-center;
-            display: flex;
-            justify-content: center;
         }
         .arrow-span{
             width: 40px;
@@ -674,13 +630,6 @@
             
             <div id="select-camera">
                 Set Marker
-                <!-- <select name="format" id="setMarker" disabled>
-                   <option selected disabled>Set Marker</option>
-                   <option value="socket">Socket</option>
-                   <option value="wi_iq">Wi-IQ</option>
-                   <option value="blinky">Blinky</option>
-                   <option value="side_label">Side Label</option>
-                </select> -->
              </div>
             <span class="arrow-span" style="padding-left: 4px"  id="forth-arrow">
                 <img src="media/svg/chevron_right.svg"/>
