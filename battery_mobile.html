@@ -247,9 +247,9 @@
             },
             "wi_iq":{
                 cameraPosition : {
-                        "x": -0.5711270870065493,
-                        "y": 0.18078816693255273,
-                        "z": 1.219989311942058,
+                        "x": -0.22164710816971614,
+                        "y": 0.5169144199176214,
+                        "z": 0.008190847007115934,
                         "tx": 0.001729867510146096,
                         "ty": -0.0035642500848741096,
                         "tz": -0.06277148988907286
@@ -258,9 +258,9 @@
             }, 
             "blinky":{
                 cameraPosition : {
-                        "x": -0.5589355714776592,
-                        "y": 0.6731652143352089,
-                        "z": 0.07446903725815979,
+                        "x": 0.06986063826030349,
+                        "y": 0.42447429175848195,
+                        "z": 0.005131962013576075,
                         "tx": 0.001729867510146096,
                         "ty": -0.0035642500848741096,
                         "tz": -0.06277148988907286
@@ -355,6 +355,8 @@
             let element = document.getElementById("select-camera");
             element.innerHTML = markerData[key].label;
             handleCameraPositionSet(key)
+            let tooltipEle = document.getElementsByClassName('fwdemv-main-tooltip-window');
+            tooltipEle.style.display = "none"
         }
     </script>
 
@@ -690,6 +692,7 @@
              <div data-class = "innerview-marker-2"
                 class="innerview-marker"
                 data-position = "x:0.2484790193658539, y:0.15109280837211062, z:0.12318402059280859, nx:0.2484790193658539, ny:0.1510914647837263, nz:10.123184020592719, meshName: Socket"
+                data-marker-type = "2D"
                 data-marker-type = "3D"
                 data-polygon-offset-units = "0.01"
                 data-icon-type = "info"
@@ -701,7 +704,7 @@
                 data-icon-selected-color = "#21A80B"
                 data-scale = "1"
 
-                data-normals-angle = "130"
+                data-normals-angle = "90"
                 data-tooltip-offset-x = "0"
 
                 data-link = ""
@@ -728,7 +731,7 @@
 
             <div data-class = ""
                 data-position = "x:-0.13884432044116812, y:0.018484308838115193, z:0.08360228566102983, nx:-0.13884432044116812, ny:0.018482965249730865, nz:10.083602285660941, meshName: Outerbox"
-                data-marker-type = "3D"
+                data-marker-type = "2D"
                 data-polygon-offset-units = "0.01"
                 data-icon-type = "info"
                 data-border-color = "#FFFFFF"
@@ -739,7 +742,7 @@
                 data-icon-selected-color = "#21A80B"
                 data-scale = "1"
 
-                data-normals-angle = "130"
+                data-normals-angle = "90"
                 data-tooltip-offset-x = "0"
 
                 data-link = ""
@@ -766,7 +769,7 @@
 
             <div data-class = ""
                 data-position = "x:-0.3451329740100086, y:0.19444611934819983, z:0.006807311334299088, nx:-0.30126320896775066, ny:10.194220581669896, nz:-0.04404685677360612, meshName: Cap"
-                data-marker-type = "3D"
+                data-marker-type = "2D"
                 data-polygon-offset-units = "0.01"
                 data-icon-type = "info"
                 data-border-color = "#FFFFFF"
@@ -777,7 +780,7 @@
                 data-icon-selected-color = "#21A80B"
                 data-scale = "1"
 
-                data-normals-angle = "130"
+                data-normals-angle = "90"
                 data-tooltip-offset-x = "0"
 
                 data-link = ""
