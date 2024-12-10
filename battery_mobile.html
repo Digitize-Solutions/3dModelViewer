@@ -338,7 +338,10 @@
             element.innerHTML = markerData[key].label;
             handleCameraPositionSet(key)
             let tooltipEle = document.getElementsByClassName('fwdemv-main-tooltip-window');
-            tooltipEle[0]?.style.display = "none"
+            if(tooltipEle[0]?.style){
+                tooltipEle[0].style.display = "none"
+            }
+            
         }
     </script>
 
