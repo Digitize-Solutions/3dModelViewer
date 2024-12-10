@@ -13,6 +13,14 @@
     <script>
 
         let currentMarkerIndex=0;
+        const outerViewCameraPosition = {
+            "x": -1.048038829914852,
+            "y": 0.7368168150831309,
+            "z": 0.3676118638535819,
+            "tx": 0.001729867510146096,
+            "ty": -0.0035642500848741096,
+            "tz": -0.06277148988907286
+        }
         const settings = {
 
             // General settings.  
@@ -153,8 +161,9 @@
 
             // Markers & camera positions.
             markersData: 'markers_data',
-            // showMarkerTool: 'no',
             showMarkerTool: 'no',
+            // showMarkerTool: 'yes',
+            // markerShowAndHideAnimationType: 'opacity',
             markerShowAndHideAnimationType: 'scale',
             showMarkersAfterTime: 2,
             markerToolTipOffsetY: 10,
@@ -227,44 +236,48 @@
         const markerData = {
             "socket":{
                 cameraPosition : {
-                        "x": 0.21788711986201864,
-                        "y": 0.3025869473794921,
-                        "z": 0.6864396770360911,
-                        "tx": -0.006564968723456249,
-                        "ty": -0.09990818441590082,
-                        "tz": 0.000915808066485707
-                    }
+                        "x": 0.7208114797889543,
+                        "y": 0.487818704295674,
+                        "z": 0.5153883841623164,
+                        "tx": 0.001729867510146096,
+                        "ty": -0.0035642500848741096,
+                        "tz": -0.06277148988907286
+                    },
+                "label": "Socket"
             },
             "wi_iq":{
                 cameraPosition : {
-                        "x": -0.00046418035741224804,
-                        "y": 0.7760604116898822,
-                        "z": 0.24115860650606863,
-                        "tx": -0.006564968723456249,
-                        "ty": -0.09990818441590082,
-                        "tz": 0.000915808066485707
-                    }
+                        "x": -0.5711270870065493,
+                        "y": 0.18078816693255273,
+                        "z": 1.219989311942058,
+                        "tx": 0.001729867510146096,
+                        "ty": -0.0035642500848741096,
+                        "tz": -0.06277148988907286
+                    },
+                "label": "Wi-IQ"
             }, 
             "blinky":{
                 cameraPosition : {
-                        "x": -0.40609229061276764,
-                        "y": 0.7353672650717108,
-                        "z": 0.4813829258841578,
-                        "tx": 0.10021136346153406,
-                        "ty": -0.02422313285522223,
-                        "tz": -0.06466309995454829
-                    }
+                        "x": -0.5589355714776592,
+                        "y": 0.6731652143352089,
+                        "z": 0.07446903725815979,
+                        "tx": 0.001729867510146096,
+                        "ty": -0.0035642500848741096,
+                        "tz": -0.06277148988907286
+                    },
+                "label": "Blinky"
             },
-            "side_label":{
-                cameraPosition : {
-                        "x": -0.7288026546400463,
-                        "y": 0.12428039760344137,
-                        "z": -0.22191123536664564,
-                        "tx": -0.006564968723456249,
-                        "ty": -0.09990818441590082,
-                        "tz": 0.000915808066485707
-                    }
-            }
+            // "side_label":{
+            //     cameraPosition : {
+            //             "x": -0.7288026546400463,
+            //             "y": 0.12428039760344137,
+            //             "z": -0.22191123536664564,
+            //             "tx": -0.006564968723456249,
+            //             "ty": -0.09990818441590082,
+            //             "tz": 0.000915808066485707
+            //         },
+            //     "label": "Side Label"
+            // }
         }
 
 
@@ -274,11 +287,14 @@
             // console.log('fwdemv0>>>>>>>>>>>>>>>>', fwdemv0)
             // console.log('fwdemv0>>>>>>>>>>>>>>>>', fwdemv0.playOrStopAnimationClip)
             fwdemv0?.playOrStopAnimationClip("Animation", e.target.checked, "1", false)
+            if(e.target.checked){
+                fwdemv0?.modelManagerDO?.setCameraPositionDigitize(outerViewCameraPosition, "0.5", "easeout" )
+            }
         }
         function handleCameraPositionSet(key){
             let tmpCameraPos = markerData[key].cameraPosition
             fwdemv0?.modelManagerDO?.setCameraPositionDigitize(tmpCameraPos, "0.5", "easeout" )
-            fwdemv0?.playOrStopAnimationClip("Animation", false, "1", false)
+            // fwdemv0?.playOrStopAnimationClip("Animation", false, "1", false)
         }
         if(document.readyState == 'complete'){
             fwdemvInit();
@@ -318,10 +334,10 @@
             document.getElementById('forth-arrow').addEventListener('click', ()=>{
                 handleSwitchMarker(1)
             });
-            document.getElementById("setMarker").onchange = function(){
-                let value = document.getElementById("setMarker").value;
-                handleCameraPositionSet(value)
-            };
+            // document.getElementById("setMarker").onchange = function(){
+            //     let value = document.getElementById("setMarker").value;
+            //     handleCameraPositionSet(value)
+            // };
 
 
         }
@@ -336,14 +352,28 @@
             currentMarkerIndex += value
             console.log('currentMarkerIndex>>>>>>>>>>>>>>>>', currentMarkerIndex, keys);
             let key = keys[currentMarkerIndex]
-            let element = document.getElementById("setMarker");
-            element.value = key;
+            let element = document.getElementById("select-camera");
+            element.innerHTML = markerData[key].label;
             handleCameraPositionSet(key)
         }
     </script>
 
     </head>
     <style>
+        body{
+            margin: 0;
+        }
+        .dg.main.a.closed{
+            top: 35px!important;
+        }
+        .view-switch-container-main{
+            width: 100%;
+            float: left;
+            position: relative;
+            z-index: 1;
+            min-height: 40px;
+            background: white;
+        }
         .view-switch-container {
             position: absolute;
             top: 10px;
@@ -423,6 +453,9 @@
             height: 50px;
             display: grid;
             top: 300px;
+            background: #fff;
+            width: 50px;
+            height: auto;
         }
         .info-content{
             color: red;
@@ -432,6 +465,9 @@
         }
         .fwdemv-camera-positions-select-menu{
             left: calc(-1 * 50% + 120px) !important;
+        }
+        .fwdemv-block-touch-button{
+            top: 32px!important;
         }
         .camera-position-container{
             position: absolute;
@@ -462,16 +498,19 @@
         select::-ms-expand {
             display: none;
         }
-        .select {
+        #select-camera {
             position: relative;
-            display: flex;
             width: 120px;
-            text-align: center;
             height: 2.5em;
-            line-height: 3;
-            background: #5c6664;
             overflow: hidden;
             border-radius: .25em;
+            text-align: center;
+            display: inline-block;
+            line-height: 35px;
+            font-family: system-ui;
+            color: #fff;
+            background: #646464;
+            cursor: pointer;
         }
         #setMarker{
             text-align: center;
@@ -483,16 +522,20 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
             display: inline-block;
             text-align: center;
-            line-height: 40px;
+            line-height: 42px;
             cursor: pointer;
             font-size: 24px;
             font-weight: bold;
             box-sizing: border-box;
+            border: 2px solid #888;
+            transition: all ease-in 0.3s;
         }
+        .arrow-span:hover{
+            border: 2px solid #363636;
+        }
+
         @media screen and (max-width: 716px){
             .left-content-container{
                 top: 265px;
@@ -505,7 +548,21 @@
     </style>
 
     <body>
-
+        <div class="view-switch-container-main">
+         
+            <div class="view-switch-container" id="">
+                <span>
+                    Outerview
+                </span>
+                <label class="switch">
+                    <input type="checkbox" id="viewSwitch">
+                    <span class="slider round"></span>
+                </label>
+                <span>
+                    Innnerview
+                </span>
+            </div>   
+        </div>
         <!-- Viewer holder -->
         <div id="myDiv"></div>
 
@@ -605,33 +662,27 @@
         
         
         </div>
-        
-        <div class="view-switch-container" id="">
-            <span>
-                Outerview
-            </span>
-            <label class="switch">
-                <input type="checkbox" id="viewSwitch">
-                <span class="slider round"></span>
-            </label>
-            <span>
-                Innnerview
-            </span>
-        </div>
+       
 
         <div class="camera-position-container">
-            <span class="arrow-span" id="back-arrow"> &#60; </span>
+            <span class="arrow-span" id="back-arrow"> 
+                <!-- &#60;  -->
+                <img src="media/svg/chevron_left.svg"/>
+            </span>
             
-            <div class="select">
-                <select name="format" id="setMarker" disabled>
+            <div id="select-camera">
+                Set Marker
+                <!-- <select name="format" id="setMarker" disabled>
                    <option selected disabled>Set Marker</option>
                    <option value="socket">Socket</option>
                    <option value="wi_iq">Wi-IQ</option>
                    <option value="blinky">Blinky</option>
                    <option value="side_label">Side Label</option>
-                </select>
+                </select> -->
              </div>
-            <span class="arrow-span" style="padding-left: 4px"  id="forth-arrow">></span>
+            <span class="arrow-span" style="padding-left: 4px"  id="forth-arrow">
+                <img src="media/svg/chevron_right.svg"/>
+            </span>
         </div>
       
         <div id="markers_data" style="display: none;">
@@ -670,13 +721,13 @@
                 data-camera-position-animation-duration = "1.2"
                 data-camera-position-animation-easing-type = "easeout"> 
                 
-                <div data-tooltip = "" data-max-width = "355">
-                    <p>This is to display information about the socket.</p>
+                <div data-tooltip = "" data-max-width = "315">
+                    <p style="color: red;font-weight: bold!important;">Dependable power. Reliable protection.</p>
                 </div>
             </div>
 
             <div data-class = ""
-                data-position = "x:-0.1413800270140897, y:0.20670311303539973, z:-0.03232151647768075, nx:-0.13782755950160444, ny:10.206702425602938, nz:-0.03338388331829504, meshName: Wi_iQ_Body"
+                data-position = "x:-0.13884432044116812, y:0.018484308838115193, z:0.08360228566102983, nx:-0.13884432044116812, ny:0.018482965249730865, nz:10.083602285660941, meshName: Outerbox"
                 data-marker-type = "3D"
                 data-polygon-offset-units = "0.01"
                 data-icon-type = "info"
@@ -708,13 +759,13 @@
                 data-camera-position-animation-duration = "1.2"
                 data-camera-position-animation-easing-type = "easeout"> 
                 
-                <div data-tooltip = "" data-max-width = "160">
-                    <p>All work. No water.</p>
+                <div data-tooltip = "" data-max-width = "215">
+                    <p style="color: red;font-weight: bold!important;">Resoundingly recyclable.</p>
                 </div>
             </div>
 
             <div data-class = ""
-                data-position = "x:-0.34305336754704346, y:0.19445051579236466, z:-0.09903319152518916, nx:-0.36744222950733235, ny:10.194415370051697, nz:-0.08863622127331294, meshName: Cap"
+                data-position = "x:-0.3451329740100086, y:0.19444611934819983, z:0.006807311334299088, nx:-0.30126320896775066, ny:10.194220581669896, nz:-0.04404685677360612, meshName: Cap"
                 data-marker-type = "3D"
                 data-polygon-offset-units = "0.01"
                 data-icon-type = "info"
@@ -746,12 +797,12 @@
                 data-camera-position-animation-duration = "1.2"
                 data-camera-position-animation-easing-type = "easeout"> 
                 
-                <div data-tooltip = "" data-max-width = "305">
-                    <p>Dependable power. Reliable protection.</p>
+                <div data-tooltip = "" data-max-width = "235">
+                    <p style="color: red;font-weight: bold!important;">More work. More longetivity.</p>
                 </div>
             </div>
 
-            
+<!--             
             <div data-class = ""
                 data-position = "x:-0.395931172969574, y:0.03588625246952043, z:-0.021156221504759966, nx:-10.395931172969574, ny:0.03588625246952043, nz:-0.021156221504759966, meshName: S_Label"
                 data-marker-type = "3D"
@@ -789,7 +840,7 @@
                     <p class="fwdemv-tooltip-window-single-line">Resoundingly recyclable</p>
                 </div>
 
-            </div>
+            </div> -->
 
         </div>
 
