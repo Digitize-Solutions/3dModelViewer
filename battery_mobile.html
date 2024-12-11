@@ -246,6 +246,14 @@
                 "label": "Socket"
             },
             "wi_iq":{
+                // cameraPosition : {
+                //         "x": -0.22164710816971614,
+                //         "y": 0.5169144199176214,
+                //         "z": 0.008190847007115934,
+                //         "tx": 0.001729867510146096,
+                //         "ty": -0.0035642500848741096,
+                //         "tz": -0.06277148988907286
+                //     },
                 cameraPosition : {
                         "x": -0.22164710816971614,
                         "y": 0.5169144199176214,
@@ -334,8 +342,12 @@
             }
             currentMarkerIndex += value
             let key = keys[currentMarkerIndex]
+            console.log("key>>", {key,"ds" : markerData[key].label});
             let element = document.getElementById("select-camera");
             element.innerHTML = markerData[key].label;
+
+            //let selectedMarker = document.getElementById("wiiq-position")
+
             handleCameraPositionSet(key)
             // let tooltipEle = document.getElementsByClassName('fwdemv-main-tooltip-window');
             // if(tooltipEle[0]?.style){
@@ -755,6 +767,7 @@
             </div>
             
             <div data-class = ""
+            id="wiiq-position"
                 data-position = "x:-0.1218421931849859, y:0.19596332925568033, z:-0.021550261355555864, nx:-0.1218421931849859, ny:10.195963114954392, nz:-0.023620533247339842, meshName: Wi_iQ_Body"
                 data-marker-type = "2D"
                 data-polygon-offset-units = "2"
@@ -781,8 +794,8 @@
                 data-animation-finish-reset-camera = "resetOnAnimationFinish"
                 data-animation-show-tooltip-when-finished = "no"
 
-                data-camera-position-name = ""
-                data-camera-position = "x:0.06986063826030349, y:0.42447429175848195, z:0.005131962013576075, nx:0.001729867510146096, ny:-0.0035642500848741096, nz:-0.06277148988907286"
+                data-camera-position-name = "custom wi-iq one"
+                data-camera-position = "x:-0.22164710816971614, y:0.5169144199176214, z:0.008190847007115934, tx:0.001729867510146096, ty:-0.0035642500848741096, tz:-0.06277148988907286"
                 data-camera-show-tooltip-when-finished = "yes"
                 data-camera-position-animation-duration = "1.2"
                 data-camera-position-animation-easing-type = "easeout"> 
@@ -811,7 +824,7 @@
                 data-tooltip-offset-x = "0"
 
                 data-link = "https://www.enersys.com/493bb4/globalassets/documents/product-documentation/pro-series/amer/am_philscicat_svc_proseries_preferred_watering_systems_and_accessory_catalog/"
-                data-target = "blank"
+                data-target = "_blank"
 
                 data-animation-name = ""
                 data-animation-repeat-count = "1"
@@ -821,8 +834,13 @@
                 data-animation-finish-reset-camera = "resetOnAnimationFinish"
                 data-animation-show-tooltip-when-finished = "no"
 
-                data-camera-position-name = ""
-                data-camera-position = "x:-0.22164710816971614, y:0.5169144199176214, z:0.008190847007115934, nx:0.001729867510146096, ny:-0.0035642500848741096, nz:-0.06277148988907286"
+                data-camera-position-name = "custom blinky two"
+                data-camera-position = "x: 0.06986063826030349,
+                y: 0.42447429175848195,
+                z: 0.005131962013576075,
+                tx: 0.001729867510146096,
+                ty: -0.0035642500848741096,
+                tz: -0.06277148988907286"
                 data-camera-show-tooltip-when-finished = "yes"
                 data-camera-position-animation-duration = "1.2"
                 data-camera-position-animation-easing-type = "easeout"> 
